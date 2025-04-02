@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class App {
     public static void main(String[] args) {
-        String test = "1 2 * 1 3 * * ";
+        String test = "15 7 2 * 3 + -";
         double add = 0;
         double addend = 0;
 
