@@ -5,9 +5,11 @@ package at.fhj.msd;
  * This class provides methods to manipulate the linked list, including adding, removing, and retrieving elements
  * as well as checking its size and whether it is empty and printing the list.
  * The list is composed of nodes, each containing a string data and a reference to the next node.
+ * @param <E> the type of elements in the linked list.
+ * @see Node
  */
-public class MySinglyLinkedList {
-      private Node head;   // Anfang der Liste
+public class MySinglyLinkedList<E> {
+      private Node<E> head;   // Anfang der Liste
 
     // Füge ein neues Element am Ende der Liste hinzu
 
@@ -19,7 +21,7 @@ public class MySinglyLinkedList {
     public int size() 
     {
         int count = 0;
-        Node current = head;
+        Node<E> current = head;
         while (current != null) {
             count++;
             current = current.next;
@@ -42,7 +44,7 @@ public class MySinglyLinkedList {
      * So it just returns the data of the head node.
      * @return the data of the first node in the list.
      */
-    public String first() {
+    public E first() {
         return head.data;
     }
     
@@ -50,10 +52,11 @@ public class MySinglyLinkedList {
      * Adds a new string to the beginning of the linked list.
      * A new node is created with the provided string, and it becomes the new head of the list.
      * The previous head becomes the second node in the list.
-     * @param newString the string to be added to the list.
+     * @param newElement the Datatype to be added to the list.
+     * @param <E> the type of the element to be added.
      */
-    public void addFirst(String newString) {
-        Node newNode = new Node(newString);
+    public void addFirst(E newElement) {
+        Node<E> newNode = new Node<>(newElement);
         newNode.next = head;
         head = newNode;
     }
@@ -63,9 +66,9 @@ public class MySinglyLinkedList {
      * The head node is removed, and the next node becomes the new head.
      * @return the data of the removed node.
      */
-    public String removeFist() {
-        Node deleted = head;
-        Node current = head;
+    public E removeFist() {
+        Node<E> deleted = head;
+        Node<E> current = head;
         current = current.next;
         head = current;
         return deleted.data;
@@ -76,9 +79,9 @@ public class MySinglyLinkedList {
      * It iterates through the list until it reaches the last node (where next is null).
      * @return the data of the last node in the list.
      */
-    public String last()
+    public E last()
     {
-        Node current = head;
+        Node<E> current = head;
         while (current.next != null) {
             current = current.next;
         }
@@ -87,20 +90,21 @@ public class MySinglyLinkedList {
     }
 
     /**
-     * Adds a new string to the end of the linked list.
-     * A new node is created with the provided string, and it is added after the last node in the list.
+     * Adds a new Element to the end of the linked list.
+     * A new node is created with the provided Element, and it is added after the last node in the list.
      * If the list is empty, the new node becomes the head.
-     * @param newString the string to be added to the list.
+     * @param newElement the Datatype to be added to the list.
+     * @param <E> the type of the element to be added.
      */
-    public void addLast(String newString) {
-        Node newNode = new Node(newString);
+    public void addLast(E newElement) {
+        Node<E> newNode = new Node<>(newElement);
 
         if (head == null) {
             head = newNode;
             return;
         }
 
-        Node current = head;
+        Node<E> current = head;
         while (current.next != null) {
             current = current.next;
         }
@@ -115,7 +119,7 @@ public class MySinglyLinkedList {
      * Finally, it prints "null" to indicate the end of the list.
      */
     public void printList() {
-        Node current = head;
+        Node<E> current = head;
         while (current != null) {
             System.out.print(current.data + " -> ");
             current = current.next;

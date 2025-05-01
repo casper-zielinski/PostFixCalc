@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class App {
     public static void main(String[] args) {
-        MySinglyLinkedList list = new MySinglyLinkedList();
+        MySinglyLinkedList<String> list = new MySinglyLinkedList<>();
 
         list.addLast("10");
         list.addLast("20");
