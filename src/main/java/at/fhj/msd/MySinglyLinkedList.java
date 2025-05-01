@@ -1,10 +1,7 @@
 package at.fhj.msd;
 
-
 public class MySinglyLinkedList {
-      private Node head;   // Anfang der Liste
-
-    // Füge ein neues Element am Ende der Liste hinzu
+      private Node head;   
 
     public int size() 
     {
