@@ -11,8 +11,6 @@ package at.fhj.msd;
 public class MySinglyLinkedList<E> {
       private Node<E> head;   // Anfang der Liste
 
-    // Füge ein neues Element am Ende der Liste hinzu
-
     /**
      * The size method calculates the number of elements in the linked list.
      * It iterates through the list, counting each node until it reaches the end (null).

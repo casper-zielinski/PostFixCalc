@@ -11,12 +11,13 @@ import org.junit.jupiter.api.Test;
 
 public class MySinglyLinkedListTest {
 
-      MySinglyLinkedList list;
+      MySinglyLinkedList<String> list;
 
       @BeforeEach
-      void setup()
+      @DisplayName("Single LinkedList Setup")
+      public void setup()
       {
-            list = new MySinglyLinkedList();
+            list = new MySinglyLinkedList<>();
       }
 
       @Test
