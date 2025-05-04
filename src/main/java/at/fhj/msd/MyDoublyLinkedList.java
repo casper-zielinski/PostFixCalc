@@ -1,5 +1,7 @@
 package at.fhj.msd;
 
+import java.util.NoSuchElementException;
+
 public class MyDoublyLinkedList<E> {
 
     private Node<E> head;
@@ -40,6 +42,11 @@ public class MyDoublyLinkedList<E> {
      * @return the data of the first node in the list.
      */
     public E first() {
+
+        if (isEmpty()) {
+            throw new NoSuchElementException("The list is empty!");
+        }
+
         return head.data;
     }
 
@@ -59,6 +66,7 @@ public class MyDoublyLinkedList<E> {
             // Liste war leer
             head = newNode;
             tail = newNode;
+            return;
         }
 
         newNode.next = head;
@@ -73,7 +81,11 @@ public class MyDoublyLinkedList<E> {
      *
      * @return the data of the removed node.
      */
-    public E removeFist() {
+    public E removeFirst() {
+
+        if (isEmpty()) {
+            throw new NoSuchElementException("The list is empty!");
+        }
 
         Node<E> deleted = head;
         Node<E> current = head;
@@ -83,6 +95,10 @@ public class MyDoublyLinkedList<E> {
     }
 
     public E last() {
+
+        if (isEmpty()) {
+            throw new NoSuchElementException("The list is empty!");
+        }
 
         tail = head;
         while (tail.next != null) {
@@ -115,9 +131,14 @@ public class MyDoublyLinkedList<E> {
     }
 
     public void printList() {
+
+        if (isEmpty()) {
+            throw new NoSuchElementException("The list is empty!");
+        }
+
         Node<E> current = head;
         while (current != null) {
-            System.out.println(current.data + " <-> ");
+            System.out.print(current.data + " <-> ");
             current = current.next;
         }
         System.out.println("null");
