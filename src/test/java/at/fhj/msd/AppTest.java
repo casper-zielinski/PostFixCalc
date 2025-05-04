@@ -1,7 +1,6 @@
 package at.fhj.msd;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -34,4 +33,7 @@ public class AppTest {
         assertTrue(app instanceof App);
         // Add assertions or verifications as needed
     }
+    
+
+    
 }
