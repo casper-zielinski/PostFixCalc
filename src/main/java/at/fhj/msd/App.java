@@ -1,12 +1,15 @@
 package at.fhj.msd;
 
-import java.util.ArrayList;
-
 /**
  * Hello world!
  */
 public class App {
+
     public static void main(String[] args) {
-        
-            }
-        }
+
+        PostFixCalculator calc = new PostFixCalculator();
+        String result = calc.calculatePostFix("10 2 8 * + 3 4 2 * + / 5 2 3 * + -");
+        System.out.println(result);
+
+    }
+}
