@@ -11,5 +11,9 @@ public class App {
         String result = calc.calculatePostFix("10 2 8 * + 3 4 2 * + / 5 2 3 * + -");
         System.out.println(result);
 
+        PostFixCalculator calcString = new PostFixCalculator();
+        String infix = calc.convertPostfixToInfix("7 3 2 + 5 * - 6 4 / +");
+        System.out.println(infix);
+
     }
 }

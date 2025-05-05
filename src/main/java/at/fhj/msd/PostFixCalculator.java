@@ -47,4 +47,41 @@ public class PostFixCalculator {
 
     }
 
+    //? Bonus Punkte, maybe? :)
+    public String convertPostfixToInfix(String expression) {
+
+        MySinglyLinkedList<String> stack = new MySinglyLinkedList<>();
+        String[] tokens = expression.split(" ");
+        String infix = "";
+
+        for (String token : tokens) {
+
+            if (!isOperator(token)) {
+                if (Character.isDigit(token.charAt(0))) {
+                    stack.addFirst(token);
+                } else {
+                    throw new IllegalArgumentException("One of the given operators is not an actual operator");
+                }
+            } else {
+                String number2 = stack.removeFist();
+                String number1 = stack.removeFist();
+
+                if (token.equals("+")) {
+                    infix = "(" + number1 + " + " + number2 + ")";
+                } else if (token.equals("-")) {
+                    infix = "(" + number1 + " - " + number2 + ")";
+                } else if (token.equals("*")) {
+                    infix = "(" + number1 + " * " + number2 + ")";
+                } else if (token.equals("/")) {
+                    infix = "(" + number1 + " / " + number2 + ")";
+                }
+                stack.addFirst(infix);
+            }
+
+        }
+
+        return infix;
+
+    }
+
 }
