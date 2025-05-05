@@ -10,11 +10,14 @@ import org.junit.jupiter.api.Test;
 public class PostFixCalculatorTest {
 
     PostFixCalculator calc;
+    PostFixCalculator calcString;
+    
 
     @BeforeEach
     @DisplayName("PostFix Calculator Setup")
     public void setup() {
         calc = new PostFixCalculator();
+        calcString = new PostFixCalculator();
     }
 
     @Test
@@ -64,5 +67,23 @@ public class PostFixCalculatorTest {
             calc.calculatePostFix("5 3 &");
         });
     }
+
+    @Test
+    @DisplayName("PostFix Convert PostFix-Notation to Infix-Notation")
+    void convertPostfixToInfixTest() {
+       
+        assertEquals("((7 - ((3 + 2) * 5)) + (6 / 4))", calcString.convertPostfixToInfix("7 3 2 + 5 * - 6 4 / +"));     
+    }
+
+    @Test
+    @DisplayName("PostFix Convert PostFix-Notation to Infix-Notation - IllegalArgument Test")
+    void convertIllegalArgumentTest() {
+        
+        assertThrows(IllegalArgumentException.class, () -> {
+            calcString.convertPostfixToInfix("7 3 2 + 5 * ü");
+        } );
+
+    }
+
 
 }

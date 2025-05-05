@@ -35,7 +35,7 @@ public class PostFixCalculator {
                     result = number1 - number2;
                 } else if (token.equals("*")) {
                     result = number1 * number2;
-                } else if (token.equals("/")) {
+                } else {
                     result = number1 / number2;
                 }
                 stack.addFirst(String.valueOf(result));
@@ -60,7 +60,7 @@ public class PostFixCalculator {
                 if (Character.isDigit(token.charAt(0))) {
                     stack.addFirst(token);
                 } else {
-                    throw new IllegalArgumentException("One of the given operators is not an actual operator");
+                    throw new IllegalArgumentException("One element of the given PostFix notation is neither an operator nor a digit!");
                 }
             } else {
                 String number2 = stack.removeFist();
@@ -72,7 +72,7 @@ public class PostFixCalculator {
                     infix = "(" + number1 + " - " + number2 + ")";
                 } else if (token.equals("*")) {
                     infix = "(" + number1 + " * " + number2 + ")";
-                } else if (token.equals("/")) {
+                } else {
                     infix = "(" + number1 + " / " + number2 + ")";
                 }
                 stack.addFirst(infix);
