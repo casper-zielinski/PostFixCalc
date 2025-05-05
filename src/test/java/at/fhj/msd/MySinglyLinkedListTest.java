@@ -2,8 +2,13 @@ package at.fhj.msd;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.List;
+import java.util.NoSuchElementException;
 
+import org.apache.logging.log4j.CloseableThreadContext;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -56,6 +61,8 @@ public class MySinglyLinkedListTest {
       @Test
       @DisplayName("Single LinkedList Remove First Test")
       void RemoveFirst() {
+            assertThrows(NoSuchElementException.class, () -> {list.first();}   );
+            assertThrows(NoSuchElementException.class, () -> {list.removeFist();}   );
             list.addFirst("1");
             list.addFirst("2");
             list.removeFist();
@@ -67,6 +74,7 @@ public class MySinglyLinkedListTest {
       @Test
       @DisplayName("Single LinkedList Last Test")
       void LastTest() {
+            assertThrows(NoSuchElementException.class, () -> {list.last();}   );
             list.addFirst("1");
             list.addFirst("2");
             list.addFirst("3");
@@ -93,6 +101,7 @@ public class MySinglyLinkedListTest {
       @Test
       @DisplayName("Single LinkedList Print Test")
       void PrintTest() {
+            assertThrows(NoSuchElementException.class, () -> {list.printList();} );
             list.addFirst("1");
             list.addLast("2");
             list.addLast("3");
@@ -108,11 +117,7 @@ public class MySinglyLinkedListTest {
             String outputContent = output.toString().trim();
 
             assertEquals("1 -> 2 -> 3 -> null", outputContent);
-      }
-
-      
-
-
+      }     
 
 
 }

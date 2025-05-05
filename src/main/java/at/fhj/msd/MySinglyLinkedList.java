@@ -1,5 +1,7 @@
 package at.fhj.msd;
 
+import java.util.NoSuchElementException;
+
 /**
  * A simple implementation of a singly linked list.
  * This class provides methods to manipulate the linked list, including adding, removing, and retrieving elements
@@ -43,6 +45,11 @@ public class MySinglyLinkedList<E> {
      * @return the data of the first node in the list.
      */
     public E first() {
+        
+        if (this.isEmpty() == true)
+        {
+            throw new NoSuchElementException("Linked List is Empty");
+        }
         return head.data;
     }
     
@@ -65,6 +72,10 @@ public class MySinglyLinkedList<E> {
      * @return the data of the removed node.
      */
     public E removeFist() {
+        if (this.isEmpty() == true)
+        {
+            throw new NoSuchElementException("Linked List is Empty");
+        } 
         Node<E> deleted = head;
         Node<E> current = head;
         current = current.next;
@@ -79,6 +90,10 @@ public class MySinglyLinkedList<E> {
      */
     public E last()
     {
+        if (this.isEmpty() == true)
+        {
+            throw new NoSuchElementException("Linked List is Empty");
+        }
         Node<E> current = head;
         while (current.next != null) {
             current = current.next;
@@ -117,6 +132,10 @@ public class MySinglyLinkedList<E> {
      * Finally, it prints "null" to indicate the end of the list.
      */
     public void printList() {
+        if (this.isEmpty() == true)
+        {
+            throw new NoSuchElementException("Linked List is Empty");
+        }
         Node<E> current = head;
         while (current != null) {
             System.out.print(current.data + " -> ");
