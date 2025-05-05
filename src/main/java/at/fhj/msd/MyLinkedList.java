@@ -130,6 +130,26 @@ public class MyLinkedList<E> {
 
     }
 
+    public E removeLast()
+    {
+        if (isEmpty())
+        {
+            throw new NoSuchElementException("The list is empty!");
+        }
+
+        Node <E> deleted = tail;
+        tail = tail.prev;
+
+        if (tail != null) {
+            tail.next = null;
+        } else {
+            head = null; // Liste ist jetzt leer
+        }
+        
+        return deleted.data;
+
+    }
+
     public void printList() {
 
         if (isEmpty()) {

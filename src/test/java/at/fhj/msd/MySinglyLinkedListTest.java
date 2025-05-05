@@ -62,12 +62,12 @@ public class MySinglyLinkedListTest {
       @DisplayName("Single LinkedList Remove First Test")
       void RemoveFirst() {
             assertThrows(NoSuchElementException.class, () -> {list.first();}   );
-            assertThrows(NoSuchElementException.class, () -> {list.removeFist();}   );
+            assertThrows(NoSuchElementException.class, () -> {list.removeFirst();}   );
             list.addFirst("1");
             list.addFirst("2");
-            list.removeFist();
+            list.removeFirst();
             assertEquals(1, list.size());
-            list.removeFist();
+            list.removeFirst();
             assertEquals(true, list.isEmpty());
       }
 

@@ -71,7 +71,7 @@ public class MySinglyLinkedList<E> {
      * The head node is removed, and the next node becomes the new head.
      * @return the data of the removed node.
      */
-    public E removeFist() {
+    public E removeFirst() {
         if (this.isEmpty() == true)
         {
             throw new NoSuchElementException("Linked List is Empty");

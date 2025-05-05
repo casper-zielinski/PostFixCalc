@@ -27,8 +27,8 @@ public class PostFixCalculator {
                     throw new IllegalArgumentException("One of the given operators is not an actual operator");
                 }
             } else {
-                int number2 = Integer.parseInt(stack.removeFist());
-                int number1 = Integer.parseInt(stack.removeFist());
+                int number2 = Integer.parseInt(stack.removeFirst());
+                int number1 = Integer.parseInt(stack.removeFirst());
 
                 if (token.equals("+")) {
                     result = number1 + number2;

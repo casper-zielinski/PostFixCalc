@@ -114,6 +114,33 @@ public class MyLinkedListTest {
       }
 
       @Test
+      @DisplayName("Doubly LinkedList Remove Last Test")
+      void RemoveLastTest() {
+        list.addFirst("1");
+        list.addLast("2");
+        
+
+        assertEquals("2", list.last());
+        assertEquals(2, list.size());
+
+        list.removeLast();
+        assertEquals(1, list.size());
+        assertEquals("1", list.last());
+        list.removeLast();
+        assertEquals(true, list.isEmpty());
+        assertThrows(NoSuchElementException.class, () -> {
+            list.removeLast();});
+      }
+
+      @Test
+      @DisplayName("Remove Last from Empty List Test")
+      void EmptyRemoveLast()
+      {
+        assertThrows(NoSuchElementException.class, () -> {
+            list.removeLast();});
+      }
+
+      @Test
       @DisplayName("Doubly LinkedList Print Test")
       void PrintTest() {
             list.addFirst("1");
