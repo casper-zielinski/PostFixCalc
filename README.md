@@ -20,12 +20,15 @@
 
 ## Actual Implementation
 
-
 ### Node Class (String)
 
 > The ``Node.java`` Class serves as one element in the linked list's, it has a data Attribute, which is the Data Element, and a next attribute, which is a reference to the next Element and also a previous attribute, which point to the previous Element.
 
-### MySingleLinkedList Class (String)
+### MySingleLinkedList Class (T)
 
 > Using the Node Object as a Element, the Object can be used as a Single Linked List. It comes with Methods such as addFirst/Last, First/Last returning the first or last Element of the List, a size method, returning the size of the list in a integer form, a isEmpty Method, returning a true boolean if the List is empty and a printList method, printing the Elements of the list and the pointer (Example: 10 -> 20 -> null )
 
+### MyLinkedList Class (T)
+
+> Using the Node Object as a Element, the Object can be usede as a (Double) Linked List. It comes with Methods like size(), returning the amount of Elements in the List as a Integer, isEmpty(), returning a boolean value depending on if the list is empty or not, a first() method, returning the first element of the list and addFirst(), adding an Element to the first position (head) of the List as well as removeFirst(), removing the first Element of a list. It also has methods for the last position of the list (tail), such as last(), returning the last element and addLast(), adding a Element to the end of an list as well as a removeLast() removing the last Element of the list. For Test purposes it also comes with a printList() Method printing the list elements and their refrences:  
+> Example: 1 <-> 2 <-> 3 <-> null

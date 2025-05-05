@@ -9,6 +9,7 @@ public class PostFixCalculator {
         return token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/");
     }
 
+    @SuppressWarnings("ConvertToStringSwitch")
     public String calculatePostFix(String expression) {
 
         // Erstelle eine Instanz der LinkedList-Klasse
@@ -35,7 +36,7 @@ public class PostFixCalculator {
                     result = number1 - number2;
                 } else if (token.equals("*")) {
                     result = number1 * number2;
-                } else if (token.equals("/")) {
+                } else {
                     result = number1 / number2;
                 }
                 stack.addFirst(String.valueOf(result));

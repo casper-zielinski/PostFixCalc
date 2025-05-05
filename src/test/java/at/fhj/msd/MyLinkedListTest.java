@@ -10,14 +10,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class MyDoublyLinkedListTest {
+public class MyLinkedListTest {
 
-    MyDoublyLinkedList<String> list;
+    MyLinkedList<String> list;
 
     @BeforeEach
     @DisplayName("Doubly LinkedList Setup")
     public void setup() {
-        list = new MyDoublyLinkedList<>();
+        list = new MyLinkedList<>();
     }
 
     @Test
