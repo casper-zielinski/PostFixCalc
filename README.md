@@ -36,7 +36,7 @@ It uses a **Singly Linked List** as the internal data structure for stack-like b
 
 ---
 
-## ✅ isOperator(String token)
+#### ✅ isOperator(String token)
 
 Checks whether a given token is a valid arithmetic operator.  
 Supported operators: `+`, `-`, `*`, `/`
@@ -45,7 +45,7 @@ Supported operators: `+`, `-`, `*`, `/`
 
 ---
 
-## ✅ isOperatorExtended(String token)
+#### ✅ isOperatorExtended(String token)
 
 Checks whether a given token is a valid operator or parenthesis.  
 Supported tokens: `+`, `-`, `*`, `/`, `(`, `)`
@@ -54,7 +54,7 @@ Supported tokens: `+`, `-`, `*`, `/`, `(`, `)`
 
 ---
 
-## 🧮 calculatePostFix(String expression)
+#### 🧮 calculatePostFix(String expression)
 
 Evaluates the result of a **Postfix expression**.  
 The input string must be space-separated (e.g., `"3 4 + 5 *"`).  
@@ -67,7 +67,7 @@ Internally uses a singly linked list as a stack.
 
 ---
 
-## 🔁 convertPostfixToInfix(String expression)
+#### 🔁 convertPostfixToInfix(String expression)
 
 Converts a **Postfix expression** into an **Infix expression** with proper parentheses.  
 Useful for understanding the expression in a more familiar format.
@@ -79,7 +79,7 @@ Useful for understanding the expression in a more familiar format.
 
 ---
 
-## 🔄 convertInfixToPostfix(String expression)
+#### 🔄 convertInfixToPostfix(String expression)
 
 Converts an **Infix expression** into **Postfix (RPN)** notation using operator precedence and parentheses.  
 Uses the Shunting Yard Algorithm.
@@ -93,7 +93,7 @@ Uses the Shunting Yard Algorithm.
 
 ---
 
-## 🧠 precedence(String operator)
+#### 🧠 precedence(String operator)
 
 Returns the **precedence level** of the provided operator, used in expression conversion.
 
@@ -107,7 +107,7 @@ Returns the **precedence level** of the provided operator, used in expression co
 
 ---
 
-## ⚖️ hasLowerPrecedence(String op1, String op2)
+#### ⚖️ hasLowerPrecedence(String op1, String op2)
 
 Compares two operators to determine if the first one (`op1`) has **lower or equal precedence** than the second (`op2`).  
 Used to decide whether to pop from the operator stack during infix-to-postfix conversion.
@@ -116,7 +116,7 @@ Used to decide whether to pop from the operator stack during infix-to-postfix co
 
 ---
 
-## 📌 Example Usage
+#### 📌 Example Usage
 
 ```java
 PostFixCalculator calc = new PostFixCalculator();
