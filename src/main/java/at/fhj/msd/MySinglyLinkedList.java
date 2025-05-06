@@ -10,7 +10,7 @@ import java.util.NoSuchElementException;
  * @param <E> the type of elements in the linked list.
  * @see Node
  */
-public class MySinglyLinkedList<E> {
+public class MySinglyLinkedList<E> implements LinkedListInterface<E> {
       private Node<E> head;   // Anfang der Liste
 
     /**
@@ -18,6 +18,7 @@ public class MySinglyLinkedList<E> {
      * It iterates through the list, counting each node until it reaches the end (null).
      * @return the number of elements in the list.
      */
+    @Override
     public int size() 
     {
         int count = 0;
@@ -34,6 +35,7 @@ public class MySinglyLinkedList<E> {
      * An empty list has no nodes, meaning the head is null.
      * @return true if the list is empty, false otherwise.
      */
+    @Override
     public boolean isEmpty() {
         return head == null;
     }
@@ -42,8 +44,9 @@ public class MySinglyLinkedList<E> {
      * The first method returns the first element of the linked list.
      * It retrieves the data from the head node. The head node is the first node in the list.
      * So it just returns the data of the head node.
-     * @return the data of the first node in the list.
+     * @return the data of the firsst node in the list.
      */
+    @Override
     public E first() {
         
         if (this.isEmpty() == true)
@@ -60,6 +63,7 @@ public class MySinglyLinkedList<E> {
      * @param newElement the Datatype to be added to the list.
      * @param <E> the type of the element to be added.
      */
+    @Override
     public void addFirst(E newElement) {
         Node<E> newNode = new Node<>(newElement);
         newNode.next = head;
@@ -71,6 +75,7 @@ public class MySinglyLinkedList<E> {
      * The head node is removed, and the next node becomes the new head.
      * @return the data of the removed node.
      */
+    @Override
     public E removeFirst() {
         if (this.isEmpty() == true)
         {
@@ -88,6 +93,7 @@ public class MySinglyLinkedList<E> {
      * It iterates through the list until it reaches the last node (where next is null).
      * @return the data of the last node in the list.
      */
+    @Override
     public E last()
     {
         if (this.isEmpty() == true)
@@ -109,6 +115,7 @@ public class MySinglyLinkedList<E> {
      * @param newElement the Datatype to be added to the list.
      * @param <E> the type of the element to be added.
      */
+    @Override
     public void addLast(E newElement) {
         Node<E> newNode = new Node<>(newElement);
 
@@ -131,6 +138,7 @@ public class MySinglyLinkedList<E> {
      * It also prints a " -> " between each element to indicate the link between nodes.
      * Finally, it prints "null" to indicate the end of the list.
      */
+    @Override
     public void printList() {
         if (this.isEmpty() == true)
         {
