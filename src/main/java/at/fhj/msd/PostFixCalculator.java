@@ -3,7 +3,12 @@ package at.fhj.msd;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class PostFixCalculator {
+
+    private static final Logger logger = LogManager.getLogger(PostFixCalculator.class);
 
     /**
      * A class that implements a Postfix Calculator using a single linked list
