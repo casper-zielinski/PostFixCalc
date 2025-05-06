@@ -12,7 +12,7 @@ public class App {
         System.out.println(result);
 
         PostFixCalculator calcConvert2 = new PostFixCalculator();
-        String postfix = calcConvert2.convertInfixToPostfix("( ( 7 + 3 ) - ( 2 * 5 ) ) / ( 4 + 1 )");
+        String postfix = calcConvert2.convertInfixToPostfix("8 + ( 4 * 3 ) - ( 2 + 6 ) / 4");
         System.out.println(postfix);
     }
 }
