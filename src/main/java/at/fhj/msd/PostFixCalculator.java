@@ -101,7 +101,7 @@ public class PostFixCalculator {
                 if (Character.isDigit(token.charAt(0))) {
                     stack.addFirst(token);
                 } else {
-                    throw new IllegalArgumentException("One of the given operators is not an actual operator");
+                    throw new IllegalArgumentException("One element of the given postfix-notation is neither an operator nor a digit!");
                 }
             } else {
                 int number2 = Integer.parseInt(stack.removeFirst());
@@ -114,8 +114,7 @@ public class PostFixCalculator {
                     result = number1 - number2;
                 } else if (token.equals("*")) {
                     result = number1 * number2;
-                } 
-                else {
+                } else {
                     result = number1 / number2;
                 }
                 stack.addFirst(String.valueOf(result)); //Result back on stack
@@ -127,8 +126,44 @@ public class PostFixCalculator {
 
     }
 
-      //? Bonus Punkte, maybe? :)
-      public String convertPostfixToInfix(String expression) {
+    //? Bonus Punkte, maybe? :)
+
+    /**
+     * Converts a postfix expression (Reverse Polish Notation) into a valid
+     * infix expression.
+     * <p>
+     * This method parses a space-separated postfix expression and reconstructs
+     * the original infix notation by using a stack-based approach. It processes
+     * each token in the postfix expression, where operands are pushed onto the
+     * stack and operators trigger a pop of the top two operands to form an
+     * infix sub-expression.
+     * </p>
+     *
+     * <p>
+     * The reconstructed sub-expression is then pushed back onto the stack. This
+     * continues until the full infix expression is formed.
+     * </p>
+     *
+     * <p>
+     * Example:
+     * <pre>
+     * Input: 3 4 + 2 *
+     * Output: ((3 + 4) * 2)
+     * </pre>
+     * </p>
+     *
+     * <p>
+     * <b>Note:</b> The input expression must be space-separated (e.g.
+     * {@code "3 4 +"}).</p>
+     *
+     * @param expression A postfix expression as a string, with each token
+     * (number or operator) separated by a space
+     * @return The corresponding infix expression as a string
+     * @throws IllegalArgumentException If a token is neither a valid number nor
+     * a supported operator
+     */
+    
+    public String convertPostfixToInfix(String expression) {
 
         MySinglyLinkedList<String> stack = new MySinglyLinkedList<>();
         String[] tokens = expression.split(" ");
@@ -140,7 +175,7 @@ public class PostFixCalculator {
                 if (Character.isDigit(token.charAt(0))) {
                     stack.addFirst(token);
                 } else {
-                    throw new IllegalArgumentException("One element of the given PostFix notation is neither an operator nor a digit!");
+                    throw new IllegalArgumentException("One element of the given postfix-notation is neither an operator nor a digit!");
                 }
             } else {
                 String number2 = stack.removeFirst();
