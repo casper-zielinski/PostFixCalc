@@ -127,6 +127,43 @@ public class PostFixCalculator {
 
     }
 
+      //? Bonus Punkte, maybe? :)
+      public String convertPostfixToInfix(String expression) {
+
+        MySinglyLinkedList<String> stack = new MySinglyLinkedList<>();
+        String[] tokens = expression.split(" ");
+        String infix = "";
+
+        for (String token : tokens) {
+
+            if (!isOperator(token)) {
+                if (Character.isDigit(token.charAt(0))) {
+                    stack.addFirst(token);
+                } else {
+                    throw new IllegalArgumentException("One element of the given PostFix notation is neither an operator nor a digit!");
+                }
+            } else {
+                String number2 = stack.removeFirst();
+                String number1 = stack.removeFirst();
+
+                if (token.equals("+")) {
+                    infix = "(" + number1 + " + " + number2 + ")";
+                } else if (token.equals("-")) {
+                    infix = "(" + number1 + " - " + number2 + ")";
+                } else if (token.equals("*")) {
+                    infix = "(" + number1 + " * " + number2 + ")";
+                } else {
+                    infix = "(" + number1 + " / " + number2 + ")";
+                }
+                stack.addFirst(infix);
+            }
+
+        }
+
+        return infix;
+
+    }
+
     /**
      * Watched the youtube video: https://www.youtube.com/watch?v=0Vnd41fBqY4
      * for better understanding, how a method like this could look like. Based
