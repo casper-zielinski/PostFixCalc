@@ -2,17 +2,25 @@ package at.fhj.msd;
 
 import java.util.NoSuchElementException;
 
+
+/**
+ * A doubly linked list implementation that follows the {@link LinkedListInterface}.
+ * This class supports operations for manipulating the linked list, such as adding, removing, and retrieving elements,
+ * as well as checking the size, whether the list is empty, and printing the list.
+ * Each node contains references to both the next and the previous node, allowing traversal in both directions.
+ *
+ * @param <E> the type of elements in the linked list.
+ * @see LinkedListInterface
+ * @see Node
+ */
+
 public class MyLinkedList<E> implements LinkedListInterface<E> {
 
     private Node<E> head;
     private Node<E> tail;
 
     /**
-     * The size method calculates the number of elements in the linked list. It
-     * iterates through the list, counting each node until it reaches the end
-     * (null).
-     *
-     * @return the number of elements in the list.
+     * {@inheritDoc}
      */
     @Override
     public int size() {
@@ -26,10 +34,7 @@ public class MyLinkedList<E> implements LinkedListInterface<E> {
     }
 
     /**
-     * Checks if the linked list is empty. An empty list has no nodes, meaning
-     * the head is null.
-     *
-     * @return true if the list is empty, false otherwise.
+     * {@inheritDoc}
      */
     @Override
     public boolean isEmpty() {
@@ -37,29 +42,29 @@ public class MyLinkedList<E> implements LinkedListInterface<E> {
     }
 
     /**
-     * The first method returns the first element of the linked list. It
-     * retrieves the data from the head node. The head node is the first node in
-     * the list. So it just returns the data of the head node.
-     *
-     * @return the data of the first node in the list.
+     * {@inheritDoc}
      */
     @Override
     public E first() {
 
-        if (isEmpty()) {
+        if (this.isEmpty()) {
             throw new NoSuchElementException("The list is empty!");
         }
 
         return head.data;
     }
 
-    /**
-     * Adds a new string to the beginning of the linked list. A new node is
-     * created with the provided string, and it becomes the new head of the
-     * list. The previous head becomes the second node in the list.
-     *
-     * @param newElement the Datatype to be added to the list.
-     * @param <E> the type of the element to be added.
+     /**
+     * Adds a new element to the beginning of the list.
+     * This method creates a new node, sets its `next` reference to the current head, 
+     * and then updates the head of the list to be the new node. 
+     * If the list was empty, both the `head` and `tail` will point to the new node.
+     * 
+     * <p>Unlike the singly linked list, this doubly linked list also updates the `prev` reference 
+     * of the new head node to be `null` and the `prev` reference of the old head node is updated to 
+     * point to the new head.</p>
+     * 
+     * @param newElement the element to be added to the beginning of the list.
      */
     @Override
     public void addFirst(E newElement) {
@@ -80,15 +85,12 @@ public class MyLinkedList<E> implements LinkedListInterface<E> {
     }
 
     /**
-     * Removes the first element from the linked list. The head node is removed,
-     * and the next node becomes the new head.
-     *
-     * @return the data of the removed node.
+     * {@inheritDoc}
      */
     @Override
     public E removeFirst() {
 
-        if (isEmpty()) {
+        if (this.isEmpty()) {
             throw new NoSuchElementException("The list is empty!");
         }
 
@@ -98,10 +100,14 @@ public class MyLinkedList<E> implements LinkedListInterface<E> {
         head = current;
         return deleted.data;
     }
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public E last() {
 
-        if (isEmpty()) {
+        if (this.isEmpty()) {
             throw new NoSuchElementException("The list is empty!");
         }
 
@@ -112,6 +118,18 @@ public class MyLinkedList<E> implements LinkedListInterface<E> {
 
         return tail.data;
     }
+
+    /**
+     * Adds a new element to the end of the list.
+     * This method traverses the list to find the last node and then updates its `next` reference
+     * to point to the new node. It also updates the `prev` reference of the new node to point to
+     * the old tail node. If the list was empty, both the `head` and `tail` will point to the new node.
+     * 
+     * <p>Unlike the singly linked list, this doubly linked list uses the `prev` pointer of the tail 
+     * node to link the new node back to the previous last node.</p>
+     * 
+     * @param newElement the element to be added to the end of the list.
+     */
     @Override
     public void addLast(E newElement) {
 
@@ -135,6 +153,18 @@ public class MyLinkedList<E> implements LinkedListInterface<E> {
 
     }
 
+    /**
+     * Removes the last element from the list.
+     * This method removes the last node by updating the `tail` reference to its `prev` node. 
+     * If the list becomes empty, it updates both `head` and `tail` to `null`.
+     * 
+     * <p>In the doubly linked list, the `prev` pointer of the new tail node is updated to `null` 
+     * while the `next` pointer of the old tail is disconnected. If the list is empty after removal, 
+     * both the head and tail references are set to `null`.</p>
+     * 
+     * @return the data of the removed node.
+     */
+
     public E removeLast()
     {
         if (isEmpty())
@@ -154,6 +184,10 @@ public class MyLinkedList<E> implements LinkedListInterface<E> {
         return deleted.data;
 
     }
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void printList() {
 
