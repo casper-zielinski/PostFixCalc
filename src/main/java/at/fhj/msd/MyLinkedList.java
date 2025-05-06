@@ -2,7 +2,7 @@ package at.fhj.msd;
 
 import java.util.NoSuchElementException;
 
-public class MyLinkedList<E> {
+public class MyLinkedList<E> implements LinkedListInterface<E> {
 
     private Node<E> head;
     private Node<E> tail;
@@ -14,6 +14,7 @@ public class MyLinkedList<E> {
      *
      * @return the number of elements in the list.
      */
+    @Override
     public int size() {
         int count = 0;
         Node<E> current = head;
@@ -30,6 +31,7 @@ public class MyLinkedList<E> {
      *
      * @return true if the list is empty, false otherwise.
      */
+    @Override
     public boolean isEmpty() {
         return head == null;
     }
@@ -41,6 +43,7 @@ public class MyLinkedList<E> {
      *
      * @return the data of the first node in the list.
      */
+    @Override
     public E first() {
 
         if (isEmpty()) {
@@ -58,6 +61,7 @@ public class MyLinkedList<E> {
      * @param newElement the Datatype to be added to the list.
      * @param <E> the type of the element to be added.
      */
+    @Override
     public void addFirst(E newElement) {
 
         Node<E> newNode = new Node<>(newElement);
@@ -81,6 +85,7 @@ public class MyLinkedList<E> {
      *
      * @return the data of the removed node.
      */
+    @Override
     public E removeFirst() {
 
         if (isEmpty()) {
@@ -93,7 +98,7 @@ public class MyLinkedList<E> {
         head = current;
         return deleted.data;
     }
-
+    @Override
     public E last() {
 
         if (isEmpty()) {
@@ -107,7 +112,7 @@ public class MyLinkedList<E> {
 
         return tail.data;
     }
-
+    @Override
     public void addLast(E newElement) {
 
         Node<E> newNode = new Node<>(newElement);
@@ -149,7 +154,7 @@ public class MyLinkedList<E> {
         return deleted.data;
 
     }
-
+    @Override
     public void printList() {
 
         if (isEmpty()) {

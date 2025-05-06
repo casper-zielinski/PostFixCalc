@@ -18,7 +18,4 @@ public interface LinkedListInterface<E> {
 
     void printList();
 
-
-
-    
 }
