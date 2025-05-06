@@ -29,5 +29,97 @@
 
 ### PostFixCalculator Class
 
-> A Class to calculate Postfix Equations. The first Method checks if the String provided a Operator is (**+,-,\*,/**), hence the name ``isOperator()``. The CalculatePostFix Method calculates the Postfix Equation and returns it as a String. It implements the SingleLinkedList and uses it to calculate the provided Equation. The Provided String hat to be in this Format, separated by Whitespaces,  
-> *Example: ... ``calculatePostFix("3 4 + 5 + 6 + 7 +")`` --> 25*
+A Java class to calculate and convert Postfix and Infix mathematical expressions.
+
+This class supports the evaluation of **Postfix (Reverse Polish Notation)** expressions and includes utility methods for converting between Postfix and Infix notation.  
+It uses a **Singly Linked List** as the internal data structure for stack-like behavior.
+
+---
+
+## ✅ isOperator(String token)
+
+Checks whether a given token is a valid arithmetic operator.  
+Supported operators: `+`, `-`, `*`, `/`
+
+- **Returns:** `true` if the token is an operator, otherwise `false`.
+
+---
+
+## ✅ isOperatorExtended(String token)
+
+Checks whether a given token is a valid operator or parenthesis.  
+Supported tokens: `+`, `-`, `*`, `/`, `(`, `)`
+
+- **Returns:** `true` if the token is an operator or parenthesis, otherwise `false`.
+
+---
+
+## 🧮 calculatePostFix(String expression)
+
+Evaluates the result of a **Postfix expression**.  
+The input string must be space-separated (e.g., `"3 4 + 5 *"`).  
+Internally uses a singly linked list as a stack.
+
+- **Input:** `"3 4 + 5 + 6 + 7 +"`
+- **Output:** `"25"`
+
+- **Throws:** `IllegalArgumentException` for invalid operators or values.
+
+---
+
+## 🔁 convertPostfixToInfix(String expression)
+
+Converts a **Postfix expression** into an **Infix expression** with proper parentheses.  
+Useful for understanding the expression in a more familiar format.
+
+- **Input:** `"3 4 + 2 *"`
+- **Output:** `"((3 + 4) * 2)"`
+
+- **Throws:** `IllegalArgumentException` for invalid tokens.
+
+---
+
+## 🔄 convertInfixToPostfix(String expression)
+
+Converts an **Infix expression** into **Postfix (RPN)** notation using operator precedence and parentheses.  
+Uses the Shunting Yard Algorithm.
+
+- **Input:** `"( 3 + 4 ) * 2"`
+- **Output:** `"3 4 + 2 *"`
+
+- **Note:** Input must be space-separated (e.g., `"3 + 4"` NOT `"3+4"`)
+
+- **Throws:** `IllegalArgumentException` for invalid tokens.
+
+---
+
+## 🧠 precedence(String operator)
+
+Returns the **precedence level** of the provided operator, used in expression conversion.
+
+| Operator | Precedence |
+|----------|------------|
+| `+`, `-` | 1          |
+| `*`, `/` | 2          |
+| `(`, `)` | 3          |
+
+- **Throws:** `IllegalArgumentException` for unknown operators.
+
+---
+
+## ⚖️ hasLowerPrecedence(String op1, String op2)
+
+Compares two operators to determine if the first one (`op1`) has **lower or equal precedence** than the second (`op2`).  
+Used to decide whether to pop from the operator stack during infix-to-postfix conversion.
+
+- **Returns:** `true` if `op1` has lower or equal precedence, or is the same as `op2`.
+
+---
+
+## 📌 Example Usage
+
+```java
+PostFixCalculator calc = new PostFixCalculator();
+String result = calc.calculatePostFix("3 4 + 5 + 6 + 7 +"); // → "25"
+String infix = calc.convertPostfixToInfix("3 4 + 2 *"); // → "((3 + 4) * 2)"
+String postfix = calc.convertInfixToPostfix("( 3 + 4 ) * 2"); // → "3 4 + 2 *"
