@@ -42,8 +42,8 @@ public class PostFixCalculator {
                     result = number1 - number2;
                 } else if (token.equals("*")) {
                     result = number1 * number2;
-                } else {
-                } else {
+                } 
+                else {
                     result = number1 / number2;
                 }
                 stack.addFirst(String.valueOf(result));
@@ -82,7 +82,7 @@ public class PostFixCalculator {
                 //? Example3: if token is = "+" and "*" is already in the stack, while loop will be called, we are then following the mathematical rules
                 while (!stack.isEmpty() && hasLowerPrecedence(token, stack.first())) {
 
-                    operands.add(stack.removeFist()); //Remove all upper-level operators to the list of operands
+                    operands.add(stack.removeFirst()); //Remove all upper-level operators to the list of operands
                 }
 
                 //? After while loop (or not) token will be added to stack!
@@ -96,13 +96,13 @@ public class PostFixCalculator {
                     while (!stack.isEmpty() && !stack.first().equals("(")) {
                         int count = 0;
                         if (count == 0) {
-                            stack.removeFist(); //if count == 0, then the value "(" will be called, since we don't need it, we will remove it
+                            stack.removeFirst(); //if count == 0, then the value "(" will be called, since we don't need it, we will remove it
                             count++;
                         }
-                        operands.add(stack.removeFist()); //move all operators which were inside the parentheses to the operand list!
+                        operands.add(stack.removeFirst()); //move all operators which were inside the parentheses to the operand list!
                     }
 
-                    stack.removeFist(); //When "(" found, then remove ")" also!
+                    stack.removeFirst(); //When "(" found, then remove ")" also!
                 }
 
             }
@@ -111,7 +111,7 @@ public class PostFixCalculator {
         //? If the infix notation is at the end (for loop end), then move all remaining operators to operands list
         //? This will ensure, that the stack is empty at the end
         while (!stack.isEmpty()) {
-            operands.add(stack.removeFist());
+            operands.add(stack.removeFirst());
         }
 
         //? Remove all remaining parentheses and create a clean String!
