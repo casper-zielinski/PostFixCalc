@@ -3,24 +3,26 @@ package at.fhj.msd;
 import java.util.NoSuchElementException;
 
 /**
- * A simple implementation of a singly linked list.
- * This class provides methods to manipulate the linked list, including adding, removing, and retrieving elements
- * as well as checking its size and whether it is empty and printing the list.
- * The list is composed of nodes, each containing a string data and a reference to the next node.
+ * A simple implementation of a singly linked list that implements the
+ * {@link LinkedListInterface}. This class provides methods to manipulate the
+ * linked list, including adding, removing, and retrieving elements as well as
+ * checking its size, whether it is empty, and printing the list. The list is
+ * composed of nodes, each containing a string data and a reference to the next
+ * node.
+ *
  * @param <E> the type of elements in the linked list.
  * @see Node
+ * @see LinkedListInterface
  */
 public class MySinglyLinkedList<E> implements LinkedListInterface<E> {
-      private Node<E> head;   // Anfang der Liste
+
+    private Node<E> head;   // Anfang der Liste
 
     /**
-     * The size method calculates the number of elements in the linked list.
-     * It iterates through the list, counting each node until it reaches the end (null).
-     * @return the number of elements in the list.
+     * {@inheritDoc}
      */
     @Override
-    public int size() 
-    {
+    public int size() {
         int count = 0;
         Node<E> current = head;
         while (current != null) {
@@ -31,9 +33,7 @@ public class MySinglyLinkedList<E> implements LinkedListInterface<E> {
     }
 
     /**
-     * Checks if the linked list is empty.
-     * An empty list has no nodes, meaning the head is null.
-     * @return true if the list is empty, false otherwise.
+     * {@inheritDoc}
      */
     @Override
     public boolean isEmpty() {
@@ -41,27 +41,19 @@ public class MySinglyLinkedList<E> implements LinkedListInterface<E> {
     }
 
     /**
-     * The first method returns the first element of the linked list.
-     * It retrieves the data from the head node. The head node is the first node in the list.
-     * So it just returns the data of the head node.
-     * @return the data of the firsst node in the list.
+     * {@inheritDoc}
      */
     @Override
     public E first() {
-        
-        if (this.isEmpty() == true)
-        {
+
+        if (this.isEmpty() == true) {
             throw new NoSuchElementException("Linked List is Empty");
         }
         return head.data;
     }
-    
+
     /**
-     * Adds a new string to the beginning of the linked list.
-     * A new node is created with the provided string, and it becomes the new head of the list.
-     * The previous head becomes the second node in the list.
-     * @param newElement the Datatype to be added to the list.
-     * @param <E> the type of the element to be added.
+     * {@inheritDoc}
      */
     @Override
     public void addFirst(E newElement) {
@@ -71,16 +63,13 @@ public class MySinglyLinkedList<E> implements LinkedListInterface<E> {
     }
 
     /**
-     * Removes the first element from the linked list.
-     * The head node is removed, and the next node becomes the new head.
-     * @return the data of the removed node.
+     * {@inheritDoc}
      */
     @Override
     public E removeFirst() {
-        if (this.isEmpty() == true)
-        {
+        if (this.isEmpty() == true) {
             throw new NoSuchElementException("Linked List is Empty");
-        } 
+        }
         Node<E> deleted = head;
         Node<E> current = head;
         current = current.next;
@@ -89,15 +78,11 @@ public class MySinglyLinkedList<E> implements LinkedListInterface<E> {
     }
 
     /**
-     * The last method returns the last element of the linked list.
-     * It iterates through the list until it reaches the last node (where next is null).
-     * @return the data of the last node in the list.
+     * {@inheritDoc}
      */
     @Override
-    public E last()
-    {
-        if (this.isEmpty() == true)
-        {
+    public E last() {
+        if (this.isEmpty() == true) {
             throw new NoSuchElementException("Linked List is Empty");
         }
         Node<E> current = head;
@@ -109,11 +94,7 @@ public class MySinglyLinkedList<E> implements LinkedListInterface<E> {
     }
 
     /**
-     * Adds a new Element to the end of the linked list.
-     * A new node is created with the provided Element, and it is added after the last node in the list.
-     * If the list is empty, the new node becomes the head.
-     * @param newElement the Datatype to be added to the list.
-     * @param <E> the type of the element to be added.
+     * {@inheritDoc}
      */
     @Override
     public void addLast(E newElement) {
@@ -133,15 +114,11 @@ public class MySinglyLinkedList<E> implements LinkedListInterface<E> {
     }
 
     /**
-     * printList method prints the elements of the linked list in order.
-     * It starts from the head and iterates through each node, printing the data until it reaches the end (null).
-     * It also prints a " -> " between each element to indicate the link between nodes.
-     * Finally, it prints "null" to indicate the end of the list.
+     * {@inheritDoc}
      */
     @Override
     public void printList() {
-        if (this.isEmpty() == true)
-        {
+        if (this.isEmpty() == true) {
             throw new NoSuchElementException("Linked List is Empty");
         }
         Node<E> current = head;
