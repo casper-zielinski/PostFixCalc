@@ -1,167 +1,169 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-<modelVersion>4.0.0</modelVersion>
-<groupId>at.fhj.msd</groupId>
-<artifactId>Postfixcalc</artifactId>
-<version>1.0</version>
-<url>https://github.com/casper-zielinski</url>
-<!--  developers information, will be used for documentation  -->
-<developers>
-<developer>
-<id>CasperZ</id>
-<name>Casper Zielinski</name>
-<email>casper.zielinski@fh-joanneum.at</email>
-<organization>FH JOANNEUM GmbH</organization>
-<organizationUrl>https://www.fh-joanneum.at/iit</organizationUrl>
-<roles>
-<role>Student</role>
-</roles>
-<timezone>Europe/Vienna</timezone>
-<properties>
-</properties>
-</developer>
-<developer>
-<id>v26x24</id>
-<name>Umejr Dzinovic</name>
-<email>umejr.dzinovic@fh-joanneum.at</email>
-<organization>FH JOANNEUM GmbH</organization>
-<organizationUrl>https://www.fh-joanneum.at/iit</organizationUrl>
-<roles>
-<role>Student</role>
-</roles>
-<timezone>Europe/Vienna</timezone>
-<properties>
-</properties>
-</developer>
-</developers>
-<properties>
-<maven.compiler.source>21</maven.compiler.source>
-<maven.compiler.target>21</maven.compiler.target>
-<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-</properties>
-<dependencies>
-<dependency>
-<groupId>org.junit.jupiter</groupId>
-<artifactId>junit-jupiter-api</artifactId>
-<version>5.10.2</version>
-<scope>test</scope>
-</dependency>
-<dependency>
-<groupId>org.junit.jupiter</groupId>
-<artifactId>junit-jupiter-engine</artifactId>
-<version>5.10.2</version>
-<scope>test</scope>
-</dependency>
-<dependency>
-<groupId>org.junit.jupiter</groupId>
-<artifactId>junit-jupiter-params</artifactId>
-<version>5.10.2</version>
-<scope>test</scope>
-</dependency>
-<dependency>
-<groupId>org.apache.logging.log4j</groupId>
-<artifactId>log4j-api</artifactId>
-<version>2.23.1</version>
-</dependency>
-<dependency>
-<groupId>org.apache.logging.log4j</groupId>
-<artifactId>log4j-core</artifactId>
-<version>2.23.1</version>
-</dependency>
-</dependencies>
-<build>
-<plugins>
-<plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>3.5.0</version>
-        <configuration>
-          <mainClass>at.fhj.msd.App</mainClass>
-        </configuration>
-      </plugin>
-<plugin>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-compiler-plugin</artifactId>
-<version>3.13.0</version>
-<configuration>
-<release>21</release>
-<compilerArgs>-proc:full</compilerArgs>
-</configuration>
-</plugin>
-<plugin>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-surefire-plugin</artifactId>
-<version>3.2.5</version>
-</plugin>
-<plugin>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-resources-plugin</artifactId>
-<version>3.3.1</version>
-</plugin>
-<plugin>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-site-plugin</artifactId>
-<version>3.12.1</version>
-</plugin>
-<!--  generate information about test coverage  -->
-<plugin>
-<groupId>org.jacoco</groupId>
-<artifactId>jacoco-maven-plugin</artifactId>
-<version>0.8.12</version>
-<executions>
-<execution>
-<id>prepare-agent</id>
-<goals>
-<goal>prepare-agent</goal>
-</goals>
-</execution>
-<execution>
-<id>report</id>
-<phase>test</phase>
-<goals>
-<goal>report</goal>
-</goals>
-</execution>
-</executions>
-</plugin>
-</plugins>
-</build>
-<reporting>
-<plugins>
-<!--  maven site for documentation  -->
-<plugin>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-project-info-reports-plugin</artifactId>
-<version>3.5.0</version>
-</plugin>
-<plugin>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-site-plugin</artifactId>
-<version>3.12.1</version>
-</plugin>
-<!--  Java Doc within Maven Site Documentation -->
-<plugin>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-javadoc-plugin</artifactId>
-<version>3.7.0</version>
-<configuration>
-<!--  Disable JavaDoc warnings  -->
-<additionalJOption>-Xdoclint:none</additionalJOption>
-</configuration>
-</plugin>
-<!--  Test Coverage from JaCoCo Plugin integration in Maven Site Documentation  -->
-<plugin>
-<groupId>org.jacoco</groupId>
-<artifactId>jacoco-maven-plugin</artifactId>
-<version>0.8.12</version>
-<reportSets>
-<reportSet>
-<reports>
-<!--  select non-aggregate reports  -->
-<report>report</report>
-</reports>
-</reportSet>
-</reportSets>
-</plugin>
-</plugins>
-</reporting>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>at.fhj.msd</groupId>
+    <artifactId>Postfixcalc</artifactId>
+    <version>1.0</version>
+    <url>https://github.com/casper-zielinski</url>
+    <!--  developers information, will be used for documentation  -->
+    <developers>
+        <developer>
+            <id>CasperZ</id>
+            <name>Casper Zielinski</name>
+            <email>casper.zielinski@fh-joanneum.at</email>
+            <organization>FH JOANNEUM GmbH</organization>
+            <organizationUrl>https://www.fh-joanneum.at/iit</organizationUrl>
+            <roles>
+                <role>Student</role>
+            </roles>
+            <timezone>Europe/Vienna</timezone>
+            <properties>
+            </properties>
+        </developer>
+        <developer>
+            <id>Umex10</id>
+            <name>Umejr Dzinovic</name>
+            <email>Umejr.Dzinovic@edu.fh-joanneum.at</email>
+            <url>https://github.com/Umex10</url>
+            <organization>FH JOANNEUM GmbH</organization>
+            <organizationUrl>https://www.fh-joanneum.at/iit</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>Europe/Vienna</timezone>
+            <properties>
+                <picUrl>https://avatars.githubusercontent.com/u/192374024?v=4</picUrl> 
+            </properties>
+        </developer>
+    </developers>
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.10.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.10.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>5.10.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.23.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.23.1</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <mainClass>at.fhj.msd.App</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <release>21</release>
+                    <compilerArgs>-proc:full</compilerArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.12.1</version>
+            </plugin>
+            <!--  generate information about test coverage  -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.12</version>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <reporting>
+        <plugins>
+            <!--  maven site for documentation  -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>3.5.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.12.1</version>
+            </plugin>
+            <!--  Java Doc within Maven Site Documentation -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <!--  Disable JavaDoc warnings  -->
+                    <additionalJOption>-Xdoclint:none</additionalJOption>
+                </configuration>
+            </plugin>
+            <!--  Test Coverage from JaCoCo Plugin integration in Maven Site Documentation  -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.12</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <!--  select non-aggregate reports  -->
+                            <report>report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>
