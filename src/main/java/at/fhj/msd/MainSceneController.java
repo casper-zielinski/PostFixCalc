@@ -29,6 +29,9 @@ public class MainSceneController {
 
     @FXML
     private Label lb_mathprint;
+    
+    @FXML
+    private Label lb_info;
 
     @FXML
     void btn_onClick_calc(ActionEvent event) {
