@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class MainSceneController {
@@ -18,7 +19,7 @@ public class MainSceneController {
     private Button btn_post_to_in;
 
     @FXML
-    private TextField tf_calculated;
+    private TextArea tf_calculated;
 
     @FXML
     private TextField tf_postfix;

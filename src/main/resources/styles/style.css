@@ -16,6 +16,13 @@ TextField{
       -fx-font : 14px bold;
 }
 
+#tf_calculated{
+      -fx-control-inner-background: rgb(29, 125, 50);
+      -fx-text-fill: black;
+      -fx-font-family: "Digital-7";
+      -fx-font : 14px bold;
+}
+
 #lb_text{
       -fx-font : 22px bold;
       -fx-font-family: "Digital-7";
