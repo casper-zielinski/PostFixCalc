@@ -9,7 +9,8 @@ import org.apache.logging.log4j.Logger;
 public class PostFixCalculator {
 
     private static final Logger logger = LogManager.getLogger(PostFixCalculator.class); //Step-By-Step Logger. print every single step for better understanding of calculatePostFix()
-   
+    private static final Logger solutionLogger = LogManager.getLogger("SolutionLogger"); //Step-By-Step Logger. print every single step for better understanding of calculatePostFix()
+
 
     /**
      * A class that implements a Postfix Calculator using a single linked list
@@ -96,7 +97,8 @@ public class PostFixCalculator {
     public String calculatePostFix(String expression) {
 
         logger.info("Start calculation for: {}", expression);
-       
+        solutionLogger.info("Start calculation for: {}", expression);
+
 
         // Erstelle eine Instanz der LinkedList-Klasse
         MySinglyLinkedList<String> stack = new MySinglyLinkedList<>(); // Stack für die Berechnung
@@ -158,7 +160,10 @@ public class PostFixCalculator {
 
         }
         logger.info("Final result: {}", result);
-       
+
+        solutionLogger.info("Final result: {}", result);
+        solutionLogger.debug(""); //new empty line in .log file!
+
         return Integer.toString(result);
 
     }
