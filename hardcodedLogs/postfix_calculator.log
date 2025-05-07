@@ -1,0 +1,882 @@
+2025-05-07 03:09:37 INFO  PostFixCalculator - Start calculation for: 3 4 +
+2025-05-07 03:09:37 DEBUG PostFixCalculator - token: 3 is not a operator
+2025-05-07 03:09:37 DEBUG PostFixCalculator - token: 3 is a digit, adding to stack
+2025-05-07 03:09:37 DEBUG PostFixCalculator - stack after pushing token: 3 -> null
+2025-05-07 03:09:37 DEBUG PostFixCalculator - token: 4 is not a operator
+2025-05-07 03:09:37 DEBUG PostFixCalculator - token: 4 is a digit, adding to stack
+2025-05-07 03:09:37 DEBUG PostFixCalculator - stack after pushing token: 4 -> 3 -> null
+2025-05-07 03:09:37 DEBUG PostFixCalculator - token: + is a operator
+2025-05-07 03:09:37 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:09:37 DEBUG PostFixCalculator - stack after removing first number: 3 -> null
+2025-05-07 03:09:37 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:09:37 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:09:37 INFO  PostFixCalculator - Removed 3 and 4 from the stack. Calculating result for: 3 + 4
+2025-05-07 03:09:37 INFO  PostFixCalculator - Calculated result: 3 + 4 = 7
+2025-05-07 03:09:37 DEBUG PostFixCalculator - adding result: 7 to stack
+2025-05-07 03:09:37 DEBUG PostFixCalculator - stack after pushing result: 7 -> null
+2025-05-07 03:09:37 INFO  PostFixCalculator - Final result: 7
+2025-05-07 03:09:37 DEBUG PostFixCalculator - --------------------------------------------------
+2025-05-07 03:10:12 INFO  PostFixCalculator - Start calculation for: 8 5 -
+2025-05-07 03:10:12 DEBUG PostFixCalculator - token: 8 is not a operator
+2025-05-07 03:10:12 DEBUG PostFixCalculator - token: 8 is a digit, adding to stack
+2025-05-07 03:10:12 DEBUG PostFixCalculator - stack after pushing token: 8 -> null
+2025-05-07 03:10:12 DEBUG PostFixCalculator - token: 5 is not a operator
+2025-05-07 03:10:12 DEBUG PostFixCalculator - token: 5 is a digit, adding to stack
+2025-05-07 03:10:12 DEBUG PostFixCalculator - stack after pushing token: 5 -> 8 -> null
+2025-05-07 03:10:12 DEBUG PostFixCalculator - token: - is a operator
+2025-05-07 03:10:12 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:10:12 DEBUG PostFixCalculator - stack after removing first number: 8 -> null
+2025-05-07 03:10:12 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:10:12 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:10:12 INFO  PostFixCalculator - Removed 8 and 5 from the stack. Calculating result for: 8 - 5
+2025-05-07 03:10:12 INFO  PostFixCalculator - Calculated result: 8 - 5 = 3
+2025-05-07 03:10:12 DEBUG PostFixCalculator - adding result: 3 to stack
+2025-05-07 03:10:12 DEBUG PostFixCalculator - stack after pushing result: 3 -> null
+2025-05-07 03:10:12 INFO  PostFixCalculator - Final result: 3
+2025-05-07 03:10:12 DEBUG PostFixCalculator - --------------------------------------------------
+2025-05-07 03:10:41 INFO  PostFixCalculator - Start calculation for: 6 2 *
+2025-05-07 03:10:41 DEBUG PostFixCalculator - token: 6 is not a operator
+2025-05-07 03:10:41 DEBUG PostFixCalculator - token: 6 is a digit, adding to stack
+2025-05-07 03:10:41 DEBUG PostFixCalculator - stack after pushing token: 6 -> null
+2025-05-07 03:10:41 DEBUG PostFixCalculator - token: 2 is not a operator
+2025-05-07 03:10:41 DEBUG PostFixCalculator - token: 2 is a digit, adding to stack
+2025-05-07 03:10:41 DEBUG PostFixCalculator - stack after pushing token: 2 -> 6 -> null
+2025-05-07 03:10:41 DEBUG PostFixCalculator - token: * is a operator
+2025-05-07 03:10:41 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:10:41 DEBUG PostFixCalculator - stack after removing first number: 6 -> null
+2025-05-07 03:10:41 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:10:41 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:10:41 INFO  PostFixCalculator - Removed 6 and 2 from the stack. Calculating result for: 6 * 2
+2025-05-07 03:10:41 INFO  PostFixCalculator - Calculated result: 6 * 2 = 12
+2025-05-07 03:10:41 DEBUG PostFixCalculator - adding result: 12 to stack
+2025-05-07 03:10:41 DEBUG PostFixCalculator - stack after pushing result: 12 -> null
+2025-05-07 03:10:41 INFO  PostFixCalculator - Final result: 12
+2025-05-07 03:10:41 DEBUG PostFixCalculator - --------------------------------------------------
+2025-05-07 03:10:58 INFO  PostFixCalculator - Start calculation for: 10 2 /
+2025-05-07 03:10:58 DEBUG PostFixCalculator - token: 10 is not a operator
+2025-05-07 03:10:58 DEBUG PostFixCalculator - token: 10 is a digit, adding to stack
+2025-05-07 03:10:58 DEBUG PostFixCalculator - stack after pushing token: 10 -> null
+2025-05-07 03:10:58 DEBUG PostFixCalculator - token: 2 is not a operator
+2025-05-07 03:10:58 DEBUG PostFixCalculator - token: 2 is a digit, adding to stack
+2025-05-07 03:10:58 DEBUG PostFixCalculator - stack after pushing token: 2 -> 10 -> null
+2025-05-07 03:10:58 DEBUG PostFixCalculator - token: / is a operator
+2025-05-07 03:10:58 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:10:58 DEBUG PostFixCalculator - stack after removing first number: 10 -> null
+2025-05-07 03:10:58 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:10:58 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:10:58 INFO  PostFixCalculator - Removed 10 and 2 from the stack. Calculating result for: 10 / 2
+2025-05-07 03:10:58 INFO  PostFixCalculator - Calculated result: 10 / 2 = 5
+2025-05-07 03:10:58 DEBUG PostFixCalculator - adding result: 5 to stack
+2025-05-07 03:10:58 DEBUG PostFixCalculator - stack after pushing result: 5 -> null
+2025-05-07 03:10:58 INFO  PostFixCalculator - Final result: 5
+2025-05-07 03:10:58 DEBUG PostFixCalculator - --------------------------------------------------
+2025-05-07 03:11:16 INFO  PostFixCalculator - Start calculation for: 3 4 + 2 *
+2025-05-07 03:11:16 DEBUG PostFixCalculator - token: 3 is not a operator
+2025-05-07 03:11:16 DEBUG PostFixCalculator - token: 3 is a digit, adding to stack
+2025-05-07 03:11:16 DEBUG PostFixCalculator - stack after pushing token: 3 -> null
+2025-05-07 03:11:16 DEBUG PostFixCalculator - token: 4 is not a operator
+2025-05-07 03:11:16 DEBUG PostFixCalculator - token: 4 is a digit, adding to stack
+2025-05-07 03:11:16 DEBUG PostFixCalculator - stack after pushing token: 4 -> 3 -> null
+2025-05-07 03:11:16 DEBUG PostFixCalculator - token: + is a operator
+2025-05-07 03:11:16 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:11:16 DEBUG PostFixCalculator - stack after removing first number: 3 -> null
+2025-05-07 03:11:16 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:11:16 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:11:16 INFO  PostFixCalculator - Removed 3 and 4 from the stack. Calculating result for: 3 + 4
+2025-05-07 03:11:16 INFO  PostFixCalculator - Calculated result: 3 + 4 = 7
+2025-05-07 03:11:16 DEBUG PostFixCalculator - adding result: 7 to stack
+2025-05-07 03:11:16 DEBUG PostFixCalculator - stack after pushing result: 7 -> null
+2025-05-07 03:11:16 DEBUG PostFixCalculator - token: 2 is not a operator
+2025-05-07 03:11:16 DEBUG PostFixCalculator - token: 2 is a digit, adding to stack
+2025-05-07 03:11:16 DEBUG PostFixCalculator - stack after pushing token: 2 -> 7 -> null
+2025-05-07 03:11:16 DEBUG PostFixCalculator - token: * is a operator
+2025-05-07 03:11:16 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:11:16 DEBUG PostFixCalculator - stack after removing first number: 7 -> null
+2025-05-07 03:11:16 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:11:16 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:11:16 INFO  PostFixCalculator - Removed 7 and 2 from the stack. Calculating result for: 7 * 2
+2025-05-07 03:11:16 INFO  PostFixCalculator - Calculated result: 7 * 2 = 14
+2025-05-07 03:11:16 DEBUG PostFixCalculator - adding result: 14 to stack
+2025-05-07 03:11:16 DEBUG PostFixCalculator - stack after pushing result: 14 -> null
+2025-05-07 03:11:16 INFO  PostFixCalculator - Final result: 14
+2025-05-07 03:11:16 DEBUG PostFixCalculator - --------------------------------------------------
+2025-05-07 03:11:40 INFO  PostFixCalculator - Start calculation for: 9 3 / 5 -
+2025-05-07 03:11:40 DEBUG PostFixCalculator - token: 9 is not a operator
+2025-05-07 03:11:40 DEBUG PostFixCalculator - token: 9 is a digit, adding to stack
+2025-05-07 03:11:40 DEBUG PostFixCalculator - stack after pushing token: 9 -> null
+2025-05-07 03:11:40 DEBUG PostFixCalculator - token: 3 is not a operator
+2025-05-07 03:11:40 DEBUG PostFixCalculator - token: 3 is a digit, adding to stack
+2025-05-07 03:11:40 DEBUG PostFixCalculator - stack after pushing token: 3 -> 9 -> null
+2025-05-07 03:11:40 DEBUG PostFixCalculator - token: / is a operator
+2025-05-07 03:11:40 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:11:40 DEBUG PostFixCalculator - stack after removing first number: 9 -> null
+2025-05-07 03:11:40 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:11:40 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:11:40 INFO  PostFixCalculator - Removed 9 and 3 from the stack. Calculating result for: 9 / 3
+2025-05-07 03:11:40 INFO  PostFixCalculator - Calculated result: 9 / 3 = 3
+2025-05-07 03:11:40 DEBUG PostFixCalculator - adding result: 3 to stack
+2025-05-07 03:11:40 DEBUG PostFixCalculator - stack after pushing result: 3 -> null
+2025-05-07 03:11:40 DEBUG PostFixCalculator - token: 5 is not a operator
+2025-05-07 03:11:40 DEBUG PostFixCalculator - token: 5 is a digit, adding to stack
+2025-05-07 03:11:40 DEBUG PostFixCalculator - stack after pushing token: 5 -> 3 -> null
+2025-05-07 03:11:40 DEBUG PostFixCalculator - token: - is a operator
+2025-05-07 03:11:40 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:11:40 DEBUG PostFixCalculator - stack after removing first number: 3 -> null
+2025-05-07 03:11:40 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:11:40 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:11:40 INFO  PostFixCalculator - Removed 3 and 5 from the stack. Calculating result for: 3 - 5
+2025-05-07 03:11:40 INFO  PostFixCalculator - Calculated result: 3 - 5 = -2
+2025-05-07 03:11:40 DEBUG PostFixCalculator - adding result: -2 to stack
+2025-05-07 03:11:40 DEBUG PostFixCalculator - stack after pushing result: -2 -> null
+2025-05-07 03:11:40 INFO  PostFixCalculator - Final result: -2
+2025-05-07 03:11:40 DEBUG PostFixCalculator - --------------------------------------------------
+2025-05-07 03:11:54 INFO  PostFixCalculator - Start calculation for: 2 3 4 + *
+2025-05-07 03:11:54 DEBUG PostFixCalculator - token: 2 is not a operator
+2025-05-07 03:11:54 DEBUG PostFixCalculator - token: 2 is a digit, adding to stack
+2025-05-07 03:11:54 DEBUG PostFixCalculator - stack after pushing token: 2 -> null
+2025-05-07 03:11:54 DEBUG PostFixCalculator - token: 3 is not a operator
+2025-05-07 03:11:54 DEBUG PostFixCalculator - token: 3 is a digit, adding to stack
+2025-05-07 03:11:54 DEBUG PostFixCalculator - stack after pushing token: 3 -> 2 -> null
+2025-05-07 03:11:54 DEBUG PostFixCalculator - token: 4 is not a operator
+2025-05-07 03:11:54 DEBUG PostFixCalculator - token: 4 is a digit, adding to stack
+2025-05-07 03:11:54 DEBUG PostFixCalculator - stack after pushing token: 4 -> 3 -> 2 -> null
+2025-05-07 03:11:54 DEBUG PostFixCalculator - token: + is a operator
+2025-05-07 03:11:54 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:11:54 DEBUG PostFixCalculator - stack after removing first number: 3 -> 2 -> null
+2025-05-07 03:11:54 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:11:54 DEBUG PostFixCalculator - stack after removing second number: 2 -> null
+2025-05-07 03:11:54 INFO  PostFixCalculator - Removed 3 and 4 from the stack. Calculating result for: 3 + 4
+2025-05-07 03:11:54 INFO  PostFixCalculator - Calculated result: 3 + 4 = 7
+2025-05-07 03:11:54 DEBUG PostFixCalculator - adding result: 7 to stack
+2025-05-07 03:11:54 DEBUG PostFixCalculator - stack after pushing result: 7 -> 2 -> null
+2025-05-07 03:11:54 DEBUG PostFixCalculator - token: * is a operator
+2025-05-07 03:11:54 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:11:54 DEBUG PostFixCalculator - stack after removing first number: 2 -> null
+2025-05-07 03:11:54 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:11:54 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:11:54 INFO  PostFixCalculator - Removed 2 and 7 from the stack. Calculating result for: 2 * 7
+2025-05-07 03:11:54 INFO  PostFixCalculator - Calculated result: 2 * 7 = 14
+2025-05-07 03:11:54 DEBUG PostFixCalculator - adding result: 14 to stack
+2025-05-07 03:11:54 DEBUG PostFixCalculator - stack after pushing result: 14 -> null
+2025-05-07 03:11:54 INFO  PostFixCalculator - Final result: 14
+2025-05-07 03:11:54 DEBUG PostFixCalculator - --------------------------------------------------
+2025-05-07 03:12:08 INFO  PostFixCalculator - Start calculation for: 10 5 / 3 +
+2025-05-07 03:12:08 DEBUG PostFixCalculator - token: 10 is not a operator
+2025-05-07 03:12:08 DEBUG PostFixCalculator - token: 10 is a digit, adding to stack
+2025-05-07 03:12:08 DEBUG PostFixCalculator - stack after pushing token: 10 -> null
+2025-05-07 03:12:08 DEBUG PostFixCalculator - token: 5 is not a operator
+2025-05-07 03:12:08 DEBUG PostFixCalculator - token: 5 is a digit, adding to stack
+2025-05-07 03:12:08 DEBUG PostFixCalculator - stack after pushing token: 5 -> 10 -> null
+2025-05-07 03:12:08 DEBUG PostFixCalculator - token: / is a operator
+2025-05-07 03:12:08 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:12:08 DEBUG PostFixCalculator - stack after removing first number: 10 -> null
+2025-05-07 03:12:08 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:12:08 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:12:08 INFO  PostFixCalculator - Removed 10 and 5 from the stack. Calculating result for: 10 / 5
+2025-05-07 03:12:08 INFO  PostFixCalculator - Calculated result: 10 / 5 = 2
+2025-05-07 03:12:08 DEBUG PostFixCalculator - adding result: 2 to stack
+2025-05-07 03:12:08 DEBUG PostFixCalculator - stack after pushing result: 2 -> null
+2025-05-07 03:12:08 DEBUG PostFixCalculator - token: 3 is not a operator
+2025-05-07 03:12:08 DEBUG PostFixCalculator - token: 3 is a digit, adding to stack
+2025-05-07 03:12:08 DEBUG PostFixCalculator - stack after pushing token: 3 -> 2 -> null
+2025-05-07 03:12:08 DEBUG PostFixCalculator - token: + is a operator
+2025-05-07 03:12:08 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:12:08 DEBUG PostFixCalculator - stack after removing first number: 2 -> null
+2025-05-07 03:12:08 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:12:08 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:12:08 INFO  PostFixCalculator - Removed 2 and 3 from the stack. Calculating result for: 2 + 3
+2025-05-07 03:12:08 INFO  PostFixCalculator - Calculated result: 2 + 3 = 5
+2025-05-07 03:12:08 DEBUG PostFixCalculator - adding result: 5 to stack
+2025-05-07 03:12:08 DEBUG PostFixCalculator - stack after pushing result: 5 -> null
+2025-05-07 03:12:08 INFO  PostFixCalculator - Final result: 5
+2025-05-07 03:12:08 DEBUG PostFixCalculator - --------------------------------------------------
+2025-05-07 03:12:21 INFO  PostFixCalculator - Start calculation for: 5 1 2 + 4 * + 3 -
+2025-05-07 03:12:21 DEBUG PostFixCalculator - token: 5 is not a operator
+2025-05-07 03:12:21 DEBUG PostFixCalculator - token: 5 is a digit, adding to stack
+2025-05-07 03:12:21 DEBUG PostFixCalculator - stack after pushing token: 5 -> null
+2025-05-07 03:12:21 DEBUG PostFixCalculator - token: 1 is not a operator
+2025-05-07 03:12:21 DEBUG PostFixCalculator - token: 1 is a digit, adding to stack
+2025-05-07 03:12:21 DEBUG PostFixCalculator - stack after pushing token: 1 -> 5 -> null
+2025-05-07 03:12:21 DEBUG PostFixCalculator - token: 2 is not a operator
+2025-05-07 03:12:21 DEBUG PostFixCalculator - token: 2 is a digit, adding to stack
+2025-05-07 03:12:21 DEBUG PostFixCalculator - stack after pushing token: 2 -> 1 -> 5 -> null
+2025-05-07 03:12:21 DEBUG PostFixCalculator - token: + is a operator
+2025-05-07 03:12:21 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:12:21 DEBUG PostFixCalculator - stack after removing first number: 1 -> 5 -> null
+2025-05-07 03:12:21 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:12:21 DEBUG PostFixCalculator - stack after removing second number: 5 -> null
+2025-05-07 03:12:21 INFO  PostFixCalculator - Removed 1 and 2 from the stack. Calculating result for: 1 + 2
+2025-05-07 03:12:21 INFO  PostFixCalculator - Calculated result: 1 + 2 = 3
+2025-05-07 03:12:21 DEBUG PostFixCalculator - adding result: 3 to stack
+2025-05-07 03:12:21 DEBUG PostFixCalculator - stack after pushing result: 3 -> 5 -> null
+2025-05-07 03:12:21 DEBUG PostFixCalculator - token: 4 is not a operator
+2025-05-07 03:12:21 DEBUG PostFixCalculator - token: 4 is a digit, adding to stack
+2025-05-07 03:12:21 DEBUG PostFixCalculator - stack after pushing token: 4 -> 3 -> 5 -> null
+2025-05-07 03:12:21 DEBUG PostFixCalculator - token: * is a operator
+2025-05-07 03:12:21 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:12:21 DEBUG PostFixCalculator - stack after removing first number: 3 -> 5 -> null
+2025-05-07 03:12:21 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:12:21 DEBUG PostFixCalculator - stack after removing second number: 5 -> null
+2025-05-07 03:12:21 INFO  PostFixCalculator - Removed 3 and 4 from the stack. Calculating result for: 3 * 4
+2025-05-07 03:12:21 INFO  PostFixCalculator - Calculated result: 3 * 4 = 12
+2025-05-07 03:12:21 DEBUG PostFixCalculator - adding result: 12 to stack
+2025-05-07 03:12:21 DEBUG PostFixCalculator - stack after pushing result: 12 -> 5 -> null
+2025-05-07 03:12:21 DEBUG PostFixCalculator - token: + is a operator
+2025-05-07 03:12:21 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:12:21 DEBUG PostFixCalculator - stack after removing first number: 5 -> null
+2025-05-07 03:12:21 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:12:21 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:12:21 INFO  PostFixCalculator - Removed 5 and 12 from the stack. Calculating result for: 5 + 12
+2025-05-07 03:12:21 INFO  PostFixCalculator - Calculated result: 5 + 12 = 17
+2025-05-07 03:12:21 DEBUG PostFixCalculator - adding result: 17 to stack
+2025-05-07 03:12:21 DEBUG PostFixCalculator - stack after pushing result: 17 -> null
+2025-05-07 03:12:21 DEBUG PostFixCalculator - token: 3 is not a operator
+2025-05-07 03:12:21 DEBUG PostFixCalculator - token: 3 is a digit, adding to stack
+2025-05-07 03:12:21 DEBUG PostFixCalculator - stack after pushing token: 3 -> 17 -> null
+2025-05-07 03:12:21 DEBUG PostFixCalculator - token: - is a operator
+2025-05-07 03:12:21 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:12:21 DEBUG PostFixCalculator - stack after removing first number: 17 -> null
+2025-05-07 03:12:21 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:12:21 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:12:21 INFO  PostFixCalculator - Removed 17 and 3 from the stack. Calculating result for: 17 - 3
+2025-05-07 03:12:21 INFO  PostFixCalculator - Calculated result: 17 - 3 = 14
+2025-05-07 03:12:21 DEBUG PostFixCalculator - adding result: 14 to stack
+2025-05-07 03:12:21 DEBUG PostFixCalculator - stack after pushing result: 14 -> null
+2025-05-07 03:12:21 INFO  PostFixCalculator - Final result: 14
+2025-05-07 03:12:21 DEBUG PostFixCalculator - --------------------------------------------------
+2025-05-07 03:13:27 INFO  PostFixCalculator - Start calculation for: 7 3 5 * + 2 /
+2025-05-07 03:13:27 DEBUG PostFixCalculator - token: 7 is not a operator
+2025-05-07 03:13:27 DEBUG PostFixCalculator - token: 7 is a digit, adding to stack
+2025-05-07 03:13:27 DEBUG PostFixCalculator - stack after pushing token: 7 -> null
+2025-05-07 03:13:27 DEBUG PostFixCalculator - token: 3 is not a operator
+2025-05-07 03:13:27 DEBUG PostFixCalculator - token: 3 is a digit, adding to stack
+2025-05-07 03:13:27 DEBUG PostFixCalculator - stack after pushing token: 3 -> 7 -> null
+2025-05-07 03:13:27 DEBUG PostFixCalculator - token: 5 is not a operator
+2025-05-07 03:13:27 DEBUG PostFixCalculator - token: 5 is a digit, adding to stack
+2025-05-07 03:13:27 DEBUG PostFixCalculator - stack after pushing token: 5 -> 3 -> 7 -> null
+2025-05-07 03:13:27 DEBUG PostFixCalculator - token: * is a operator
+2025-05-07 03:13:27 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:13:27 DEBUG PostFixCalculator - stack after removing first number: 3 -> 7 -> null
+2025-05-07 03:13:27 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:13:27 DEBUG PostFixCalculator - stack after removing second number: 7 -> null
+2025-05-07 03:13:27 INFO  PostFixCalculator - Removed 3 and 5 from the stack. Calculating result for: 3 * 5
+2025-05-07 03:13:27 INFO  PostFixCalculator - Calculated result: 3 * 5 = 15
+2025-05-07 03:13:27 DEBUG PostFixCalculator - adding result: 15 to stack
+2025-05-07 03:13:27 DEBUG PostFixCalculator - stack after pushing result: 15 -> 7 -> null
+2025-05-07 03:13:27 DEBUG PostFixCalculator - token: + is a operator
+2025-05-07 03:13:27 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:13:27 DEBUG PostFixCalculator - stack after removing first number: 7 -> null
+2025-05-07 03:13:27 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:13:27 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:13:27 INFO  PostFixCalculator - Removed 7 and 15 from the stack. Calculating result for: 7 + 15
+2025-05-07 03:13:27 INFO  PostFixCalculator - Calculated result: 7 + 15 = 22
+2025-05-07 03:13:27 DEBUG PostFixCalculator - adding result: 22 to stack
+2025-05-07 03:13:27 DEBUG PostFixCalculator - stack after pushing result: 22 -> null
+2025-05-07 03:13:27 DEBUG PostFixCalculator - token: 2 is not a operator
+2025-05-07 03:13:27 DEBUG PostFixCalculator - token: 2 is a digit, adding to stack
+2025-05-07 03:13:27 DEBUG PostFixCalculator - stack after pushing token: 2 -> 22 -> null
+2025-05-07 03:13:27 DEBUG PostFixCalculator - token: / is a operator
+2025-05-07 03:13:27 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:13:27 DEBUG PostFixCalculator - stack after removing first number: 22 -> null
+2025-05-07 03:13:27 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:13:27 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:13:27 INFO  PostFixCalculator - Removed 22 and 2 from the stack. Calculating result for: 22 / 2
+2025-05-07 03:13:27 INFO  PostFixCalculator - Calculated result: 22 / 2 = 11
+2025-05-07 03:13:27 DEBUG PostFixCalculator - adding result: 11 to stack
+2025-05-07 03:13:27 DEBUG PostFixCalculator - stack after pushing result: 11 -> null
+2025-05-07 03:13:27 INFO  PostFixCalculator - Final result: 11
+2025-05-07 03:13:27 DEBUG PostFixCalculator - --------------------------------------------------
+2025-05-07 03:18:32 INFO  PostFixCalculator - Start calculation for: 15 3 / 4 2 * + 6 1 - * 3 3 * 2 + - 5 +
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: 15 is not a operator
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: 15 is a digit, adding to stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after pushing token: 15 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: 3 is not a operator
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: 3 is a digit, adding to stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after pushing token: 3 -> 15 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: / is a operator
+2025-05-07 03:18:32 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after removing first number: 15 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:18:32 INFO  PostFixCalculator - Removed 15 and 3 from the stack. Calculating result for: 15 / 3
+2025-05-07 03:18:32 INFO  PostFixCalculator - Calculated result: 15 / 3 = 5
+2025-05-07 03:18:32 DEBUG PostFixCalculator - adding result: 5 to stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after pushing result: 5 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: 4 is not a operator
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: 4 is a digit, adding to stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after pushing token: 4 -> 5 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: 2 is not a operator
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: 2 is a digit, adding to stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after pushing token: 2 -> 4 -> 5 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: * is a operator
+2025-05-07 03:18:32 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after removing first number: 4 -> 5 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after removing second number: 5 -> null
+2025-05-07 03:18:32 INFO  PostFixCalculator - Removed 4 and 2 from the stack. Calculating result for: 4 * 2
+2025-05-07 03:18:32 INFO  PostFixCalculator - Calculated result: 4 * 2 = 8
+2025-05-07 03:18:32 DEBUG PostFixCalculator - adding result: 8 to stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after pushing result: 8 -> 5 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: + is a operator
+2025-05-07 03:18:32 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after removing first number: 5 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:18:32 INFO  PostFixCalculator - Removed 5 and 8 from the stack. Calculating result for: 5 + 8
+2025-05-07 03:18:32 INFO  PostFixCalculator - Calculated result: 5 + 8 = 13
+2025-05-07 03:18:32 DEBUG PostFixCalculator - adding result: 13 to stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after pushing result: 13 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: 6 is not a operator
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: 6 is a digit, adding to stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after pushing token: 6 -> 13 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: 1 is not a operator
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: 1 is a digit, adding to stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after pushing token: 1 -> 6 -> 13 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: - is a operator
+2025-05-07 03:18:32 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after removing first number: 6 -> 13 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after removing second number: 13 -> null
+2025-05-07 03:18:32 INFO  PostFixCalculator - Removed 6 and 1 from the stack. Calculating result for: 6 - 1
+2025-05-07 03:18:32 INFO  PostFixCalculator - Calculated result: 6 - 1 = 5
+2025-05-07 03:18:32 DEBUG PostFixCalculator - adding result: 5 to stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after pushing result: 5 -> 13 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: * is a operator
+2025-05-07 03:18:32 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after removing first number: 13 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:18:32 INFO  PostFixCalculator - Removed 13 and 5 from the stack. Calculating result for: 13 * 5
+2025-05-07 03:18:32 INFO  PostFixCalculator - Calculated result: 13 * 5 = 65
+2025-05-07 03:18:32 DEBUG PostFixCalculator - adding result: 65 to stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after pushing result: 65 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: 3 is not a operator
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: 3 is a digit, adding to stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after pushing token: 3 -> 65 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: 3 is not a operator
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: 3 is a digit, adding to stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after pushing token: 3 -> 3 -> 65 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: * is a operator
+2025-05-07 03:18:32 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after removing first number: 3 -> 65 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after removing second number: 65 -> null
+2025-05-07 03:18:32 INFO  PostFixCalculator - Removed 3 and 3 from the stack. Calculating result for: 3 * 3
+2025-05-07 03:18:32 INFO  PostFixCalculator - Calculated result: 3 * 3 = 9
+2025-05-07 03:18:32 DEBUG PostFixCalculator - adding result: 9 to stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after pushing result: 9 -> 65 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: 2 is not a operator
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: 2 is a digit, adding to stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after pushing token: 2 -> 9 -> 65 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: + is a operator
+2025-05-07 03:18:32 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after removing first number: 9 -> 65 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after removing second number: 65 -> null
+2025-05-07 03:18:32 INFO  PostFixCalculator - Removed 9 and 2 from the stack. Calculating result for: 9 + 2
+2025-05-07 03:18:32 INFO  PostFixCalculator - Calculated result: 9 + 2 = 11
+2025-05-07 03:18:32 DEBUG PostFixCalculator - adding result: 11 to stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after pushing result: 11 -> 65 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: - is a operator
+2025-05-07 03:18:32 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after removing first number: 65 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:18:32 INFO  PostFixCalculator - Removed 65 and 11 from the stack. Calculating result for: 65 - 11
+2025-05-07 03:18:32 INFO  PostFixCalculator - Calculated result: 65 - 11 = 54
+2025-05-07 03:18:32 DEBUG PostFixCalculator - adding result: 54 to stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after pushing result: 54 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: 5 is not a operator
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: 5 is a digit, adding to stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after pushing token: 5 -> 54 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - token: + is a operator
+2025-05-07 03:18:32 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after removing first number: 54 -> null
+2025-05-07 03:18:32 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:18:32 INFO  PostFixCalculator - Removed 54 and 5 from the stack. Calculating result for: 54 + 5
+2025-05-07 03:18:32 INFO  PostFixCalculator - Calculated result: 54 + 5 = 59
+2025-05-07 03:18:32 DEBUG PostFixCalculator - adding result: 59 to stack
+2025-05-07 03:18:32 DEBUG PostFixCalculator - stack after pushing result: 59 -> null
+2025-05-07 03:18:32 INFO  PostFixCalculator - Final result: 59
+2025-05-07 03:18:32 DEBUG PostFixCalculator - --------------------------------------------------
+2025-05-07 03:18:54 INFO  PostFixCalculator - Start calculation for: 8 4 / 2 5 * + 3 1 - * 10 2 / 4 + - 6 *
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: 8 is not a operator
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: 8 is a digit, adding to stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after pushing token: 8 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: 4 is not a operator
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: 4 is a digit, adding to stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after pushing token: 4 -> 8 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: / is a operator
+2025-05-07 03:18:54 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after removing first number: 8 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:18:54 INFO  PostFixCalculator - Removed 8 and 4 from the stack. Calculating result for: 8 / 4
+2025-05-07 03:18:54 INFO  PostFixCalculator - Calculated result: 8 / 4 = 2
+2025-05-07 03:18:54 DEBUG PostFixCalculator - adding result: 2 to stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after pushing result: 2 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: 2 is not a operator
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: 2 is a digit, adding to stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after pushing token: 2 -> 2 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: 5 is not a operator
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: 5 is a digit, adding to stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after pushing token: 5 -> 2 -> 2 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: * is a operator
+2025-05-07 03:18:54 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after removing first number: 2 -> 2 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after removing second number: 2 -> null
+2025-05-07 03:18:54 INFO  PostFixCalculator - Removed 2 and 5 from the stack. Calculating result for: 2 * 5
+2025-05-07 03:18:54 INFO  PostFixCalculator - Calculated result: 2 * 5 = 10
+2025-05-07 03:18:54 DEBUG PostFixCalculator - adding result: 10 to stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after pushing result: 10 -> 2 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: + is a operator
+2025-05-07 03:18:54 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after removing first number: 2 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:18:54 INFO  PostFixCalculator - Removed 2 and 10 from the stack. Calculating result for: 2 + 10
+2025-05-07 03:18:54 INFO  PostFixCalculator - Calculated result: 2 + 10 = 12
+2025-05-07 03:18:54 DEBUG PostFixCalculator - adding result: 12 to stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after pushing result: 12 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: 3 is not a operator
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: 3 is a digit, adding to stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after pushing token: 3 -> 12 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: 1 is not a operator
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: 1 is a digit, adding to stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after pushing token: 1 -> 3 -> 12 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: - is a operator
+2025-05-07 03:18:54 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after removing first number: 3 -> 12 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after removing second number: 12 -> null
+2025-05-07 03:18:54 INFO  PostFixCalculator - Removed 3 and 1 from the stack. Calculating result for: 3 - 1
+2025-05-07 03:18:54 INFO  PostFixCalculator - Calculated result: 3 - 1 = 2
+2025-05-07 03:18:54 DEBUG PostFixCalculator - adding result: 2 to stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after pushing result: 2 -> 12 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: * is a operator
+2025-05-07 03:18:54 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after removing first number: 12 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:18:54 INFO  PostFixCalculator - Removed 12 and 2 from the stack. Calculating result for: 12 * 2
+2025-05-07 03:18:54 INFO  PostFixCalculator - Calculated result: 12 * 2 = 24
+2025-05-07 03:18:54 DEBUG PostFixCalculator - adding result: 24 to stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after pushing result: 24 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: 10 is not a operator
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: 10 is a digit, adding to stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after pushing token: 10 -> 24 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: 2 is not a operator
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: 2 is a digit, adding to stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after pushing token: 2 -> 10 -> 24 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: / is a operator
+2025-05-07 03:18:54 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after removing first number: 10 -> 24 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after removing second number: 24 -> null
+2025-05-07 03:18:54 INFO  PostFixCalculator - Removed 10 and 2 from the stack. Calculating result for: 10 / 2
+2025-05-07 03:18:54 INFO  PostFixCalculator - Calculated result: 10 / 2 = 5
+2025-05-07 03:18:54 DEBUG PostFixCalculator - adding result: 5 to stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after pushing result: 5 -> 24 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: 4 is not a operator
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: 4 is a digit, adding to stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after pushing token: 4 -> 5 -> 24 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: + is a operator
+2025-05-07 03:18:54 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after removing first number: 5 -> 24 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after removing second number: 24 -> null
+2025-05-07 03:18:54 INFO  PostFixCalculator - Removed 5 and 4 from the stack. Calculating result for: 5 + 4
+2025-05-07 03:18:54 INFO  PostFixCalculator - Calculated result: 5 + 4 = 9
+2025-05-07 03:18:54 DEBUG PostFixCalculator - adding result: 9 to stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after pushing result: 9 -> 24 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: - is a operator
+2025-05-07 03:18:54 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after removing first number: 24 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:18:54 INFO  PostFixCalculator - Removed 24 and 9 from the stack. Calculating result for: 24 - 9
+2025-05-07 03:18:54 INFO  PostFixCalculator - Calculated result: 24 - 9 = 15
+2025-05-07 03:18:54 DEBUG PostFixCalculator - adding result: 15 to stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after pushing result: 15 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: 6 is not a operator
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: 6 is a digit, adding to stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after pushing token: 6 -> 15 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - token: * is a operator
+2025-05-07 03:18:54 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after removing first number: 15 -> null
+2025-05-07 03:18:54 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:18:54 INFO  PostFixCalculator - Removed 15 and 6 from the stack. Calculating result for: 15 * 6
+2025-05-07 03:18:54 INFO  PostFixCalculator - Calculated result: 15 * 6 = 90
+2025-05-07 03:18:54 DEBUG PostFixCalculator - adding result: 90 to stack
+2025-05-07 03:18:54 DEBUG PostFixCalculator - stack after pushing result: 90 -> null
+2025-05-07 03:18:54 INFO  PostFixCalculator - Final result: 90
+2025-05-07 03:18:54 DEBUG PostFixCalculator - --------------------------------------------------
+2025-05-07 03:19:16 INFO  PostFixCalculator - Start calculation for: 6 2 / 3 4 * + 5 1 - 2 / * 9 3 + 2 * - 4 +
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 6 is not a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 6 is a digit, adding to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing token: 6 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 2 is not a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 2 is a digit, adding to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing token: 2 -> 6 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: / is a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after removing first number: 6 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:19:16 INFO  PostFixCalculator - Removed 6 and 2 from the stack. Calculating result for: 6 / 2
+2025-05-07 03:19:16 INFO  PostFixCalculator - Calculated result: 6 / 2 = 3
+2025-05-07 03:19:16 DEBUG PostFixCalculator - adding result: 3 to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing result: 3 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 3 is not a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 3 is a digit, adding to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing token: 3 -> 3 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 4 is not a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 4 is a digit, adding to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing token: 4 -> 3 -> 3 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: * is a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after removing first number: 3 -> 3 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after removing second number: 3 -> null
+2025-05-07 03:19:16 INFO  PostFixCalculator - Removed 3 and 4 from the stack. Calculating result for: 3 * 4
+2025-05-07 03:19:16 INFO  PostFixCalculator - Calculated result: 3 * 4 = 12
+2025-05-07 03:19:16 DEBUG PostFixCalculator - adding result: 12 to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing result: 12 -> 3 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: + is a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after removing first number: 3 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:19:16 INFO  PostFixCalculator - Removed 3 and 12 from the stack. Calculating result for: 3 + 12
+2025-05-07 03:19:16 INFO  PostFixCalculator - Calculated result: 3 + 12 = 15
+2025-05-07 03:19:16 DEBUG PostFixCalculator - adding result: 15 to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing result: 15 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 5 is not a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 5 is a digit, adding to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing token: 5 -> 15 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 1 is not a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 1 is a digit, adding to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing token: 1 -> 5 -> 15 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: - is a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after removing first number: 5 -> 15 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after removing second number: 15 -> null
+2025-05-07 03:19:16 INFO  PostFixCalculator - Removed 5 and 1 from the stack. Calculating result for: 5 - 1
+2025-05-07 03:19:16 INFO  PostFixCalculator - Calculated result: 5 - 1 = 4
+2025-05-07 03:19:16 DEBUG PostFixCalculator - adding result: 4 to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing result: 4 -> 15 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 2 is not a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 2 is a digit, adding to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing token: 2 -> 4 -> 15 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: / is a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after removing first number: 4 -> 15 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after removing second number: 15 -> null
+2025-05-07 03:19:16 INFO  PostFixCalculator - Removed 4 and 2 from the stack. Calculating result for: 4 / 2
+2025-05-07 03:19:16 INFO  PostFixCalculator - Calculated result: 4 / 2 = 2
+2025-05-07 03:19:16 DEBUG PostFixCalculator - adding result: 2 to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing result: 2 -> 15 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: * is a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after removing first number: 15 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:19:16 INFO  PostFixCalculator - Removed 15 and 2 from the stack. Calculating result for: 15 * 2
+2025-05-07 03:19:16 INFO  PostFixCalculator - Calculated result: 15 * 2 = 30
+2025-05-07 03:19:16 DEBUG PostFixCalculator - adding result: 30 to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing result: 30 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 9 is not a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 9 is a digit, adding to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing token: 9 -> 30 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 3 is not a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 3 is a digit, adding to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing token: 3 -> 9 -> 30 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: + is a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after removing first number: 9 -> 30 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after removing second number: 30 -> null
+2025-05-07 03:19:16 INFO  PostFixCalculator - Removed 9 and 3 from the stack. Calculating result for: 9 + 3
+2025-05-07 03:19:16 INFO  PostFixCalculator - Calculated result: 9 + 3 = 12
+2025-05-07 03:19:16 DEBUG PostFixCalculator - adding result: 12 to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing result: 12 -> 30 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 2 is not a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 2 is a digit, adding to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing token: 2 -> 12 -> 30 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: * is a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after removing first number: 12 -> 30 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after removing second number: 30 -> null
+2025-05-07 03:19:16 INFO  PostFixCalculator - Removed 12 and 2 from the stack. Calculating result for: 12 * 2
+2025-05-07 03:19:16 INFO  PostFixCalculator - Calculated result: 12 * 2 = 24
+2025-05-07 03:19:16 DEBUG PostFixCalculator - adding result: 24 to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing result: 24 -> 30 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: - is a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after removing first number: 30 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:19:16 INFO  PostFixCalculator - Removed 30 and 24 from the stack. Calculating result for: 30 - 24
+2025-05-07 03:19:16 INFO  PostFixCalculator - Calculated result: 30 - 24 = 6
+2025-05-07 03:19:16 DEBUG PostFixCalculator - adding result: 6 to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing result: 6 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 4 is not a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: 4 is a digit, adding to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing token: 4 -> 6 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - token: + is a operator
+2025-05-07 03:19:16 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after removing first number: 6 -> null
+2025-05-07 03:19:16 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:19:16 INFO  PostFixCalculator - Removed 6 and 4 from the stack. Calculating result for: 6 + 4
+2025-05-07 03:19:16 INFO  PostFixCalculator - Calculated result: 6 + 4 = 10
+2025-05-07 03:19:16 DEBUG PostFixCalculator - adding result: 10 to stack
+2025-05-07 03:19:16 DEBUG PostFixCalculator - stack after pushing result: 10 -> null
+2025-05-07 03:19:16 INFO  PostFixCalculator - Final result: 10
+2025-05-07 03:19:16 DEBUG PostFixCalculator - --------------------------------------------------
+2025-05-07 03:20:58 INFO  PostFixCalculator - Start calculation for: 9 3 / 4 5 * + 2 1 - * 6 3 / 8 + - 7 *
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: 9 is not a operator
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: 9 is a digit, adding to stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after pushing token: 9 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: 3 is not a operator
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: 3 is a digit, adding to stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after pushing token: 3 -> 9 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: / is a operator
+2025-05-07 03:20:58 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after removing first number: 9 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:20:58 INFO  PostFixCalculator - Removed 9 and 3 from the stack. Calculating result for: 9 / 3
+2025-05-07 03:20:58 INFO  PostFixCalculator - Calculated result: 9 / 3 = 3
+2025-05-07 03:20:58 DEBUG PostFixCalculator - adding result: 3 to stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after pushing result: 3 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: 4 is not a operator
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: 4 is a digit, adding to stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after pushing token: 4 -> 3 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: 5 is not a operator
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: 5 is a digit, adding to stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after pushing token: 5 -> 4 -> 3 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: * is a operator
+2025-05-07 03:20:58 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after removing first number: 4 -> 3 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after removing second number: 3 -> null
+2025-05-07 03:20:58 INFO  PostFixCalculator - Removed 4 and 5 from the stack. Calculating result for: 4 * 5
+2025-05-07 03:20:58 INFO  PostFixCalculator - Calculated result: 4 * 5 = 20
+2025-05-07 03:20:58 DEBUG PostFixCalculator - adding result: 20 to stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after pushing result: 20 -> 3 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: + is a operator
+2025-05-07 03:20:58 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after removing first number: 3 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:20:58 INFO  PostFixCalculator - Removed 3 and 20 from the stack. Calculating result for: 3 + 20
+2025-05-07 03:20:58 INFO  PostFixCalculator - Calculated result: 3 + 20 = 23
+2025-05-07 03:20:58 DEBUG PostFixCalculator - adding result: 23 to stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after pushing result: 23 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: 2 is not a operator
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: 2 is a digit, adding to stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after pushing token: 2 -> 23 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: 1 is not a operator
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: 1 is a digit, adding to stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after pushing token: 1 -> 2 -> 23 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: - is a operator
+2025-05-07 03:20:58 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after removing first number: 2 -> 23 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after removing second number: 23 -> null
+2025-05-07 03:20:58 INFO  PostFixCalculator - Removed 2 and 1 from the stack. Calculating result for: 2 - 1
+2025-05-07 03:20:58 INFO  PostFixCalculator - Calculated result: 2 - 1 = 1
+2025-05-07 03:20:58 DEBUG PostFixCalculator - adding result: 1 to stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after pushing result: 1 -> 23 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: * is a operator
+2025-05-07 03:20:58 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after removing first number: 23 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:20:58 INFO  PostFixCalculator - Removed 23 and 1 from the stack. Calculating result for: 23 * 1
+2025-05-07 03:20:58 INFO  PostFixCalculator - Calculated result: 23 * 1 = 23
+2025-05-07 03:20:58 DEBUG PostFixCalculator - adding result: 23 to stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after pushing result: 23 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: 6 is not a operator
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: 6 is a digit, adding to stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after pushing token: 6 -> 23 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: 3 is not a operator
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: 3 is a digit, adding to stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after pushing token: 3 -> 6 -> 23 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: / is a operator
+2025-05-07 03:20:58 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after removing first number: 6 -> 23 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after removing second number: 23 -> null
+2025-05-07 03:20:58 INFO  PostFixCalculator - Removed 6 and 3 from the stack. Calculating result for: 6 / 3
+2025-05-07 03:20:58 INFO  PostFixCalculator - Calculated result: 6 / 3 = 2
+2025-05-07 03:20:58 DEBUG PostFixCalculator - adding result: 2 to stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after pushing result: 2 -> 23 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: 8 is not a operator
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: 8 is a digit, adding to stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after pushing token: 8 -> 2 -> 23 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: + is a operator
+2025-05-07 03:20:58 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after removing first number: 2 -> 23 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after removing second number: 23 -> null
+2025-05-07 03:20:58 INFO  PostFixCalculator - Removed 2 and 8 from the stack. Calculating result for: 2 + 8
+2025-05-07 03:20:58 INFO  PostFixCalculator - Calculated result: 2 + 8 = 10
+2025-05-07 03:20:58 DEBUG PostFixCalculator - adding result: 10 to stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after pushing result: 10 -> 23 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: - is a operator
+2025-05-07 03:20:58 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after removing first number: 23 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:20:58 INFO  PostFixCalculator - Removed 23 and 10 from the stack. Calculating result for: 23 - 10
+2025-05-07 03:20:58 INFO  PostFixCalculator - Calculated result: 23 - 10 = 13
+2025-05-07 03:20:58 DEBUG PostFixCalculator - adding result: 13 to stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after pushing result: 13 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: 7 is not a operator
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: 7 is a digit, adding to stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after pushing token: 7 -> 13 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - token: * is a operator
+2025-05-07 03:20:58 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after removing first number: 13 -> null
+2025-05-07 03:20:58 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:20:58 INFO  PostFixCalculator - Removed 13 and 7 from the stack. Calculating result for: 13 * 7
+2025-05-07 03:20:58 INFO  PostFixCalculator - Calculated result: 13 * 7 = 91
+2025-05-07 03:20:58 DEBUG PostFixCalculator - adding result: 91 to stack
+2025-05-07 03:20:58 DEBUG PostFixCalculator - stack after pushing result: 91 -> null
+2025-05-07 03:20:58 INFO  PostFixCalculator - Final result: 91
+2025-05-07 03:20:58 DEBUG PostFixCalculator - --------------------------------------------------
+2025-05-07 03:21:23 INFO  PostFixCalculator - Start calculation for: 10 2 * 3 4 + - 5 1 + 2 / * 8 4 / 2 * + 6 -
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 10 is not a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 10 is a digit, adding to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing token: 10 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 2 is not a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 2 is a digit, adding to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing token: 2 -> 10 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: * is a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after removing first number: 10 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:21:23 INFO  PostFixCalculator - Removed 10 and 2 from the stack. Calculating result for: 10 * 2
+2025-05-07 03:21:23 INFO  PostFixCalculator - Calculated result: 10 * 2 = 20
+2025-05-07 03:21:23 DEBUG PostFixCalculator - adding result: 20 to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing result: 20 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 3 is not a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 3 is a digit, adding to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing token: 3 -> 20 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 4 is not a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 4 is a digit, adding to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing token: 4 -> 3 -> 20 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: + is a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after removing first number: 3 -> 20 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after removing second number: 20 -> null
+2025-05-07 03:21:23 INFO  PostFixCalculator - Removed 3 and 4 from the stack. Calculating result for: 3 + 4
+2025-05-07 03:21:23 INFO  PostFixCalculator - Calculated result: 3 + 4 = 7
+2025-05-07 03:21:23 DEBUG PostFixCalculator - adding result: 7 to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing result: 7 -> 20 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: - is a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after removing first number: 20 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:21:23 INFO  PostFixCalculator - Removed 20 and 7 from the stack. Calculating result for: 20 - 7
+2025-05-07 03:21:23 INFO  PostFixCalculator - Calculated result: 20 - 7 = 13
+2025-05-07 03:21:23 DEBUG PostFixCalculator - adding result: 13 to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing result: 13 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 5 is not a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 5 is a digit, adding to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing token: 5 -> 13 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 1 is not a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 1 is a digit, adding to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing token: 1 -> 5 -> 13 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: + is a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after removing first number: 5 -> 13 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after removing second number: 13 -> null
+2025-05-07 03:21:23 INFO  PostFixCalculator - Removed 5 and 1 from the stack. Calculating result for: 5 + 1
+2025-05-07 03:21:23 INFO  PostFixCalculator - Calculated result: 5 + 1 = 6
+2025-05-07 03:21:23 DEBUG PostFixCalculator - adding result: 6 to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing result: 6 -> 13 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 2 is not a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 2 is a digit, adding to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing token: 2 -> 6 -> 13 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: / is a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after removing first number: 6 -> 13 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after removing second number: 13 -> null
+2025-05-07 03:21:23 INFO  PostFixCalculator - Removed 6 and 2 from the stack. Calculating result for: 6 / 2
+2025-05-07 03:21:23 INFO  PostFixCalculator - Calculated result: 6 / 2 = 3
+2025-05-07 03:21:23 DEBUG PostFixCalculator - adding result: 3 to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing result: 3 -> 13 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: * is a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after removing first number: 13 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:21:23 INFO  PostFixCalculator - Removed 13 and 3 from the stack. Calculating result for: 13 * 3
+2025-05-07 03:21:23 INFO  PostFixCalculator - Calculated result: 13 * 3 = 39
+2025-05-07 03:21:23 DEBUG PostFixCalculator - adding result: 39 to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing result: 39 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 8 is not a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 8 is a digit, adding to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing token: 8 -> 39 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 4 is not a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 4 is a digit, adding to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing token: 4 -> 8 -> 39 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: / is a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after removing first number: 8 -> 39 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after removing second number: 39 -> null
+2025-05-07 03:21:23 INFO  PostFixCalculator - Removed 8 and 4 from the stack. Calculating result for: 8 / 4
+2025-05-07 03:21:23 INFO  PostFixCalculator - Calculated result: 8 / 4 = 2
+2025-05-07 03:21:23 DEBUG PostFixCalculator - adding result: 2 to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing result: 2 -> 39 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 2 is not a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 2 is a digit, adding to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing token: 2 -> 2 -> 39 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: * is a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after removing first number: 2 -> 39 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after removing second number: 39 -> null
+2025-05-07 03:21:23 INFO  PostFixCalculator - Removed 2 and 2 from the stack. Calculating result for: 2 * 2
+2025-05-07 03:21:23 INFO  PostFixCalculator - Calculated result: 2 * 2 = 4
+2025-05-07 03:21:23 DEBUG PostFixCalculator - adding result: 4 to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing result: 4 -> 39 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: + is a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after removing first number: 39 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:21:23 INFO  PostFixCalculator - Removed 39 and 4 from the stack. Calculating result for: 39 + 4
+2025-05-07 03:21:23 INFO  PostFixCalculator - Calculated result: 39 + 4 = 43
+2025-05-07 03:21:23 DEBUG PostFixCalculator - adding result: 43 to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing result: 43 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 6 is not a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: 6 is a digit, adding to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing token: 6 -> 43 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - token: - is a operator
+2025-05-07 03:21:23 DEBUG PostFixCalculator - removing first number from stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after removing first number: 43 -> null
+2025-05-07 03:21:23 DEBUG PostFixCalculator - removing second number from stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after removing second number: Stack is empty.
+2025-05-07 03:21:23 INFO  PostFixCalculator - Removed 43 and 6 from the stack. Calculating result for: 43 - 6
+2025-05-07 03:21:23 INFO  PostFixCalculator - Calculated result: 43 - 6 = 37
+2025-05-07 03:21:23 DEBUG PostFixCalculator - adding result: 37 to stack
+2025-05-07 03:21:23 DEBUG PostFixCalculator - stack after pushing result: 37 -> null
+2025-05-07 03:21:23 INFO  PostFixCalculator - Final result: 37
+2025-05-07 03:21:23 DEBUG PostFixCalculator - --------------------------------------------------
