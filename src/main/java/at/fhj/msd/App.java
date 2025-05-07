@@ -8,7 +8,7 @@ public class App {
     public static void main(String[] args) {
 
         PostFixCalculator calc = new PostFixCalculator();
-        String result = calc.calculatePostFix("10 2 8 * + 3 4 2 * + / 5 2 3 * + -");
+        String result = calc.calculatePostFix("3 4 +");
         System.out.println(result);
 
         PostFixCalculator calcString = new PostFixCalculator();

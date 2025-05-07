@@ -8,7 +8,8 @@ import org.apache.logging.log4j.Logger;
 
 public class PostFixCalculator {
 
-    private static final Logger logger = LogManager.getLogger(PostFixCalculator.class);
+    private static final Logger logger = LogManager.getLogger(PostFixCalculator.class); //Step-By-Step Logger. print every single step for better understanding of calculatePostFix()
+   
 
     /**
      * A class that implements a Postfix Calculator using a single linked list
@@ -94,6 +95,9 @@ public class PostFixCalculator {
      */
     public String calculatePostFix(String expression) {
 
+        logger.info("Start calculation for: {}", expression);
+       
+
         // Erstelle eine Instanz der LinkedList-Klasse
         MySinglyLinkedList<String> stack = new MySinglyLinkedList<>(); // Stack für die Berechnung
         String[] tokens = expression.split(" "); // Ausdruck in Tokens zerlegen
@@ -103,14 +107,35 @@ public class PostFixCalculator {
         for (String token : tokens) {
 
             if (!isOperator(token)) {
+                logger.debug("token: {} is not a operator", token);
                 if (Character.isDigit(token.charAt(0))) {
+                    logger.debug("token: {} is a digit, adding to stack", token);
+
+                    //Adding token to stack
                     stack.addFirst(token);
+                    logger.debug("stack after pushing token: {}", stack.printListAsString());
                 } else {
+                    logger.error("token: {} is neither an operator nor a digit", token);
                     throw new IllegalArgumentException("One element of the given postfix-notation is neither an operator nor a digit!");
+
                 }
             } else {
+                logger.debug("token: {} is a operator", token);
+
+                logger.debug("removing first number from stack");
+
+                //Removing first number from stack
                 int number2 = Integer.parseInt(stack.removeFirst());
+                logger.debug("stack after removing first number: {}", stack.printListAsString());
+
+              
+                logger.debug("removing second number from stack");
+
+                //Removing second number from stack
                 int number1 = Integer.parseInt(stack.removeFirst());
+                logger.debug("stack after removing second number: {}", stack.printListAsString());
+
+                logger.info("Removed {} and {} from the stack. Calculating result for: {} {} {}", number1, number2, number1, token, number2);
 
                 //? Result - Solution
                 if (token.equals("+")) {
@@ -122,17 +147,23 @@ public class PostFixCalculator {
                 } else {
                     result = number1 / number2;
                 }
+
+                logger.info("Calculated result: {} {} {} = {}", number1, token, number2, result);
+                logger.debug("adding result: {} to stack", result);
+
+                //Adding result to stack
                 stack.addFirst(String.valueOf(result)); //Result back on stack
+                logger.debug("stack after pushing result: {}", stack.printListAsString());
             }
 
         }
-
+        logger.info("Final result: {}", result);
+       
         return Integer.toString(result);
 
     }
 
     //? Bonus Punkte, maybe? :)
-
     /**
      * Converts a postfix expression (Reverse Polish Notation) into a valid
      * infix expression.
@@ -167,7 +198,6 @@ public class PostFixCalculator {
      * @throws IllegalArgumentException If a token is neither a valid number nor
      * a supported operator
      */
-    
     public String convertPostfixToInfix(String expression) {
 
         MySinglyLinkedList<String> stack = new MySinglyLinkedList<>();

@@ -128,4 +128,29 @@ public class MySinglyLinkedList<E> implements LinkedListInterface<E> {
         }
         System.out.println("null");
     }
+
+    public String printListAsString() {
+
+        StringBuilder printList = new StringBuilder();
+        boolean status = true; //This will be used to only print "stack is empty". Therefore printlist.append("null") will be ignored --> better readability
+
+        if (this.isEmpty() == true) {
+            printList.append("Stack is empty.");
+            status = false;
+        }
+        
+        Node<E> current = head;
+        while (current != null) {
+            printList.append(current.data).append(" -> ");
+            current = current.next;
+        }
+
+        if (!status) {
+
+        } else {
+            printList.append("null");
+            
+        }
+        return printList.toString();
+    }
 }
