@@ -17,7 +17,12 @@ TextField{
 }
 
 #lb_text{
+      -fx-font : 22px bold;
       -fx-font-family: "Digital-7";
-      -fx-font : 2em bold;
+      -fx-text-fill: white;
+}
+
+#lb_mathprint{
+      -fx-font-family: "Digital-7";
       -fx-text-fill: white;
 }

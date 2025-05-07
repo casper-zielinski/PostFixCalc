@@ -15,6 +15,7 @@
       </Button>
       <TextField fx:id="tf_postfix" layoutX="73.0" layoutY="80.0" prefHeight="59.0" prefWidth="469.0" />
       <TextField fx:id="tf_calculated" layoutX="73.0" layoutY="273.0" prefHeight="59.0" prefWidth="469.0" />
-      <Label fx:id="lb_text" layoutX="252.0" layoutY="33.0" text="TI-31X Pro" />
+      <Label fx:id="lb_text" layoutX="262.0" layoutY="22.0" text="TI-31X Pro" />
+      <Label fx:id="lb_mathprint" layoutX="282.0" layoutY="56.0" text="MathPrint" />
    </children>
 </AnchorPane>

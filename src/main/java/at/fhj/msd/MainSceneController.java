@@ -21,6 +21,9 @@ public class MainSceneController {
     private Label lb_text;
 
     @FXML
+    private Label lb_mathprint;
+
+    @FXML
     void btn_onClick_calc(ActionEvent event) {
       PostFixCalculator calc = new PostFixCalculator();
       String result = calc.calculatePostFix(tf_postfix.getText());
