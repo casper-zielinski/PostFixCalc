@@ -11,7 +11,10 @@ public class PostFixCalculator {
     private static final Logger logger = LogManager.getLogger(PostFixCalculator.class); //Step-By-Step Logger. print every single step for better understanding of calculatePostFix()
     private static final Logger solutionLogger = LogManager.getLogger("SolutionLogger"); //Only expression and results logged
     private static final Logger postfixToInfixLogger = LogManager.getLogger("PostfixToInfixLogger"); //Logs conversion of postfix to infix
-    private static final Logger solutionPostfixToInfixLogger = LogManager.getLogger("SolutionPostfixToInfixLogger");
+    private static final Logger solutionPostfixToInfixLogger = LogManager.getLogger("SolutionPostfixToInfixLogger"); //Only expression and results logged of conversion
+    private static final Logger infixToPostFixLogger = LogManager.getLogger("InfixToPostFixLogger"); //Logs conversion of infix to postfix
+    private static final Logger solutionInfixToPostFixLogger = LogManager.getLogger("SolutionInfixToPostFixLogger"); //Only expression and results logged of conversion
+
     /**
      * A class that implements a Postfix Calculator using a single linked list
      * as its underlying data structure.
@@ -99,7 +102,6 @@ public class PostFixCalculator {
         logger.info("Start calculation for: {}", expression);
         solutionLogger.info("Start calculation for: {}", expression);
 
-
         // Erstelle eine Instanz der LinkedList-Klasse
         MySinglyLinkedList<String> stack = new MySinglyLinkedList<>(); // Stack für die Berechnung
         String[] tokens = expression.split(" "); // Ausdruck in Tokens zerlegen
@@ -110,6 +112,7 @@ public class PostFixCalculator {
 
             if (!isOperator(token)) {
                 logger.debug("token: {} is not a operator", token);
+
                 if (Character.isDigit(token.charAt(0))) {
                     logger.debug("token: {} is a digit, adding to stack", token);
 
@@ -130,7 +133,6 @@ public class PostFixCalculator {
                 int number2 = Integer.parseInt(stack.removeFirst());
                 logger.debug("stack after removing first number: {}", stack.printListAsString());
 
-              
                 logger.debug("removing second number from stack");
 
                 //Removing second number from stack
@@ -208,7 +210,7 @@ public class PostFixCalculator {
 
         postfixToInfixLogger.info("Start conversion of PostFix-Notation to Infix-Notation for: {}", expression);
         solutionPostfixToInfixLogger.info("Start conversion of PostFix-Notation to Infix-Notation for: {}", expression);
-        
+
         MySinglyLinkedList<String> stack = new MySinglyLinkedList<>();
         String[] tokens = expression.split(" ");
         String infix = "";
@@ -216,7 +218,9 @@ public class PostFixCalculator {
         for (String token : tokens) {
 
             if (!isOperator(token)) {
+
                 postfixToInfixLogger.debug("token: {} is not a operator", token);
+
                 if (Character.isDigit(token.charAt(0))) {
                     postfixToInfixLogger.debug("token: {} is a digit, adding to stack", token);
 
@@ -260,7 +264,7 @@ public class PostFixCalculator {
                 //Adding result to stack
                 stack.addFirst(infix);
                 postfixToInfixLogger.debug("stack after pushing result: {}", stack.printListAsString());
-                
+
             }
 
         }
@@ -268,7 +272,6 @@ public class PostFixCalculator {
         postfixToInfixLogger.info("Final result: {}", infix);
         postfixToInfixLogger.debug("--------------------------------------------------");
 
-        
         solutionPostfixToInfixLogger.info("Final result: {}", infix);
         solutionPostfixToInfixLogger.debug("--------------------------------------------------");
 
@@ -326,44 +329,87 @@ public class PostFixCalculator {
      */
     public String convertInfixToPostfix(String expression) {
 
+        infixToPostFixLogger.info("Start conversion of Infix-Notation to PostFix-Notation for: {}", expression);
+        solutionInfixToPostFixLogger.info("Start conversion of Infix-Notation to PostFix-Notation for: {}", expression);
+
         MySinglyLinkedList<String> stack = new MySinglyLinkedList<>();
         List<String> operands = new ArrayList<>();
 
         String[] tokens = expression.split(" "); // Ausdruck in Tokens zerlegen
 
         for (String token : tokens) {
-
             //?If it is a number, then put it into new data structure: list
             if (!isOperatorExtended(token)) {
+
+                infixToPostFixLogger.debug("token: '{}' is not a operator", token);
+
                 if (Character.isDigit(token.charAt(0))) {
+                    infixToPostFixLogger.debug("token: '{}' is a digit, adding to stack", token);
+
                     operands.add(token);
+                    infixToPostFixLogger.debug("operands list after adding token '{}': {}", token, operands.toString());
                 } else {
+                    infixToPostFixLogger.error("token: '{}' is neither an operator nor a digit", token);
                     throw new IllegalArgumentException("One element of the given infix-notation is neither an operator nor a digit!");
                 }
             } else {
 
+                infixToPostFixLogger.debug("token: '{}' is a operator", token);
+
                 //? Example1: if token is = ")" the while loop will be ignored and the token will be added to the stack
                 //? Example2: If token is = "-" and ")" is already in the stack, while loop will also be skipped, see hasLowerPrecendence()
                 //? Example3: if token is = "+" and "*" is already in the stack, while loop will be called, we are then following the mathematical rules
+                infixToPostFixLogger.info("Processing token: '{}'", token);
+
                 while (!stack.isEmpty() && hasLowerPrecedence(token, stack.first())) {
 
+                    infixToPostFixLogger.debug("Operator '{}' has lower or equal precedence, removing all operators from the stack and adding them to the operand list.", token);
+                    infixToPostFixLogger.debug("Removing first element: '{}' from stack", stack.first());
+                    infixToPostFixLogger.debug("Adding removed element: '{}' from stack to operands list", stack.first());
+
                     operands.add(stack.removeFirst()); //Remove all upper-level operators to the list of operands
+
+                    infixToPostFixLogger.debug("stack after removing first element: '{}'", stack.printListAsString());
+                    infixToPostFixLogger.debug("operands list after adding first element from stack: {}", operands.toString());
+
                 }
+
+                infixToPostFixLogger.debug("adding token: {} to stack", token);
 
                 stack.addFirst(token); //? After while loop (or not) token will be added to stack!
 
+                infixToPostFixLogger.debug("stack after adding token to stack: '{}'", stack.printListAsString());
+
+                int count = 0;
                 //? Iterate backbwards until "(" is found
                 if (token.equals(")")) {
+                    infixToPostFixLogger.debug("Found closing parenthesis. Moving operators inside parentheses to the operand list.");
                     while (!stack.isEmpty() && !stack.first().equals("(")) {
-                        int count = 0;
+                        
                         if (count == 0) {
+                            infixToPostFixLogger.debug("Removing first '(' from stack");
                             stack.removeFirst(); //if count == 0, then the value "(" will be called, since we don't need it, we will remove it
+
+                            infixToPostFixLogger.debug("stack after removing first '(': '{}'", stack.printListAsString());
                             count++;
                         }
+
+                        infixToPostFixLogger.debug("Removing first element: '{}' from stack", stack.first());
+                        infixToPostFixLogger.debug("Adding removed element: '{}' from stack to operands list", stack.first());
+
                         operands.add(stack.removeFirst()); //move all operators which were inside the parentheses to the operand list!
+
+                        infixToPostFixLogger.debug("stack after removing first element: '{}'", stack.printListAsString());
+                        infixToPostFixLogger.debug("operands list after adding first element from stack: {}", operands.toString());
                     }
 
+                    infixToPostFixLogger.debug("Removing the ')' in relation to the first '(' from stack");
+
                     stack.removeFirst(); //When "(" found, then remove ")" also!
+
+                    infixToPostFixLogger.debug("stack after removing first ')': '{}'", stack.printListAsString());
+                    infixToPostFixLogger.info("Processed token: {} --> END", token);
+
                 }
 
             }
@@ -372,8 +418,22 @@ public class PostFixCalculator {
         //? If the infix notation is at the end (for loop end), then move all remaining operators to operands list
         //? This will ensure, that the stack is empty at the end
         while (!stack.isEmpty()) {
+            infixToPostFixLogger.info("Processing remaining operators in the stack, moving them to the operands list.");
+
+            infixToPostFixLogger.debug("Removing first element: '{}' from stack", stack.first());
+            infixToPostFixLogger.debug("Adding removed element: '{}' from stack to operands list", stack.first());
+
             operands.add(stack.removeFirst());
+
+            infixToPostFixLogger.debug("stack after removing first element: '{}'", stack.printListAsString());
+            infixToPostFixLogger.debug("operands list after adding first element from stack: {}", operands.toString());
         }
+
+        infixToPostFixLogger.info("Final result: {}", String.join(" ", operands));
+        infixToPostFixLogger.debug("--------------------------------------------------");
+
+        solutionInfixToPostFixLogger.info("Final result: {}", String.join(" ", operands));
+        solutionInfixToPostFixLogger.debug("--------------------------------------------------");
 
         return String.join(" ", operands);
     }
