@@ -19,6 +19,34 @@
                 <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %c{1} - %msg%n</pattern>
             </PatternLayout>
         </File>
+
+        <!-- Logdatei für Postfix-to-Infix Conversion -->
+        <File name="PostfixToInfixLogger" fileName="logs/postfix_to_infix.log" append="true">
+            <PatternLayout>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %c{1} - %msg%n</pattern>
+            </PatternLayout>
+        </File>
+
+        <!-- Logdatei für Postfix-to-Infix Solutions -->
+        <File name="SolutionPostfixToInfixLogger" fileName="logs/postfix_to_infix_solutions.log" append="true">
+            <PatternLayout>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %c{1} - %msg%n</pattern>
+            </PatternLayout>
+        </File>
+
+        <!-- Logdatei für Infix-to-Postfix Conversion -->
+        <File name="InfixToPostFixLogger" fileName="logs/infix_to_postfix.log" append="true">
+            <PatternLayout>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %c{1} - %msg%n</pattern>
+            </PatternLayout>
+        </File>
+
+        <!-- Logdatei für Infix-to-Postfix Solutions -->
+        <File name="SolutionInfixToPostFixLogger" fileName="logs/infix_to_postfix_solutions.log" append="true">
+            <PatternLayout>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %c{1} - %msg%n</pattern>
+            </PatternLayout>
+        </File>
     </Appenders>
 
     <Loggers>
@@ -31,6 +59,26 @@
         <!-- Logger für spezifische Lösungsausgaben -->
         <Logger name="SolutionLogger" level="debug" additivity="false">
             <AppenderRef ref="SolutionFileLogger"/>
+        </Logger>
+
+        <!-- Logger für Postfix-to-Infix Conversion -->
+        <Logger name="PostfixToInfixLogger" level="debug" additivity="false">
+            <AppenderRef ref="PostfixToInfixLogger"/>
+        </Logger>
+
+        <!-- Logger für Postfix-to-Infix Solution Outputs -->
+        <Logger name="SolutionPostfixToInfixLogger" level="debug" additivity="false">
+            <AppenderRef ref="SolutionPostfixToInfixLogger"/>
+        </Logger>
+
+        <!-- Logger für Infix-to-Postfix Conversion -->
+        <Logger name="InfixToPostFixLogger" level="debug" additivity="false">
+            <AppenderRef ref="InfixToPostFixLogger"/>
+        </Logger>
+
+        <!-- Logger für Infix-to-Postfix Solution Outputs -->
+        <Logger name="SolutionInfixToPostFixLogger" level="debug" additivity="false">
+            <AppenderRef ref="SolutionInfixToPostFixLogger"/>
         </Logger>
     </Loggers>
 </Configuration>
