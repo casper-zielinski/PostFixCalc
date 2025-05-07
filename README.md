@@ -214,3 +214,125 @@ private static final Logger solutionInfixToPostFixLogger = LoggerFactory.getLogg
 - **Learning:** Shows real processing examples
 - **Documentation:** Serves as live system documentation
 - **Maintenance:** Clear separation of logging concerns
+
+### JavaFX Overview
+
+#### 🧮 Main.java – Einstiegspunkt für die JavaFX-Oberfläch
+
+ Die Datei Main.java befindet sich im Paket at.fhj.msd und ist die Hauptklasse der JavaFX-Anwendung Post Fix Calculator.
+
+🔧 Hauptaufgaben:
+
+1. Startet die JavaFX-Anwendung
+
+    - Erbt von Application und ruft beim Start automatisch die Methode start(Stage primaryStage) auf.
+
+2. Lädt die Benutzeroberfläche aus einer FXML-Datei
+
+   - Die Datei MainScene.fxml ( im resources Ordner) enthält das Layout der Oberfläche.
+   - Wird geladen mit:  
+   ``FXMLLoader.load(getClass().getResource("/MainScene.fxml"));``
+
+3. Setzt ein Stylesheet zur Gestaltung
+
+    - Die CSS-Datei style.css unter /styles/ wird auf die Szene angewendet, um z. B. Schriftfarben oder Button-Designs zu ändern.
+    ``scene.getStylesheets().add(getClass().getResource("/styles/style.css").toExternalForm());``
+
+4. Zeigt das Hauptfenster
+
+    - Fenster-Titel wird gesetzt auf Post Fix Calculator.
+    - Die Szene (mit FXML + CSS) wird der Stage zugewiesen und mit .show() angezeigt.
+
+5. Fehlerbehandlung
+
+    - Falls FXML oder CSS nicht geladen werden können (z. B. Datei fehlt), wird eine Fehlermeldung ausgegeben:  
+    ``System.out.println("IOException Error, File either not found/corrupted etc.");``
+
+#### 🏁 Fazit
+
+ > Main.java ist der zentrale Einstiegspunkt deines JavaFX-Projekts. Es kümmert sich um das Laden der Benutzeroberfläche und der Gestaltung, bevor die Anwendung dem Benutzer angezeigt wird. Wenn eine Datei fehlt, bekommst du eine einfache Fehlerausgabe – sinnvoll beim Debuggen.
+
+#### 🧭 MainSceneController.java – UI-Logik für die JavaFX-Oberfläche
+
+  Diese Datei ist der Controller für das FXML-basiertes UI (MainScene.fxml) und enthält die Logik, die ausgeführt wird, wenn Benutzer mit der Oberfläche interagieren – zum Beispiel, wenn sie auf einen Button klicken.
+
+  📌 Hauptaufgaben:
+
+1. Verbindung zur UI über FXML
+
+    - Die Felder wie btn_calc, tf_postfix, tf_calculated, lb_text usw. sind mit den Steuerelementen in der .fxml-Datei verknüpft.
+    - Dies geschieht über @FXML, was JavaFX mitteilt, dass es diese Felder automatisch mit den UI-Elementen verbinden soll.
+
+2. Berechnet das Ergebnis bei Button-Klick
+
+   - Die Methode btn_onClick_calc() wird aufgerufen, wenn der Nutzer auf den Berechnungs-Button (btn_calc) mit dem Namen Calculate PostFix Equation klickt.
+
+   - Dabei:
+
+     - Wird der eingegebene Postfix-Ausdruck aus dem TextField tf_postfix gelesen
+
+     - Der Ausdruck wird über die Hilfsklasse PostFixCalculator berechnet
+
+     - Das Ergebnis wird in das Textfeld tf_calculated geschrieben
+
+3. Transformiert Postfix zu Infix und umgekehrt
+
+   - Die Methode btn_onClick_in_to_post wird aufgerufen, wenn der Nutzer auf den Button (btn_in_to_post) mit dem Namen Convert Postfix to Infix drückt.
+
+   - Dabei:
+
+     - Wird der eingegebene Postfix-Ausdruck aus dem TextField tf_postfix gelesen
+
+     - Der Ausdruck wird über die Hilfsklasse PostFixCalculator konvertiert
+
+     - Das Ergebnis wird in das Textfeld tf_calculated geschrieben
+
+   - Die Methode btn_onClick_post_to_in wird ausgefüht wenn der Button mit dem Namen Convert Infix to Postfix drückt.
+
+   - Dabei:
+
+        - Wird der eingegebene Infix-Ausdruck aus dem Textfield tf_postfix gelesen
+
+        - Der Ausdruck wird über die Hilfsklasse PostFixCalculator konvertiert
+
+        - Das Ergebnis wird in das Textfeld tf_calculater geschrieben
+
+  💡 Wichtige Klassen/Felder
+
+| Feldname | UI-Element | Funktion |
+|----------|------------|----------|
+| btn_calc | Button         |   Löst die Berechnung aus       |
+| btn_in_to_post | Button | Transformiert Infix zu Postfix |
+| btn_post_to_in | Button | Transformiert Postfix zu Infix |
+| tf_postfix | Text Field          |     Hier gibt der Nutzer den Postfix-Ausdruck ein    |
+| tf_calculated | Text Field       |     Zeigt das Ergebnis an     |
+| lb_text | Label  | Der Obere Text des Interface: "TI-31X Pro" |
+| lb_mathprint | Label  |  Der Text unter dem Text: "TI-31X Pro" "MathPrint" |  
+
+🔄 Methode im Detail
+
+```java
+@FXML
+void btn_onClick_calc(ActionEvent event) {
+    PostFixCalculator calc = new PostFixCalculator();
+    String result = calc.calculatePostFix(tf_postfix.getText());
+    tf_calculated.setText(result);
+}
+```
+
+- Was passiert hier?
+
+  - Es wird ein neues PostFixCalculator-Objekt erzeugt.
+
+  - Der Text aus tf_postfix wird an calculatePostFix() übergeben.
+
+  - Das Ergebnis wird ins tf_calculated-Feld geschrieben.
+
+  📦 Abhängigkeit zu anderer Klasse
+
+  Die Logik zur Berechnung liegt in einer anderen Klasse:
+  ```PostFixCalculator```  
+  
+#### ✅ Fazit
+
+MainSceneController.java verbindet deine FXML-Oberfläche mit der Rechenlogik. Es steuert die Benutzerinteraktion und sorgt dafür, dass eingegebene Postfix-Ausdrücke korrekt verarbeitet und angezeigt werden.

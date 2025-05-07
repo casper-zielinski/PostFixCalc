@@ -1,0 +1,40 @@
+Button
+{
+      -fx-background-color: rgb(50, 84, 143);
+      -fx-text-fill: white;
+      -fx-font :12px bold;
+}
+
+AnchorPane {
+      -fx-background-color: black;
+  }
+
+TextField{
+      -fx-background-color: rgb(29, 125, 50);
+      -fx-color: black;
+      -fx-font-family: "Digital-7";
+      -fx-font : 14px bold;
+}
+
+#tf_calculated{
+      -fx-control-inner-background: rgb(29, 125, 50);
+      -fx-text-fill: black;
+      -fx-font-family: "Digital-7";
+      -fx-font : 14px bold;
+}
+
+#lb_text{
+      -fx-font : 22px bold;
+      -fx-font-family: "Digital-7";
+      -fx-text-fill: white;
+}
+
+#lb_mathprint{
+      -fx-font-family: "Digital-7";
+      -fx-text-fill: white;
+}
+
+#lb_info{
+      -fx-font-family: "Digital-7";
+      -fx-text-fill: white;
+}
