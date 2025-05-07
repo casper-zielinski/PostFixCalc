@@ -160,9 +160,10 @@ public class PostFixCalculator {
 
         }
         logger.info("Final result: {}", result);
+        logger.debug("--------------------------------------------------");
 
         solutionLogger.info("Final result: {}", result);
-        solutionLogger.debug(""); //new empty line in .log file!
+        solutionLogger.debug("--------------------------------------------------"); //new empty line in .log file!
 
         return Integer.toString(result);
 
