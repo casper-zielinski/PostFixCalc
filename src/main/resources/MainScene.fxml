@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.fhj.msd.MainSceneController">
+   <children>
+      <Button fx:id="btn_calc" layoutX="170.0" layoutY="189.0" mnemonicParsing="false" onAction="#btn_onClick_calc" prefHeight="37.0" prefWidth="274.0" text="Calculate PostFix Equation">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <TextField fx:id="tf_postfix" layoutX="73.0" layoutY="80.0" prefHeight="59.0" prefWidth="469.0" />
+      <TextField fx:id="tf_calculated" layoutX="73.0" layoutY="273.0" prefHeight="59.0" prefWidth="469.0" />
+   </children>
+</AnchorPane>
