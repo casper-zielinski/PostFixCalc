@@ -1,0 +1,39 @@
+2025-05-07 04:28:17 INFO  SolutionPostfixToInfixLogger - Start conversion of PostFix-Notation to Infix-Notation for: 3 4 +
+2025-05-07 04:28:17 INFO  SolutionPostfixToInfixLogger - Final result: (3 + 4)
+2025-05-07 04:28:17 DEBUG SolutionPostfixToInfixLogger - --------------------------------------------------
+2025-05-07 04:29:38 INFO  SolutionPostfixToInfixLogger - Start conversion of PostFix-Notation to Infix-Notation for: 8 2 -
+2025-05-07 04:29:38 INFO  SolutionPostfixToInfixLogger - Final result: (8 - 2)
+2025-05-07 04:29:38 DEBUG SolutionPostfixToInfixLogger - --------------------------------------------------
+2025-05-07 04:30:07 INFO  SolutionPostfixToInfixLogger - Start conversion of PostFix-Notation to Infix-Notation for: 6 3 *
+2025-05-07 04:30:07 INFO  SolutionPostfixToInfixLogger - Final result: (6 * 3)
+2025-05-07 04:30:07 DEBUG SolutionPostfixToInfixLogger - --------------------------------------------------
+2025-05-07 04:30:29 INFO  SolutionPostfixToInfixLogger - Start conversion of PostFix-Notation to Infix-Notation for: 5 2 + 4 *
+2025-05-07 04:30:29 INFO  SolutionPostfixToInfixLogger - Final result: ((5 + 2) * 4)
+2025-05-07 04:30:29 DEBUG SolutionPostfixToInfixLogger - --------------------------------------------------
+2025-05-07 04:30:57 INFO  SolutionPostfixToInfixLogger - Start conversion of PostFix-Notation to Infix-Notation for: 9 3 1 - /
+2025-05-07 04:30:57 INFO  SolutionPostfixToInfixLogger - Final result: (9 / (3 - 1))
+2025-05-07 04:30:57 DEBUG SolutionPostfixToInfixLogger - --------------------------------------------------
+2025-05-07 04:31:17 INFO  SolutionPostfixToInfixLogger - Start conversion of PostFix-Notation to Infix-Notation for: 7 2 3 + *
+2025-05-07 04:31:17 INFO  SolutionPostfixToInfixLogger - Final result: (7 * (2 + 3))
+2025-05-07 04:31:17 DEBUG SolutionPostfixToInfixLogger - --------------------------------------------------
+2025-05-07 04:31:43 INFO  SolutionPostfixToInfixLogger - Start conversion of PostFix-Notation to Infix-Notation for: 10 5 + 6 2 / -
+2025-05-07 04:31:43 INFO  SolutionPostfixToInfixLogger - Final result: ((10 + 5) - (6 / 2))
+2025-05-07 04:31:43 DEBUG SolutionPostfixToInfixLogger - --------------------------------------------------
+2025-05-07 04:32:15 INFO  SolutionPostfixToInfixLogger - Start conversion of PostFix-Notation to Infix-Notation for: 4 2 + 3 1 - * 5 /
+2025-05-07 04:32:15 INFO  SolutionPostfixToInfixLogger - Final result: (((4 + 2) * (3 - 1)) / 5)
+2025-05-07 04:32:15 DEBUG SolutionPostfixToInfixLogger - --------------------------------------------------
+2025-05-07 04:32:38 INFO  SolutionPostfixToInfixLogger - Start conversion of PostFix-Notation to Infix-Notation for: 8 3 2 * + 4 -
+2025-05-07 04:32:38 INFO  SolutionPostfixToInfixLogger - Final result: ((8 + (3 * 2)) - 4)
+2025-05-07 04:32:38 DEBUG SolutionPostfixToInfixLogger - --------------------------------------------------
+2025-05-07 04:32:58 INFO  SolutionPostfixToInfixLogger - Start conversion of PostFix-Notation to Infix-Notation for: 6 2 1 + * 3 4 + /
+2025-05-07 04:32:58 INFO  SolutionPostfixToInfixLogger - Final result: ((6 * (2 + 1)) / (3 + 4))
+2025-05-07 04:32:58 DEBUG SolutionPostfixToInfixLogger - --------------------------------------------------
+2025-05-07 04:33:58 INFO  SolutionPostfixToInfixLogger - Start conversion of PostFix-Notation to Infix-Notation for: 5 3 + 8 2 - * 4 6 + 2 / - 7 3 + *
+2025-05-07 04:33:58 INFO  SolutionPostfixToInfixLogger - Final result: ((((5 + 3) * (8 - 2)) - ((4 + 6) / 2)) * (7 + 3))
+2025-05-07 04:33:58 DEBUG SolutionPostfixToInfixLogger - --------------------------------------------------
+2025-05-07 04:34:38 INFO  SolutionPostfixToInfixLogger - Start conversion of PostFix-Notation to Infix-Notation for: 9 4 2 + 6 * + 5 3 - 2 / - 8 2 1 + / + 
+2025-05-07 04:34:38 INFO  SolutionPostfixToInfixLogger - Final result: (((9 + ((4 + 2) * 6)) - ((5 - 3) / 2)) + (8 / (2 + 1)))
+2025-05-07 04:34:38 DEBUG SolutionPostfixToInfixLogger - --------------------------------------------------
+2025-05-07 04:35:24 INFO  SolutionPostfixToInfixLogger - Start conversion of PostFix-Notation to Infix-Notation for: 10 5 2 + 3 * - 4 1 + 6 / + 8 2 2 + * - 7 + 
+2025-05-07 04:35:24 INFO  SolutionPostfixToInfixLogger - Final result: ((((10 - ((5 + 2) * 3)) + ((4 + 1) / 6)) - (8 * (2 + 2))) + 7)
+2025-05-07 04:35:24 DEBUG SolutionPostfixToInfixLogger - --------------------------------------------------
