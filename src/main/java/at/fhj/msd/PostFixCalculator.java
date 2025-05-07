@@ -9,9 +9,9 @@ import org.apache.logging.log4j.Logger;
 public class PostFixCalculator {
 
     private static final Logger logger = LogManager.getLogger(PostFixCalculator.class); //Step-By-Step Logger. print every single step for better understanding of calculatePostFix()
-    private static final Logger solutionLogger = LogManager.getLogger("SolutionLogger"); //Step-By-Step Logger. print every single step for better understanding of calculatePostFix()
-
-
+    private static final Logger solutionLogger = LogManager.getLogger("SolutionLogger"); //Only expression and results logged
+    private static final Logger postfixToInfixLogger = LogManager.getLogger("PostfixToInfixLogger"); //Logs conversion of postfix to infix
+    private static final Logger solutionPostfixToInfixLogger = LogManager.getLogger("SolutionPostfixToInfixLogger");
     /**
      * A class that implements a Postfix Calculator using a single linked list
      * as its underlying data structure.
@@ -206,6 +206,9 @@ public class PostFixCalculator {
      */
     public String convertPostfixToInfix(String expression) {
 
+        postfixToInfixLogger.info("Start conversion of PostFix-Notation to Infix-Notation for: {}", expression);
+        solutionPostfixToInfixLogger.info("Start conversion of PostFix-Notation to Infix-Notation for: {}", expression);
+        
         MySinglyLinkedList<String> stack = new MySinglyLinkedList<>();
         String[] tokens = expression.split(" ");
         String infix = "";
@@ -213,14 +216,33 @@ public class PostFixCalculator {
         for (String token : tokens) {
 
             if (!isOperator(token)) {
+                postfixToInfixLogger.debug("token: {} is not a operator", token);
                 if (Character.isDigit(token.charAt(0))) {
+                    postfixToInfixLogger.debug("token: {} is a digit, adding to stack", token);
+
+                    //Adding token to stack
                     stack.addFirst(token);
+                    postfixToInfixLogger.debug("stack after pushing token: {}", stack.printListAsString());
                 } else {
+                    postfixToInfixLogger.error("token: {} is neither an operator nor a digit", token);
                     throw new IllegalArgumentException("One element of the given postfix-notation is neither an operator nor a digit!");
                 }
             } else {
+
+                postfixToInfixLogger.debug("token: {} is a operator", token);
+
+                postfixToInfixLogger.debug("removing first number from stack");
+
+                //Removing first number from stack
                 String number2 = stack.removeFirst();
+                postfixToInfixLogger.debug("stack after removing first number: {}", stack.printListAsString());
+
+                postfixToInfixLogger.debug("removing second number from stack");
+
                 String number1 = stack.removeFirst();
+                postfixToInfixLogger.debug("stack after removing second number: {}", stack.printListAsString());
+
+                postfixToInfixLogger.info("Removed {} and {} from the stack. Calculating result for: {} {} {}", number1, number2, number1, token, number2);
 
                 if (token.equals("+")) {
                     infix = "(" + number1 + " + " + number2 + ")";
@@ -231,10 +253,24 @@ public class PostFixCalculator {
                 } else {
                     infix = "(" + number1 + " / " + number2 + ")";
                 }
+
+                postfixToInfixLogger.info("Calculated result: '{} {} {}' = {}", number1, token, number2, infix);
+                postfixToInfixLogger.debug("adding result: {} to stack", infix);
+
+                //Adding result to stack
                 stack.addFirst(infix);
+                postfixToInfixLogger.debug("stack after pushing result: {}", stack.printListAsString());
+                
             }
 
         }
+
+        postfixToInfixLogger.info("Final result: {}", infix);
+        postfixToInfixLogger.debug("--------------------------------------------------");
+
+        
+        solutionPostfixToInfixLogger.info("Final result: {}", infix);
+        solutionPostfixToInfixLogger.debug("--------------------------------------------------");
 
         return infix;
 
