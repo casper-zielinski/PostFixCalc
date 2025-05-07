@@ -1,0 +1,23 @@
+#btn_calc
+{
+      -fx-background-color: rgb(50, 84, 143);
+      -fx-text-fill: white;
+      -fx-font :22px bold;
+}
+
+AnchorPane {
+      -fx-background-color: black;
+  }
+
+TextField{
+      -fx-background-color: rgb(29, 125, 50);
+      -fx-color: black;
+      -fx-font-family: "Digital-7";
+      -fx-font : 14px bold;
+}
+
+#lb_text{
+      -fx-font-family: "Digital-7";
+      -fx-font : 2em bold;
+      -fx-text-fill: white;
+}

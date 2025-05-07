@@ -3,6 +3,7 @@ package at.fhj.msd;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class MainSceneController {
@@ -15,6 +16,9 @@ public class MainSceneController {
 
     @FXML
     private TextField tf_postfix;
+
+    @FXML
+    private Label lb_text;
 
     @FXML
     void btn_onClick_calc(ActionEvent event) {
