@@ -269,17 +269,41 @@ private static final Logger solutionInfixToPostFixLogger = LoggerFactory.getLogg
 
    - Dabei:
 
-     - Wird der eingegebene Postfix-Ausdruck aus dem TextField tf_postfix gelesen.
+     - Wird der eingegebene Postfix-Ausdruck aus dem TextField tf_postfix gelesen
 
-     - Der Ausdruck wird über die Hilfsklasse PostFixCalculator berechnet.
+     - Der Ausdruck wird über die Hilfsklasse PostFixCalculator berechnet
 
      - Das Ergebnis wird in das Textfeld tf_calculated geschrieben
+
+3. Transformiert Postfix zu Infix und umgekehrt
+
+   - Die Methode btn_onClick_in_to_post wird aufgerufen, wenn der Nutzer auf den Button (btn_in_to_post) mit dem Namen Convert Postfix to Infix drückt.
+
+   - Dabei:
+
+     - Wird der eingegebene Postfix-Ausdruck aus dem TextField tf_postfix gelesen
+
+     - Der Ausdruck wird über die Hilfsklasse PostFixCalculator konvertiert
+
+     - Das Ergebnis wird in das Textfeld tf_calculated geschrieben
+
+   - Die Methode btn_onClick_post_to_in wird ausgefüht wenn der Button mit dem Namen Convert Infix to Postfix drückt.
+
+   - Dabei:
+
+        - Wird der eingegebene Infix-Ausdruck aus dem Textfield tf_postfix gelesen
+
+        - Der Ausdruck wird über die Hilfsklasse PostFixCalculator konvertiert
+
+        - Das Ergebnis wird in das Textfeld tf_calculater geschrieben
 
   💡 Wichtige Klassen/Felder
 
 | Feldname | UI-Element | Funktion |
 |----------|------------|----------|
 | btn_calc | Button         |   Löst die Berechnung aus       |
+| btn_in_to_post | Button | Transformiert Infix zu Postfix |
+| btn_post_to_in | Button | Transformiert Postfix zu Infix |
 | tf_postfix | Text Field          |     Hier gibt der Nutzer den Postfix-Ausdruck ein    |
 | tf_calculated | Text Field       |     Zeigt das Ergebnis an     |
 | lb_text | Label  | Der Obere Text des Interface: "TI-31X Pro" |
