@@ -121,6 +121,10 @@ public class PostFixCalculator {
                     logger.debug("stack after pushing token: {}", stack.printListAsString());
                 } else {
                     logger.error("token: {} is neither an operator nor a digit", token);
+                    solutionLogger.error("token: {} is neither an operator nor a digit", token);
+
+                    logger.debug("--------------------------------------------------");
+                    solutionLogger.debug("--------------------------------------------------");
                     throw new IllegalArgumentException("One element of the given postfix-notation is neither an operator nor a digit!");
 
                 }
@@ -229,6 +233,10 @@ public class PostFixCalculator {
                     postfixToInfixLogger.debug("stack after pushing token: {}", stack.printListAsString());
                 } else {
                     postfixToInfixLogger.error("token: {} is neither an operator nor a digit", token);
+                    solutionPostfixToInfixLogger.error("token: {} is neither an operator nor a digit", token);
+
+                    postfixToInfixLogger.debug("--------------------------------------------------");
+                    solutionPostfixToInfixLogger.debug("--------------------------------------------------");
                     throw new IllegalArgumentException("One element of the given postfix-notation is neither an operator nor a digit!");
                 }
             } else {
@@ -350,6 +358,10 @@ public class PostFixCalculator {
                     infixToPostFixLogger.debug("operands list after adding token '{}': {}", token, operands.toString());
                 } else {
                     infixToPostFixLogger.error("token: '{}' is neither an operator nor a digit", token);
+                    solutionInfixToPostFixLogger.error("token: '{}' is neither an operator nor a digit", token);
+
+                    infixToPostFixLogger.debug("--------------------------------------------------");
+                    solutionInfixToPostFixLogger.debug("--------------------------------------------------");
                     throw new IllegalArgumentException("One element of the given infix-notation is neither an operator nor a digit!");
                 }
             } else {
