@@ -12,6 +12,12 @@ public class MainSceneController {
     private Button btn_calc;
 
     @FXML
+    private Button btn_in_to_post;
+
+    @FXML
+    private Button btn_post_to_in;
+
+    @FXML
     private TextField tf_calculated;
 
     @FXML
@@ -25,9 +31,37 @@ public class MainSceneController {
 
     @FXML
     void btn_onClick_calc(ActionEvent event) {
-      PostFixCalculator calc = new PostFixCalculator();
-      String result = calc.calculatePostFix(tf_postfix.getText());
-      tf_calculated.setText(result);
+      try {
+            PostFixCalculator calc = new PostFixCalculator();
+            String result = calc.calculatePostFix(tf_postfix.getText());
+            tf_calculated.setText(result);
+          
+      } catch (Exception e) {
+            tf_calculated.setText("Error\n \nSyntax");
+      }
+      
+    }
+
+    @FXML
+    void btn_onClick_in_to_post(ActionEvent event) {
+      try {
+            PostFixCalculator calc = new PostFixCalculator();
+            String result = calc.convertInfixToPostfix(tf_postfix.getText());
+            tf_calculated.setText(result);
+      } catch (Exception e) {
+            tf_calculated.setText("Error\n \nSyntax");
+      }
+    }
+
+    @FXML
+    void btn_onClick_post_to_in(ActionEvent event) {
+      try {
+            PostFixCalculator calc = new PostFixCalculator();
+            String result = calc.convertPostfixToInfix(tf_postfix.getText());
+            tf_calculated.setText(result);
+      } catch (Exception e) {
+            tf_calculated.setText("Error\n \nSyntax");
+      }
     }
 
 }

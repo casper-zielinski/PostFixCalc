@@ -1,8 +1,8 @@
-#btn_calc
+Button
 {
       -fx-background-color: rgb(50, 84, 143);
       -fx-text-fill: white;
-      -fx-font :22px bold;
+      -fx-font :12px bold;
 }
 
 AnchorPane {
