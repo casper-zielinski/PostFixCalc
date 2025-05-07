@@ -14,7 +14,6 @@ public class Main extends Application {
       public void start(Stage primaryStage) {
         
           try {
-
               Parent root = FXMLLoader.load(getClass().getResource("/MainScene.fxml"));
               Scene scene = new Scene(root);
               scene.getStylesheets().add(getClass().getResource("/styles/style.css").toExternalForm());
@@ -28,8 +27,6 @@ public class Main extends Application {
               catch (IOException ex) {
                   System.out.println("IOException Error, File either not found/corrupted etc.");
               }
-
-
     }
     
       public static void main(String[] args) {
