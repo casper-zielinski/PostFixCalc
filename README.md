@@ -1,15 +1,16 @@
-# A (test) Version of a PostFix Calculator
+# A Version of a Postfix Calculator
 
-## (test) Idea
+## Idea
 
->**Mission**: reading a String and interpreting it as a Post Fix Calculation and then solving it and
->returning the solution (as a String or a Integer or Double, doesn't matter for now)
->  
+**Mission**  
+Read a string, interpret it as a postfix expression, evaluate it, and return the result. The result can be a string, integer, or double — the specific type doesn't matter for now.
 
->**Idea**: using char arrays with a loop and checking if the char is a operator like: (+,-,*,/) and then with the operator calculating the last two digits.
->  
+**Concept**  
+Use a loop over a character array to identify operators (`+`, `-`, `*`, `/`). When an operator is found, apply it to the last two numbers from the input or stack.
 
-> **Practice**: Used different types of arrays, but not character arrays. Also made use of a `count` variable and several attributes. The program works to some extent, but not entirely — for example, a calculation with three numbers followed by an operator does not work correctly.
+**Implementation Notes**  
+Instead of character arrays, various types of arrays were used. A `count` variable and several attributes were employed to manage the process. The program works partially, but some cases — such as expressions with three numbers followed by a single operator — are not yet handled correctly.
+
 
 ## Actual Implementation
 
@@ -123,3 +124,93 @@ PostFixCalculator calc = new PostFixCalculator();
 String result = calc.calculatePostFix("3 4 + 5 + 6 + 7 +"); // → "25"
 String infix = calc.convertPostfixToInfix("3 4 + 2 *"); // → "((3 + 4) * 2)"
 String postfix = calc.convertInfixToPostfix("( 3 + 4 ) * 2"); // → "3 4 + 2 *"
+```
+
+#### Logging in PostFixCalculator Class
+
+The `PostFixCalculator` class uses multiple dedicated loggers to track different aspects of calculation and conversion processes. These loggers provide detailed insights for debugging and monitoring.
+
+#### Logging in PostFixCalculator Class
+
+The `PostFixCalculator` class uses multiple dedicated loggers to track different aspects of calculation and conversion processes. These loggers provide detailed insights for debugging and monitoring.
+
+##### Logger Declarations
+```java
+// Step-by-step calculation logger
+private static final Logger logger = LoggerFactory.getLogger("PostFixCalculator");
+// Solution output logger
+private static final Logger solutionLogger = LoggerFactory.getLogger("PostFixCalculator.solution");
+// Postfix to Infix conversion logger
+private static final Logger postfixToInfixLogger = LoggerFactory.getLogger("PostFixCalculator.postfixToInfix");
+// Postfix to Infix solution logger
+private static final Logger solutionPostfixToInfixLogger = LoggerFactory.getLogger("PostFixCalculator.solutionPostfixToInfix");
+// Infix to Postfix conversion logger
+private static final Logger infixToPostFixLogger = LoggerFactory.getLogger("PostFixCalculator.infixToPostFix");
+// Infix to Postfix solution logger
+private static final Logger solutionInfixToPostFixLogger = LoggerFactory.getLogger("PostFixCalculator.solutionInfixToPostFix");
+```
+
+### Logger Overview
+
+1. **`logger` (Step-By-Step Logger)**
+   - **Purpose:** Tracks the detailed flow of `calculatePostFix()`
+   - **Logs:**
+     - Token checks (operator/operand)
+     - Stack operations (push/pop)
+     - Intermediate calculations
+   - **Levels:**
+     - `info`: Main calculation flow
+     - `debug`: Stack state and operand processing
+     - `error`: Invalid tokens
+
+2. **`solutionLogger` (Solution Logger)**
+   - **Purpose:** Logs expression and final result
+   - **Logs:**
+     - Initial expression
+     - Final calculation result
+   - **Levels:**
+     - `info`: Expression and result
+     - `debug`: Formatting details
+
+3. **`postfixToInfixLogger` (Conversion Logger)**
+   - **Purpose:** Tracks Postfix-to-Infix conversion
+   - **Logs:**
+     - Token parsing
+     - Stack operations
+     - Parentheses handling
+   - **Levels:**
+     - `info`: Conversion start/end
+     - `debug`: Detailed stack operations
+
+4. **`solutionPostfixToInfixLogger` (Conversion Result Logger)**
+   - **Purpose:** Logs Postfix-to-Infix results
+   - **Logs:**
+     - Original Postfix expression
+     - Resulting Infix expression
+
+5. **`infixToPostFixLogger` (Infix Conversion Logger)**
+   - **Purpose:** Tracks Infix-to-Postfix conversion
+   - **Logs:**
+     - Operator precedence handling
+     - Parentheses processing
+     - Stack operations
+
+6. **`solutionInfixToPostFixLogger` (Infix Conversion Result Logger)**
+   - **Purpose:** Logs Infix-to-Postfix results
+   - **Logs:**
+     - Original Infix expression
+     - Resulting Postfix expression
+
+##### Log Storage
+- Logs are stored in the `hardcodedLogs/` directory
+- Committed to Git as reference examples
+- Helps users understand:
+  - Execution flow
+  - Expected output formats
+  - Debugging patterns
+
+##### Why This Matters
+- **Debugging:** Pinpoints exact failure points
+- **Learning:** Shows real processing examples
+- **Documentation:** Serves as live system documentation
+- **Maintenance:** Clear separation of logging concerns
