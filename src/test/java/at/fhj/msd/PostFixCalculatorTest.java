@@ -31,31 +31,31 @@ public class PostFixCalculatorTest {
     @Test
     @DisplayName("PostFix Addition Test")
     void additionTest() {
-        assertEquals("25", calc.calculatePostFix("3 4 + 5 + 6 + 7 +"));
+        assertEquals("25.0", calc.calculatePostFix("3 4 + 5 + 6 + 7 +"));
     }
 
     @Test
     @DisplayName("PostFix Substraction Test")
     void substractionTest() {
-        assertEquals("6", calc.calculatePostFix("20 2 - 3 - 4 - 5 -"));
+        assertEquals("6.0", calc.calculatePostFix("20 2 - 3 - 4 - 5 -"));
     }
 
     @Test
     @DisplayName("PostFix Multiplication Test")
     void multiplicationTest() {
-        assertEquals("48", calc.calculatePostFix("2 2 * 3 * 4 *"));
+        assertEquals("48.0", calc.calculatePostFix("2 2 * 3 * 4 *"));
     }
 
     @Test
     @DisplayName("PostFix Division Test")
     void divisionTest() {
-        assertEquals("5", calc.calculatePostFix("100 2 / 5 / 2 /"));
+        assertEquals("5.0", calc.calculatePostFix("100 2 / 5 / 2 /"));
     }
 
     @Test
     @DisplayName("PostFix Full Calculation Test")
     void fullCalculationTest() {
-        assertEquals("200", calc.calculatePostFix("5 3 + 8 2 - * 4 2 / + 7 3 - *"));
+        assertEquals("200.0", calc.calculatePostFix("5 3 + 8 2 - * 4 2 / + 7 3 - *"));
     }
 
     @Test
@@ -68,6 +68,31 @@ public class PostFixCalculatorTest {
         assertThrows(IllegalArgumentException.class, () -> {
             calc.calculatePostFix("5 3 &");
         });
+    }
+
+    @Test
+    @DisplayName("Postfix ArithmeticException Test") 
+    void ArithmeticTest() {
+        assertThrows(ArithmeticException.class, () -> {
+            calc.calculatePostFix("10 0 /");
+        });
+
+        assertThrows(ArithmeticException.class, () -> {
+            calc.calculatePostFix("8 2 2 - /");
+        });
+
+        assertThrows(ArithmeticException.class, () -> {
+            calc.calculatePostFix("5 1 + 3 3 - /");
+        });
+
+        assertThrows(ArithmeticException.class, () -> {
+            calc.calculatePostFix("4 2 + 1 1 - /");
+        });
+
+        assertThrows(ArithmeticException.class, () -> {
+            calc.calculatePostFix("4 2 * 3 3 - /");
+        });
+
     }
 
     @Test
@@ -87,6 +112,40 @@ public class PostFixCalculatorTest {
 
     }
 
+    @Test
+    @DisplayName("PostFix Convert PostFix-Notation to Infix-Notation - ArithmeticException Test")
+    void convertArithmeticTest() {
+
+        assertThrows(ArithmeticException.class, () -> {
+            calcString.convertPostfixToInfix("5 7 7 - /");
+        });
+
+        assertThrows(ArithmeticException.class, () -> {
+            calcString.convertPostfixToInfix("3 1 1 - /");
+        });
+
+        assertThrows(ArithmeticException.class, () -> {
+            calcString.convertPostfixToInfix("9 3 3 - /");
+        });
+
+        assertThrows(ArithmeticException.class, () -> {
+            calcString.convertPostfixToInfix("6 2 2 - / 4 +");
+        });
+        
+        assertThrows(ArithmeticException.class, () -> {
+            calcString.convertPostfixToInfix("2 3 * 4 4 - /");
+        });
+
+        assertThrows(ArithmeticException.class, () -> {
+            calcString.convertPostfixToInfix("10 2 + 3 * 6 6 - / 4 -");
+        });
+        
+        assertThrows(ArithmeticException.class, () -> {
+            calcString.convertPostfixToInfix("5 1 2 + 4 * + 3 3 - /");
+        });
+
+    }
+
 
     @Test
     @DisplayName("PostFix InfixToPostfix - IllegalArgument Test")
@@ -100,6 +159,31 @@ public class PostFixCalculatorTest {
             calcConvertInfix.convertInfixToPostfix("..(1 + 2) * (3 - 4)");
         });
 
+    }
+
+    @Test
+    @DisplayName("PostFix InfixToPostfix - ArithmeticException Test")
+    void InfixArithmeticTest() {
+
+        assertThrows(ArithmeticException.class, () -> {
+            calcConvertInfix.convertInfixToPostfix("( 5 + 3 ) / ( 2 - 2 )");
+        });
+        
+        assertThrows(ArithmeticException.class, () -> {
+            calcConvertInfix.convertInfixToPostfix("( ( 6 / 0 ) + 5 ) * 2");
+        });
+        
+        assertThrows(ArithmeticException.class, () -> {
+            calcConvertInfix.convertInfixToPostfix("( ( 10 + 2 ) / ( 5 - 5 ) ) + 1");
+        });
+        
+        assertThrows(ArithmeticException.class, () -> {
+            calcConvertInfix.convertInfixToPostfix("( ( 7 * 3 ) / ( 2 - 2 ) ) - 1");
+        });
+        
+        assertThrows(ArithmeticException.class, () -> {
+            calcConvertInfix.convertInfixToPostfix("( ( 20 - 5 ) / ( 3 - 3 ) ) * 4");
+        });
     }
 
     @Test

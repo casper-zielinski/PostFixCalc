@@ -105,7 +105,8 @@ public class PostFixCalculator {
         // Erstelle eine Instanz der LinkedList-Klasse
         MySinglyLinkedList<String> stack = new MySinglyLinkedList<>(); // Stack für die Berechnung
         String[] tokens = expression.split(" "); // Ausdruck in Tokens zerlegen
-        int result = 0;
+
+        double result = 0;
 
         // Berechne den Wert des Postfix-Ausdrucks
         for (String token : tokens) {
@@ -129,18 +130,21 @@ public class PostFixCalculator {
 
                 }
             } else {
+                // operators.add(token); //Add operator to the list, which I need to check if the expression contains division by 0
+
                 logger.debug("token: {} is a operator", token);
 
                 logger.debug("removing first number from stack");
 
                 //Removing first number from stack
-                int number2 = Integer.parseInt(stack.removeFirst());
+                double number2 = Double.parseDouble(stack.removeFirst());
                 logger.debug("stack after removing first number: {}", stack.printListAsString());
 
+                //Check if division by 0
                 logger.debug("removing second number from stack");
 
                 //Removing second number from stack
-                int number1 = Integer.parseInt(stack.removeFirst());
+                double number1 = Double.parseDouble(stack.removeFirst());
                 logger.debug("stack after removing second number: {}", stack.printListAsString());
 
                 logger.info("Removed {} and {} from the stack. Calculating result for: {} {} {}", number1, number2, number1, token, number2);
@@ -153,6 +157,15 @@ public class PostFixCalculator {
                 } else if (token.equals("*")) {
                     result = number1 * number2;
                 } else {
+                    if (number2 == 0.0) {
+                        logger.error("Postfix-Notation contains division by 0 --> Not Possible!");
+                        solutionLogger.error("Postfix-Notation contains division by 0 --> Not Possible!");
+
+                        logger.debug("--------------------------------------------------");
+                        solutionLogger.debug("--------------------------------------------------");
+
+                        throw new ArithmeticException("Division by 0 is not possible!");
+                    }
                     result = number1 / number2;
                 }
 
@@ -171,7 +184,7 @@ public class PostFixCalculator {
         solutionLogger.info("Final result: {}", result);
         solutionLogger.debug("--------------------------------------------------"); //new empty line in .log file!
 
-        return Integer.toString(result);
+        return Double.toString(result);
 
     }
 
@@ -218,6 +231,31 @@ public class PostFixCalculator {
         MySinglyLinkedList<String> stack = new MySinglyLinkedList<>();
         String[] tokens = expression.split(" ");
         String infix = "";
+
+        // Is postfix expression correct? No division by 0?
+
+         //Check if division by 0
+         boolean divisionIsOk = true;
+
+        try {
+            String result = calculatePostFix(expression);
+            System.out.println(result); //debug
+        } catch (ArithmeticException e) {
+            divisionIsOk = false;
+        }
+
+        if (divisionIsOk) {
+
+            postfixToInfixLogger.info("postfix expression: {} is correct!", expression);
+            
+        } else {
+            postfixToInfixLogger.error("Postfix-notation contains division by 0 --> Conversion not Possible!");
+            solutionPostfixToInfixLogger.error("Postfix-notation contains division by 0 --> Conversion not Possible!");
+
+            infixToPostFixLogger.debug("--------------------------------------------------");
+            solutionInfixToPostFixLogger.debug("--------------------------------------------------");
+            throw new ArithmeticException("The given Postfix-notation contains division by 0!");
+        }
 
         for (String token : tokens) {
 
@@ -397,7 +435,7 @@ public class PostFixCalculator {
                 if (token.equals(")")) {
                     infixToPostFixLogger.debug("Found closing parenthesis. Moving operators inside parentheses to the operand list.");
                     while (!stack.isEmpty() && !stack.first().equals("(")) {
-                        
+
                         if (count == 0) {
                             infixToPostFixLogger.debug("Removing first '(' from stack");
                             stack.removeFirst(); //if count == 0, then the value "(" will be called, since we don't need it, we will remove it
@@ -441,13 +479,34 @@ public class PostFixCalculator {
             infixToPostFixLogger.debug("operands list after adding first element from stack: {}", operands.toString());
         }
 
-        infixToPostFixLogger.info("Final result: {}", String.join(" ", operands));
-        infixToPostFixLogger.debug("--------------------------------------------------");
+        //Check if division by 0
+        boolean divisionIsOk = true;
 
-        solutionInfixToPostFixLogger.info("Final result: {}", String.join(" ", operands));
-        solutionInfixToPostFixLogger.debug("--------------------------------------------------");
+        try {
+            String result = calculatePostFix(String.join(" ", operands));
 
-        return String.join(" ", operands);
+        } catch (ArithmeticException e) {
+            divisionIsOk = false;
+        }
+
+        if (divisionIsOk) {
+
+            infixToPostFixLogger.info("Final result: {}", String.join(" ", operands));
+            infixToPostFixLogger.debug("--------------------------------------------------");
+
+            solutionInfixToPostFixLogger.info("Final result: {}", String.join(" ", operands));
+            solutionInfixToPostFixLogger.debug("--------------------------------------------------");
+
+            return String.join(" ", operands);
+        } else {
+            infixToPostFixLogger.error("Infix-Notation contains division by 0 --> Conversion not Possible!");
+            solutionInfixToPostFixLogger.error("Infix-Notation contains division by 0 --> Conversion not Possible!");
+
+            infixToPostFixLogger.debug("--------------------------------------------------");
+            solutionInfixToPostFixLogger.debug("--------------------------------------------------");
+            throw new ArithmeticException("The given infix-notation contains division by 0!");
+        }
+
     }
 
     /**
