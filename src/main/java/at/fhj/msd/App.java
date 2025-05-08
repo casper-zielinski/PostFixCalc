@@ -12,7 +12,9 @@ public class App {
 
         PostFixCalculator calc = new PostFixCalculator();
 
-        System.out.println("Calculations");
+        System.out.println("=====================================");
+        System.out.println("          POSTFIX CALCULATIONS");
+        System.out.println("=====================================");
         System.out.println();
 
         List<String> postfixExpressions = List.of(
@@ -34,32 +36,40 @@ public class App {
         );
 
         for (String test : postfixExpressions) {
+            System.out.println("Expression: " + test);
             String result = calc.calculatePostFix(test);
-            System.out.println(result);
+            System.out.println("Result  : " + result);
+            System.out.println("-------------------------------------");
         }
 
         try {
             String result = calc.calculatePostFix("5 0 /");
-            System.out.println(result);
-
+            System.out.println("Expression: 5 0 /");
+            System.out.println("Result  : " + result);
         } catch (ArithmeticException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Expression: 5 0 /");
+            System.out.println("Error    : " + e.getMessage());
         }
 
         System.out.println();
-        System.out.println("Conversion --> Postfix To Infix");
-
+        System.out.println("=====================================");
+        System.out.println("      CONVERSION --> POSTFIX TO INFIX");
+        System.out.println("=====================================");
+        
         try {
             PostFixCalculator calcString = new PostFixCalculator();
             String infix = calcString.convertPostfixToInfix("10 2 * 3 4 + - 5 1 + 2 / * 8 4 / 2 * + 6 -");
-            System.out.println(infix);
+            System.out.println("Postfix Expression: 10 2 * 3 4 + - 5 1 + 2 / * 8 4 / 2 * + 6 -");
+            System.out.println("Infix Expression  : " + infix);
         } catch (ArithmeticException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Error    : " + e.getMessage());
         }
-        
+
         System.out.println();
-        System.out.println("Conversion --> Infix To Postfix");
-      
+        System.out.println("=====================================");
+        System.out.println("      CONVERSION --> INFIX TO POSTFIX");
+        System.out.println("=====================================");
+
         PostFixCalculator calcConvert2 = new PostFixCalculator();
         List<String> tests = new ArrayList<>(List.of(
                 "3 + 4",
@@ -78,16 +88,19 @@ public class App {
         ));
 
         for (String test : tests) {
+            System.out.println("Infix Expression  : " + test);
             String postfix = calcConvert2.convertInfixToPostfix(test);
-            System.out.println(postfix);
+            System.out.println("Postfix Expression: " + postfix);
+            System.out.println("-------------------------------------");
         }
 
         try {
-           
             String infix = calcConvert2.convertInfixToPostfix("( 5 + 3 ) / ( 2 - 2 )");
-            System.out.println(infix);
+            System.out.println("Infix Expression  : ( 5 + 3 ) / ( 2 - 2 )");
+            System.out.println("Postfix Expression: " + infix);
         } catch (ArithmeticException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Expression: ( 5 + 3 ) / ( 2 - 2 )");
+            System.out.println("Error    : " + e.getMessage());
         }
 
     }

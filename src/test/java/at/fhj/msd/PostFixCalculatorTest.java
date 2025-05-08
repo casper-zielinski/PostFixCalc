@@ -11,9 +11,11 @@ public class PostFixCalculatorTest {
 
     PostFixCalculator calc;
     PostFixCalculator calcString;
-    
     PostFixCalculator calcConvertInfix;
 
+    /*----------------------------------------------------------*
+     |                      Setup Section                       |
+     *----------------------------------------------------------*/
     @BeforeEach
     @DisplayName("PostFix Calculator Setup")
     public void setup() {
@@ -22,12 +24,18 @@ public class PostFixCalculatorTest {
         calcConvertInfix = new PostFixCalculator();
     }
 
+    /*----------------------------------------------------------*
+     |                Constructor and Basic Test                |
+     *----------------------------------------------------------*/
     @Test
     @DisplayName("PostFix Constructor Test")
     void constructorTest() {
         assertNotNull(calc);
     }
 
+    /*----------------------------------------------------------*
+     |               Basic Postfix Calculation Tests            |
+     *----------------------------------------------------------*/
     @Test
     @DisplayName("PostFix Addition Test")
     void additionTest() {
@@ -58,6 +66,9 @@ public class PostFixCalculatorTest {
         assertEquals("200.0", calc.calculatePostFix("5 3 + 8 2 - * 4 2 / + 7 3 - *"));
     }
 
+    /*----------------------------------------------------------*
+     |           Exception Handling in Postfix Calculation      |
+     *----------------------------------------------------------*/
     @Test
     @DisplayName("PostFix IllegalArgument Test")
     void IllegalArgument() {
@@ -71,7 +82,7 @@ public class PostFixCalculatorTest {
     }
 
     @Test
-    @DisplayName("Postfix ArithmeticException Test") 
+    @DisplayName("Postfix ArithmeticException Test")
     void ArithmeticTest() {
         assertThrows(ArithmeticException.class, () -> {
             calc.calculatePostFix("10 0 /");
@@ -95,20 +106,23 @@ public class PostFixCalculatorTest {
 
     }
 
+    /*----------------------------------------------------------*
+     |         Postfix to Infix Conversion and Exceptions       |
+     *----------------------------------------------------------*/
     @Test
     @DisplayName("PostFix Convert PostFix-Notation to Infix-Notation")
     void convertPostfixToInfixTest() {
-       
-        assertEquals("((7 - ((3 + 2) * 5)) + (6 / 4))", calcString.convertPostfixToInfix("7 3 2 + 5 * - 6 4 / +"));     
+
+        assertEquals("((7 - ((3 + 2) * 5)) + (6 / 4))", calcString.convertPostfixToInfix("7 3 2 + 5 * - 6 4 / +"));
     }
 
     @Test
     @DisplayName("PostFix Convert PostFix-Notation to Infix-Notation - IllegalArgument Test")
     void convertIllegalArgumentTest() {
-        
+
         assertThrows(IllegalArgumentException.class, () -> {
             calcString.convertPostfixToInfix("7 3 2 + 5 * ü");
-        } );
+        });
 
     }
 
@@ -131,7 +145,7 @@ public class PostFixCalculatorTest {
         assertThrows(ArithmeticException.class, () -> {
             calcString.convertPostfixToInfix("6 2 2 - / 4 +");
         });
-        
+
         assertThrows(ArithmeticException.class, () -> {
             calcString.convertPostfixToInfix("2 3 * 4 4 - /");
         });
@@ -139,14 +153,16 @@ public class PostFixCalculatorTest {
         assertThrows(ArithmeticException.class, () -> {
             calcString.convertPostfixToInfix("10 2 + 3 * 6 6 - / 4 -");
         });
-        
+
         assertThrows(ArithmeticException.class, () -> {
             calcString.convertPostfixToInfix("5 1 2 + 4 * + 3 3 - /");
         });
 
     }
 
-
+    /*----------------------------------------------------------*
+     |        Infix to Postfix Conversion and Exception Tests   |
+     *----------------------------------------------------------*/
     @Test
     @DisplayName("PostFix InfixToPostfix - IllegalArgument Test")
     void InfixIllegalArgumentTest() {
@@ -168,24 +184,27 @@ public class PostFixCalculatorTest {
         assertThrows(ArithmeticException.class, () -> {
             calcConvertInfix.convertInfixToPostfix("( 5 + 3 ) / ( 2 - 2 )");
         });
-        
+
         assertThrows(ArithmeticException.class, () -> {
             calcConvertInfix.convertInfixToPostfix("( ( 6 / 0 ) + 5 ) * 2");
         });
-        
+
         assertThrows(ArithmeticException.class, () -> {
             calcConvertInfix.convertInfixToPostfix("( ( 10 + 2 ) / ( 5 - 5 ) ) + 1");
         });
-        
+
         assertThrows(ArithmeticException.class, () -> {
             calcConvertInfix.convertInfixToPostfix("( ( 7 * 3 ) / ( 2 - 2 ) ) - 1");
         });
-        
+
         assertThrows(ArithmeticException.class, () -> {
             calcConvertInfix.convertInfixToPostfix("( ( 20 - 5 ) / ( 3 - 3 ) ) * 4");
         });
     }
 
+    /*----------------------------------------------------------*
+     |              Valid Infix to Postfix Conversions          |
+     *----------------------------------------------------------*/
     @Test
     @DisplayName("PostFix InfixToPostfix - Addition Test")
     void infixAdditionTest() {
@@ -224,26 +243,25 @@ public class PostFixCalculatorTest {
     @DisplayName("PostFix InfixToPostfix - Komplex Test")
     void infixKomplexTest() {
 
-        assertEquals("3 5 + 6 2 - * 4 2 + 7 3 - * / 8 4 / 9 5 - * +", 
+        assertEquals("3 5 + 6 2 - * 4 2 + 7 3 - * / 8 4 / 9 5 - * +",
                 calcConvertInfix.convertInfixToPostfix("( ( 3 + 5 ) * ( 6 - 2 ) ) / ( ( 4 + 2 ) * ( 7 - 3 ) ) + ( 8 / 4 ) * ( 9 - 5 )"));
 
-     
         assertEquals("2 3 + 4 5 * + 6 -",
                 calcConvertInfix.convertInfixToPostfix("( 2 + 3 ) + ( 4 * 5 ) - 6"));
 
-        
         assertEquals("7 3 + 2 1 + / 5 *",
                 calcConvertInfix.convertInfixToPostfix("( ( 7 + 3 ) / ( 2 + 1 ) ) * 5"));
 
-   
         assertEquals("10 2 3 + * 6 4 - +",
                 calcConvertInfix.convertInfixToPostfix("( 10 * ( 2 + 3 ) ) + ( 6 - 4 )"));
 
-      
         assertEquals("5 1 2 + 4 * + 3 -",
                 calcConvertInfix.convertInfixToPostfix("5 + ( ( 1 + 2 ) * 4 ) - 3"));
     }
 
+    /*----------------------------------------------------------*
+     |             Operator Precedence Utility Tests            |
+     *----------------------------------------------------------*/
     @Test
     @DisplayName("PostFix - precedence() Test")
     void PrecedenceTest() {

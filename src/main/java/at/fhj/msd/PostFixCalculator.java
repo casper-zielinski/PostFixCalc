@@ -88,14 +88,30 @@ public class PostFixCalculator {
      * <strong>Important:</strong> The postfix expression must be provided with
      * spaces between each element (numbers and operators). For example, the
      * expression "3 4 +" must have spaces between the operands and the
-     * operator.</p>
+     * operator.
+     * </p>
+     
+     * <p>
+     * Additionally, the method includes detailed logging using Log4j:
+     * <ul>
+     *   <li>Step-by-step operations are logged using the default logger.</li>
+     *   <li>The original expression and the final result are logged using a separate solution logger.</li>
+     * </ul>
+     * This allows for both debugging and concise result logging in separate outputs.
+     * </p>
      *
-     * @param expression A string representing the postfix expression to
-     * evaluate.
-     * @return A string containing the result of the postfix expression
-     * calculation.
-     * @throws IllegalArgumentException If the expression contains invalid
-     * operators, invalid numbers, or any other errors.
+     * <p>
+     * If the expression contains invalid tokens (e.g., non-numeric values or unknown operators),
+     * an {@code IllegalArgumentException} is thrown. If a division by zero is attempted, an
+     * {@code ArithmeticException} is thrown.
+     * </p>
+     *
+     * @param expression A string representing the postfix expression to evaluate.
+     *                   The tokens (numbers and operators) must be separated by spaces.
+     * @return A string containing the result of the postfix expression calculation.
+     * @throws IllegalArgumentException If the expression contains invalid operators, non-numeric tokens,
+     *                                  or improperly formatted input.
+     * @throws ArithmeticException If a division by zero is attempted during evaluation.
      */
     public String calculatePostFix(String expression) {
 
@@ -174,7 +190,7 @@ public class PostFixCalculator {
     }
 
     //? Bonus Punkte, maybe? :)
-    /**
+      /**
      * Converts a postfix expression (Reverse Polish Notation) into a valid
      * infix expression.
      * <p>
@@ -200,13 +216,29 @@ public class PostFixCalculator {
      *
      * <p>
      * <b>Note:</b> The input expression must be space-separated (e.g.
-     * {@code "3 4 +"}).</p>
+     * {@code "3 4 +"}).
+     * </p>
+     * 
+     * <p>
+     * <b>Bonus Punkte, maybe?</b> If the postfix expression contains any 
+     * division by zero operation, an {@link ArithmeticException} is thrown.
+     * The method also ensures that the postfix expression is correctly evaluated 
+     * before the conversion takes place.
+     * </p>
+     *
+     * <p>
+     * The method also calls the {@link #calculatePostFix(String)} method to 
+     * validate the postfix expression before performing the conversion. 
+     * If the expression is invalid or contains a division by zero, 
+     * it logs the error and throws an {@link ArithmeticException}.
+     * </p>
      *
      * @param expression A postfix expression as a string, with each token
      * (number or operator) separated by a space
      * @return The corresponding infix expression as a string
      * @throws IllegalArgumentException If a token is neither a valid number nor
      * a supported operator
+     * @throws ArithmeticException If the postfix expression contains a division by 0
      */
     public String convertPostfixToInfix(String expression) {
 
@@ -222,7 +254,7 @@ public class PostFixCalculator {
         boolean divisionIsOk = true;
 
         try {
-            String result = calculatePostFix(expression);
+            String result = calculatePostFix(expression); //calles calculatePostFix to check if the expression is valid
             System.out.println(result); //debug
         } catch (ArithmeticException e) {
             divisionIsOk = false;
@@ -301,7 +333,7 @@ public class PostFixCalculator {
      * on the visuals in the video, I could implement the method and it works!
      *
      *
-     * * Converts an infix expression (mathematical notation) into postfix
+      * Converts an infix expression (mathematical notation) into postfix
      * notation (Reverse Polish Notation).
      * <p>
      * This method uses a stack-based algorithm to convert an infix expression
@@ -337,11 +369,30 @@ public class PostFixCalculator {
      * parenthesis). For example, the expression "( 3 + 4 )" must be provided
      * with spaces between the numbers, operators, and parentheses.</p>
      *
+     * <p>
+     * The method also calls {@link #calculatePostFix(String)} to validate the
+     * generated postfix expression before returning it. If the postfix expression 
+     * contains any division by zero operation, an {@link ArithmeticException} is thrown.
+     * </p>
+     *
+     * <p>
+     * The entire process of converting the infix expression is logged using a logger.
+     * This includes logging:
+     * <ul>
+     * <li>The start of the conversion process.</li>
+     * <li>Each step of processing tokens (whether they are numbers, operators, or parentheses).</li>
+     * <li>Handling of precedence and parentheses.</li>
+     * <li>The final postfix expression.</li>
+     * </ul>
+     * The logging helps trace the flow of the method and can assist in debugging.
+     * </p>
+     *
      * @param expression the infix expression to be converted, with operators
      * and operands separated by spaces
      * @return the equivalent postfix expression
      * @throws IllegalArgumentException if an element in the expression is
      * neither an operator nor a number
+     * @throws ArithmeticException if the postfix expression contains a division by 0
      */
     public String convertInfixToPostfix(String expression) {
 
