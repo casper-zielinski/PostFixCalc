@@ -99,8 +99,7 @@ public class PostFixCalculator {
      */
     public String calculatePostFix(String expression) {
 
-        logger.info("Start calculation for: {}", expression);
-        solutionLogger.info("Start calculation for: {}", expression);
+        LogUtils.StartCalculation(logger, solutionLogger, expression);
 
         // Erstelle eine Instanz der LinkedList-Klasse
         MySinglyLinkedList<String> stack = new MySinglyLinkedList<>(); // Stack für die Berechnung
@@ -112,42 +111,36 @@ public class PostFixCalculator {
         for (String token : tokens) {
 
             if (!isOperator(token)) {
-                logger.debug("token: {} is not a operator", token);
+                LogUtils.noOperator(logger, token);
 
                 if (Character.isDigit(token.charAt(0))) {
-                    logger.debug("token: {} is a digit, adding to stack", token);
+                    LogUtils.addDigit(logger, token);
 
-                    //Adding token to stack
+                    //Add Token to Stack
                     stack.addFirst(token);
-                    logger.debug("stack after pushing token: {}", stack.printListAsString());
+                    LogUtils.stackUpdated(logger, stack, "after adding");
                 } else {
-                    logger.error("token: {} is neither an operator nor a digit", token);
-                    solutionLogger.error("token: {} is neither an operator nor a digit", token);
+                    // Invalid Token
+                    LogUtils.invalidToken(logger, solutionLogger, token);
+                    LogUtils.sectionBreak(logger, solutionLogger);
 
-                    logger.debug("--------------------------------------------------");
-                    solutionLogger.debug("--------------------------------------------------");
                     throw new IllegalArgumentException("One element of the given postfix-notation is neither an operator nor a digit!");
 
                 }
             } else {
-                // operators.add(token); //Add operator to the list, which I need to check if the expression contains division by 0
+                // Log that token is operator
+                LogUtils.isOperator(logger, token);
 
-                logger.debug("token: {} is a operator", token);
-
-                logger.debug("removing first number from stack");
-
-                //Removing first number from stack
+                LogUtils.removingFromStack(logger, stack.first());
                 double number2 = Double.parseDouble(stack.removeFirst());
-                logger.debug("stack after removing first number: {}", stack.printListAsString());
+                LogUtils.stackUpdated(logger, stack, "after removing");
 
-                //Check if division by 0
-                logger.debug("removing second number from stack");
-
-                //Removing second number from stack
+                LogUtils.removingFromStack(logger, stack.first());
                 double number1 = Double.parseDouble(stack.removeFirst());
-                logger.debug("stack after removing second number: {}", stack.printListAsString());
+                LogUtils.stackUpdated(logger, stack, "after removing");
 
-                logger.info("Removed {} and {} from the stack. Calculating result for: {} {} {}", number1, number2, number1, token, number2);
+                //Log: Calculating for...
+                LogUtils.calculatingFor(logger, number1, number2, token);
 
                 //? Result - Solution
                 if (token.equals("+")) {
@@ -158,31 +151,23 @@ public class PostFixCalculator {
                     result = number1 * number2;
                 } else {
                     if (number2 == 0.0) {
-                        logger.error("Postfix-Notation contains division by 0 --> Not Possible!");
-                        solutionLogger.error("Postfix-Notation contains division by 0 --> Not Possible!");
-
-                        logger.debug("--------------------------------------------------");
-                        solutionLogger.debug("--------------------------------------------------");
-
+                        LogUtils.divideByZero(logger, solutionLogger);
                         throw new ArithmeticException("Division by 0 is not possible!");
                     }
                     result = number1 / number2;
                 }
 
-                logger.info("Calculated result: {} {} {} = {}", number1, token, number2, result);
-                logger.debug("adding result: {} to stack", result);
+                LogUtils.calculated(logger, number1, number2, token, result);
+                LogUtils.addingToStack(logger, result);
 
                 //Adding result to stack
                 stack.addFirst(String.valueOf(result)); //Result back on stack
-                logger.debug("stack after pushing result: {}", stack.printListAsString());
+                LogUtils.stackUpdated(logger, stack, "after adding");
             }
 
         }
-        logger.info("Final result: {}", result);
-        logger.debug("--------------------------------------------------");
 
-        solutionLogger.info("Final result: {}", result);
-        solutionLogger.debug("--------------------------------------------------"); //new empty line in .log file!
+        LogUtils.finalResult(logger, solutionLogger, result);
 
         return Double.toString(result);
 
@@ -225,17 +210,16 @@ public class PostFixCalculator {
      */
     public String convertPostfixToInfix(String expression) {
 
-        postfixToInfixLogger.info("Start conversion of PostFix-Notation to Infix-Notation for: {}", expression);
-        solutionPostfixToInfixLogger.info("Start conversion of PostFix-Notation to Infix-Notation for: {}", expression);
+        LogUtils.startConversionToInfix(postfixToInfixLogger, solutionPostfixToInfixLogger, expression);
 
         MySinglyLinkedList<String> stack = new MySinglyLinkedList<>();
         String[] tokens = expression.split(" ");
         String infix = "";
 
-        // Is postfix expression correct? No division by 0?
+        postfixToInfixLogger.info("call calculatePostFix and try to calculate the expression first...");
 
-         //Check if division by 0
-         boolean divisionIsOk = true;
+        //Check if division by 0
+        boolean divisionIsOk = true;
 
         try {
             String result = calculatePostFix(expression);
@@ -245,54 +229,44 @@ public class PostFixCalculator {
         }
 
         if (divisionIsOk) {
-
-            postfixToInfixLogger.info("postfix expression: {} is correct!", expression);
-            
+            postfixToInfixLogger.debug("postfix expression: {} is correct!", expression);
         } else {
-            postfixToInfixLogger.error("Postfix-notation contains division by 0 --> Conversion not Possible!");
-            solutionPostfixToInfixLogger.error("Postfix-notation contains division by 0 --> Conversion not Possible!");
 
-            infixToPostFixLogger.debug("--------------------------------------------------");
-            solutionInfixToPostFixLogger.debug("--------------------------------------------------");
+            LogUtils.divideByZero(postfixToInfixLogger, solutionPostfixToInfixLogger);
             throw new ArithmeticException("The given Postfix-notation contains division by 0!");
         }
 
         for (String token : tokens) {
 
             if (!isOperator(token)) {
-
-                postfixToInfixLogger.debug("token: {} is not a operator", token);
+                LogUtils.noOperator(postfixToInfixLogger, token);
 
                 if (Character.isDigit(token.charAt(0))) {
-                    postfixToInfixLogger.debug("token: {} is a digit, adding to stack", token);
+                    LogUtils.addDigit(postfixToInfixLogger, token);
 
                     //Adding token to stack
                     stack.addFirst(token);
-                    postfixToInfixLogger.debug("stack after pushing token: {}", stack.printListAsString());
+                    LogUtils.stackUpdated(postfixToInfixLogger, stack, "after adding");
                 } else {
-                    postfixToInfixLogger.error("token: {} is neither an operator nor a digit", token);
-                    solutionPostfixToInfixLogger.error("token: {} is neither an operator nor a digit", token);
+                    //Invalid token
+                    LogUtils.invalidToken(postfixToInfixLogger, solutionPostfixToInfixLogger, token);
+                    LogUtils.sectionBreak(postfixToInfixLogger, solutionPostfixToInfixLogger);
 
-                    postfixToInfixLogger.debug("--------------------------------------------------");
-                    solutionPostfixToInfixLogger.debug("--------------------------------------------------");
                     throw new IllegalArgumentException("One element of the given postfix-notation is neither an operator nor a digit!");
                 }
             } else {
 
-                postfixToInfixLogger.debug("token: {} is a operator", token);
+                LogUtils.isOperator(postfixToInfixLogger, token);
 
-                postfixToInfixLogger.debug("removing first number from stack");
-
-                //Removing first number from stack
+                LogUtils.removingFromStack(postfixToInfixLogger, stack.first());
                 String number2 = stack.removeFirst();
-                postfixToInfixLogger.debug("stack after removing first number: {}", stack.printListAsString());
+                LogUtils.stackUpdated(postfixToInfixLogger, stack, "after removing");
 
-                postfixToInfixLogger.debug("removing second number from stack");
-
+                LogUtils.removingFromStack(postfixToInfixLogger, stack.first());
                 String number1 = stack.removeFirst();
-                postfixToInfixLogger.debug("stack after removing second number: {}", stack.printListAsString());
+                LogUtils.stackUpdated(postfixToInfixLogger, stack, "after removing");
 
-                postfixToInfixLogger.info("Removed {} and {} from the stack. Calculating result for: {} {} {}", number1, number2, number1, token, number2);
+                LogUtils.convertingFor(postfixToInfixLogger, number1, number2, token);
 
                 if (token.equals("+")) {
                     infix = "(" + number1 + " + " + number2 + ")";
@@ -304,22 +278,18 @@ public class PostFixCalculator {
                     infix = "(" + number1 + " / " + number2 + ")";
                 }
 
-                postfixToInfixLogger.info("Calculated result: '{} {} {}' = {}", number1, token, number2, infix);
-                postfixToInfixLogger.debug("adding result: {} to stack", infix);
+                LogUtils.converted(postfixToInfixLogger, infix);
+                LogUtils.addingToStack(logger, infix);
 
                 //Adding result to stack
                 stack.addFirst(infix);
-                postfixToInfixLogger.debug("stack after pushing result: {}", stack.printListAsString());
+                LogUtils.stackUpdated(postfixToInfixLogger, stack, "after adding");
 
             }
 
         }
 
-        postfixToInfixLogger.info("Final result: {}", infix);
-        postfixToInfixLogger.debug("--------------------------------------------------");
-
-        solutionPostfixToInfixLogger.info("Final result: {}", infix);
-        solutionPostfixToInfixLogger.debug("--------------------------------------------------");
+        LogUtils.finalResult(postfixToInfixLogger, solutionPostfixToInfixLogger, infix);
 
         return infix;
 
@@ -375,8 +345,7 @@ public class PostFixCalculator {
      */
     public String convertInfixToPostfix(String expression) {
 
-        infixToPostFixLogger.info("Start conversion of Infix-Notation to PostFix-Notation for: {}", expression);
-        solutionInfixToPostFixLogger.info("Start conversion of Infix-Notation to PostFix-Notation for: {}", expression);
+       LogUtils.startConversionToPostfix(infixToPostFixLogger, solutionInfixToPostFixLogger, expression);
 
         MySinglyLinkedList<String> stack = new MySinglyLinkedList<>();
         List<String> operands = new ArrayList<>();
@@ -386,25 +355,23 @@ public class PostFixCalculator {
         for (String token : tokens) {
             //?If it is a number, then put it into new data structure: list
             if (!isOperatorExtended(token)) {
-
-                infixToPostFixLogger.debug("token: '{}' is not a operator", token);
+                LogUtils.noOperator(infixToPostFixLogger, token);
 
                 if (Character.isDigit(token.charAt(0))) {
-                    infixToPostFixLogger.debug("token: '{}' is a digit, adding to stack", token);
+                    LogUtils.addDigit(infixToPostFixLogger, token);
 
                     operands.add(token);
-                    infixToPostFixLogger.debug("operands list after adding token '{}': {}", token, operands.toString());
+                    LogUtils.listUpdated(infixToPostFixLogger, operands, "after adding");
                 } else {
-                    infixToPostFixLogger.error("token: '{}' is neither an operator nor a digit", token);
-                    solutionInfixToPostFixLogger.error("token: '{}' is neither an operator nor a digit", token);
+                    //Invalid token
+                    LogUtils.invalidToken(infixToPostFixLogger, solutionInfixToPostFixLogger, token);
+                    LogUtils.sectionBreak(infixToPostFixLogger, solutionInfixToPostFixLogger);
 
-                    infixToPostFixLogger.debug("--------------------------------------------------");
-                    solutionInfixToPostFixLogger.debug("--------------------------------------------------");
                     throw new IllegalArgumentException("One element of the given infix-notation is neither an operator nor a digit!");
                 }
             } else {
 
-                infixToPostFixLogger.debug("token: '{}' is a operator", token);
+                LogUtils.isOperator(infixToPostFixLogger, token);
 
                 //? Example1: if token is = ")" the while loop will be ignored and the token will be added to the stack
                 //? Example2: If token is = "-" and ")" is already in the stack, while loop will also be skipped, see hasLowerPrecendence()
@@ -419,16 +386,15 @@ public class PostFixCalculator {
 
                     operands.add(stack.removeFirst()); //Remove all upper-level operators to the list of operands
 
-                    infixToPostFixLogger.debug("stack after removing first element: '{}'", stack.printListAsString());
+                    LogUtils.stackUpdated(infixToPostFixLogger, stack, "after removing");
                     infixToPostFixLogger.debug("operands list after adding first element from stack: {}", operands.toString());
 
                 }
 
-                infixToPostFixLogger.debug("adding token: {} to stack", token);
-
+                LogUtils.addingToStack(infixToPostFixLogger, token);
                 stack.addFirst(token); //? After while loop (or not) token will be added to stack!
 
-                infixToPostFixLogger.debug("stack after adding token to stack: '{}'", stack.printListAsString());
+                LogUtils.stackUpdated(infixToPostFixLogger, stack, "after adding");
 
                 int count = 0;
                 //? Iterate backbwards until "(" is found
@@ -440,7 +406,7 @@ public class PostFixCalculator {
                             infixToPostFixLogger.debug("Removing first '(' from stack");
                             stack.removeFirst(); //if count == 0, then the value "(" will be called, since we don't need it, we will remove it
 
-                            infixToPostFixLogger.debug("stack after removing first '(': '{}'", stack.printListAsString());
+                            LogUtils.stackUpdated(infixToPostFixLogger, stack, "after removing");
                             count++;
                         }
 
@@ -448,13 +414,12 @@ public class PostFixCalculator {
                         infixToPostFixLogger.debug("Adding removed element: '{}' from stack to operands list", stack.first());
 
                         operands.add(stack.removeFirst()); //move all operators which were inside the parentheses to the operand list!
-
-                        infixToPostFixLogger.debug("stack after removing first element: '{}'", stack.printListAsString());
+                        LogUtils.stackUpdated(infixToPostFixLogger, stack, "after removing");
+                        
                         infixToPostFixLogger.debug("operands list after adding first element from stack: {}", operands.toString());
                     }
 
                     infixToPostFixLogger.debug("Removing the ')' in relation to the first '(' from stack");
-
                     stack.removeFirst(); //When "(" found, then remove ")" also!
 
                     infixToPostFixLogger.debug("stack after removing first ')': '{}'", stack.printListAsString());
@@ -475,11 +440,14 @@ public class PostFixCalculator {
 
             operands.add(stack.removeFirst());
 
-            infixToPostFixLogger.debug("stack after removing first element: '{}'", stack.printListAsString());
+            LogUtils.stackUpdated(infixToPostFixLogger, stack, "after removing");
             infixToPostFixLogger.debug("operands list after adding first element from stack: {}", operands.toString());
         }
 
+        infixToPostFixLogger.info("call calculatePostFix and try to calculate the expression first...");
+
         //Check if division by 0
+
         boolean divisionIsOk = true;
 
         try {
@@ -491,19 +459,13 @@ public class PostFixCalculator {
 
         if (divisionIsOk) {
 
-            infixToPostFixLogger.info("Final result: {}", String.join(" ", operands));
-            infixToPostFixLogger.debug("--------------------------------------------------");
-
-            solutionInfixToPostFixLogger.info("Final result: {}", String.join(" ", operands));
-            solutionInfixToPostFixLogger.debug("--------------------------------------------------");
+            LogUtils.finalResult(infixToPostFixLogger, solutionInfixToPostFixLogger, String.join(" ", operands));
 
             return String.join(" ", operands);
         } else {
-            infixToPostFixLogger.error("Infix-Notation contains division by 0 --> Conversion not Possible!");
-            solutionInfixToPostFixLogger.error("Infix-Notation contains division by 0 --> Conversion not Possible!");
-
-            infixToPostFixLogger.debug("--------------------------------------------------");
-            solutionInfixToPostFixLogger.debug("--------------------------------------------------");
+            LogUtils.divideByZero(infixToPostFixLogger, solutionInfixToPostFixLogger);
+            LogUtils.sectionBreak(infixToPostFixLogger, solutionInfixToPostFixLogger);
+            
             throw new ArithmeticException("The given infix-notation contains division by 0!");
         }
 

@@ -51,7 +51,7 @@ public class App {
 
         try {
             PostFixCalculator calcString = new PostFixCalculator();
-            String infix = calcString.convertPostfixToInfix("10 2 + 3 * 6 - 0 /");
+            String infix = calcString.convertPostfixToInfix("10 2 * 3 4 + - 5 1 + 2 / * 8 4 / 2 * + 6 -");
             System.out.println(infix);
         } catch (ArithmeticException e) {
             System.out.println(e.getMessage());
