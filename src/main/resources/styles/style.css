@@ -34,7 +34,6 @@ TextField{
       -fx-text-fill: white;
 }
 
-#lb_info{
-      -fx-font-family: "Digital-7";
-      -fx-text-fill: white;
+#background{
+      -fx-background-color: rgb(3, 17, 41);
 }

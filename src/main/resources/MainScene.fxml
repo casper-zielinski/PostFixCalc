@@ -5,29 +5,33 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="606.0" stylesheets="@style/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.fhj.msd.MainSceneController">
    <children>
-      <Button fx:id="btn_calc" layoutX="179.0" layoutY="155.0" mnemonicParsing="false" onAction="#btn_onClick_calc" prefHeight="37.0" prefWidth="258.0" text="Calculate PostFix Equation">
-         <font>
-            <Font name="System Bold" size="17.0" />
-         </font>
-      </Button>
       <TextField fx:id="tf_postfix" layoutX="73.0" layoutY="80.0" prefHeight="59.0" prefWidth="469.0" />
       <Label fx:id="lb_text" layoutX="262.0" layoutY="22.0" text="TI-31X Pro" />
       <Label fx:id="lb_mathprint" layoutX="282.0" layoutY="56.0" text="MathPrint" />
-      <Button fx:id="btn_post_to_in" layoutX="179.0" layoutY="220.0" mnemonicParsing="false" onAction="#btn_onClick_post_to_in" prefHeight="37.0" prefWidth="258.0" text="Convert Postfix to Infix">
-         <font>
-            <Font name="System Bold" size="17.0" />
-         </font>
-      </Button>
-      <Button fx:id="btn_in_to_post" layoutX="179.0" layoutY="284.0" mnemonicParsing="false" onAction="#btn_onClick_in_to_post" prefHeight="37.0" prefWidth="258.0" text="Convert Infix to Postfix">
-         <font>
-            <Font name="System Bold" size="17.0" />
-         </font>
-      </Button>
-      <TextArea fx:id="tf_calculated" layoutX="118.0" layoutY="377.0" prefHeight="97.0" prefWidth="379.0" />
-      <Label fx:id="lb_info" layoutX="118.0" layoutY="484.0" text="* Provide Infix with Whitespaces (also between Brackets) " />
+      <Pane fx:id="background" layoutX="-3.0" layoutY="158.0" prefHeight="387.0" prefWidth="614.0">
+         <children>
+            <Button fx:id="btn_calc" layoutX="174.0" layoutY="14.0" mnemonicParsing="false" onAction="#btn_onClick_calc" prefHeight="37.0" prefWidth="258.0" text="Calculate PostFix Equation">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_in_to_post" layoutX="174.0" layoutY="74.0" mnemonicParsing="false" onAction="#btn_onClick_in_to_post" prefHeight="37.0" prefWidth="258.0" text="Convert Infix to Postfix">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_post_to_in" layoutX="174.0" layoutY="130.0" mnemonicParsing="false" onAction="#btn_onClick_post_to_in" prefHeight="37.0" prefWidth="258.0" text="Convert Postfix to Infix">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+            <TextArea fx:id="tf_calculated" layoutX="114.0" layoutY="194.0" prefHeight="97.0" prefWidth="379.0" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
